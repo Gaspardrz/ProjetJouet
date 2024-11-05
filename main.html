@@ -2,17 +2,34 @@
 <html lang="fr">
 <head>
     <title>Toy'isen</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-</head>*
+    <meta charset="UTF-8">
+</head>
 <body>
     <header>
-        <h1>Toy'isen</h1>
-        <nav>
-            <ul>
-                <li><a href="main.html">Accueil</a></li>
-                <li><a href="catalogue.html">Catalogue</a></li>
-                <li><a href="contact.html">Contact</a></li>
+        <div class="top-bar">
+            <div class="top-bar-right">
+                <a href="#connexion">Connexion</a>
+                <a href="#contact">Contacts</a>
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <a href="#">Logo Jouets</a>
+            </div>
+            <ul class="navbar-menu">
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Catalogue</a>
+                    <div class="dropdown-content">
+                        <a href="#peluches">Peluches</a>
+                        <a href="#jeux-educatifs">Jeux éducatifs</a>
+                        <a href="#vehicules">Véhicules</a>
+                        <a href="#figurines">Figurines</a>
+                    </div>
+                </li>
+                <li><a href="#a-propos">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -25,5 +42,8 @@
     <footer>
         <p>&copy; 2021 Toy'isen</p>
     </footer>
-
+    <main>
+        <!-- Contenu principal du site -->
+    </main>
+</body>
 </html>
