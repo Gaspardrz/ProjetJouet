@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    font: black;
 }
 :root{
     --Rose: #FF4D69 ;
@@ -23,7 +24,7 @@ header {
 
 /* Top bar pour connexion et contacts */
 .top-bar {
-    background-color: var(--Gris);
+    background-color: var(--Rose);
     color: #fff;
     padding: 5px 20px;
     text-align: right;
