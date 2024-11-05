@@ -23,7 +23,7 @@ header {
 
 /* Top bar pour connexion et contacts */
 .top-bar {
-    background-color: var(--Beige);
+    background-color: var(--Gris);
     color: #fff;
     padding: 5px 20px;
     text-align: right;
