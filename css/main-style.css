@@ -15,10 +15,14 @@
     --Blanc:#FFFFFF;
 }
 
+.logo {
+    width: 150px;
+    height: auto; /* Garde les proportions de l'image */
+}
 
 body {
     font-family: Arial, sans-serif;
-    background-color: var(--Beige);
+    background-color: rgb(62, 62, 125);
 }
 
 header {
@@ -26,16 +30,15 @@ header {
 }
 
 /* Top bar pour connexion et contacts */
+
 .top-bar {
-    background-color: var(--Beige);
     color: var(--Blanc);
-    padding: 5px 20px;
     text-align: right;
 }
 
 .top-bar-right a {
     color: #fff;
-    margin-left: 15px;
+    padding: 10px 10px;
     text-decoration: none;
     font-size: 14px;
 }
@@ -46,11 +49,11 @@ header {
 
 /* Navbar */
 .navbar {
-   
     display: flex;
     justify-content: space-between;
-    padding: 10px 20px;
     align-items: center;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+
 }
 
 .navbar-logo a {
