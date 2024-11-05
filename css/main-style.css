@@ -9,7 +9,9 @@
 :root{
     --Rose: #FF4D69 ;
     --Orangé:#FF6C6E ;
-    --Beige: #FFB2A3 ;
+    --Beige: #fcd7d0 ;
+    --Beige-foncé: #d99688 ;
+    --Noir: #000000 ;
     --Blanc:#FFFFFF;
 }
 
@@ -20,7 +22,7 @@ body {
 }
 
 header {
-    width: 100%;
+    background-color: var(--Beige-foncé);
 }
 
 /* Top bar pour connexion et contacts */
@@ -44,7 +46,7 @@ header {
 
 /* Navbar */
 .navbar {
-    background-color: var(--Rose);
+   
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
