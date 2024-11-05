@@ -4,18 +4,19 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-    font: black;
+    color: black;
 }
 :root{
     --Rose: #FF4D69 ;
     --Orangé:#FF6C6E ;
     --Beige: #FFB2A3 ;
+    --Blanc:#FFFFFF;
 }
 
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    background-color: var(--Beige);
 }
 
 header {
@@ -24,8 +25,8 @@ header {
 
 /* Top bar pour connexion et contacts */
 .top-bar {
-    background-color: var(--Rose);
-    color: #fff;
+    background-color: var(--Beige);
+    color: var(--Blanc);
     padding: 5px 20px;
     text-align: right;
 }
@@ -38,12 +39,12 @@ header {
 }
 
 .top-bar-right a:hover {
-    color: #ffd700;
+    color: var(--Orangé);
 }
 
 /* Navbar */
 .navbar {
-    background-color: #ff5722;
+    background-color: var(--Rose);
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
@@ -73,7 +74,7 @@ header {
 }
 
 .navbar-menu a:hover {
-    background-color: #e64a19;
+    color: var(--Orangé);
 }
 
 /* Dropdown */
@@ -99,9 +100,12 @@ header {
 }
 
 .dropdown-content a:hover {
-    background-color: #ffab91;
+    background-color: #d99688;
+    color: var(--Blanc);
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
+
 }
+
