@@ -16,19 +16,49 @@
 }
 
 .logo {
-    width: 150px;
-    height: auto; /* Garde les proportions de l'image */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Makes the logo circular */
+    transition: transform 0.6s; /* Smooth transition for flip effect */
 }
 
+/* Flip animation on hover */
+.logo:hover {
+    transform: rotateY(180deg); /* Flip the logo on hover */
+}
+
+/* Background color for the page */
 body {
     font-family: Arial, sans-serif;
-    background-color: rgb(62, 62, 125);
+    background-color: #f4f4f9; /* Light background for a clean look */
+    color: #333;
 }
 
+/* Header style */
 header {
-    background-color: var(--Beige-foncé);
+    background-color: var(--Beige);
+    padding: 20px;
 }
 
+/* Navbar links */
+.navbar-menu a {
+    color: #333;
+    font-weight: bold;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+.navbar-menu a:hover {
+    color: var(--Orangé); /* Brighten link on hover */
+}
+
+/* Footer style */
+footer {
+    background-color: var(--Beige-foncé);
+    color: var(--Blanc);
+    text-align: center;
+    padding: 10px;
+}
 /* Top bar pour connexion et contacts */
 
 .top-bar {
