@@ -168,38 +168,62 @@ main {
     padding: 20px;
 }
 
-.tendances, .produits {
-    margin-bottom: 40px;
-}
-
-.tendances h2, .produits h2 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-}
-
-.card-grid, .product-grid {
+/* Section des produits */
+.produit-container {
     display: flex;
-    gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 20px;
+    padding: 20px;
 }
 
-.card, .product {
-    background-color: #333;
-    padding: 10px;
-    width: 120px; /* Réduit la taille des cartes à environ 20% de la largeur de l'écran */
-    height: 100px;
+.produit-card {
+    position: relative;
+    width: 220px;
+    height: 340px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: white;
     text-align: center;
-    border-radius: 5px;
 }
 
-.card img, .product img {
-    width: 100px; /* S'assure que l'image prend toute la largeur de la carte */
-    height: auto;
-    border-radius: 5px;
+.produit-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.card p, .product h3 {
-    margin: 10px 0;
+.produit-card a {
+    text-decoration: none;
+    color: inherit;
 }
 
+.produit-card img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    transition: opacity 0.3s;
+}
+
+.produit-card .info {
+    padding: 10px;
+}
+
+.produit-card h3 {
+    margin: 5px 0;
+    font-size: 1.2em;
+}
+
+.produit-card p {
+    font-size: 0.9em;
+    margin: 0;
+}
+
+/* Footer */
+footer {
+    background-color: #3A3B5A;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
