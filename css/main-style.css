@@ -150,16 +150,18 @@ footer {
 
     /* Conteneur principal */
     .carousel {
-        width: 60vw;
         height: 40vh;
         perspective: 1000px; /* Perspective pour l'effet 3D */
         overflow: hidden;
         position: relative;
         align-items: center;
         justify-content: center;
+        width: 100%;
+        margin:auto;
         overflow: hidden;
-        margin: 0;
-      }
+        
+    
+    }
   
       /* Les images du carrousel */
       .carousel__images {
@@ -169,7 +171,7 @@ footer {
       }
   
       .carousel__images img {
-        width: 60vw;
+        width: 400%;
         height: 40vh;
         object-fit: cover;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Ombre pour l'effet de profondeur */
