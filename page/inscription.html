@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/connexion-style.css">
+    <title>Inscription</title>
+</head>
+<header>
+    <div class="top-bar">
+        <div class="top-bar-right">
+            <a href="../ProjetJouet/page/connexion.html">Connexion</a>
+            <a href="../ProjetJouet/page/inscription.html">S'inscrire</a>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <a href="main.html"><img src="images/logo.png" alt="Logo Jouet" class="logo"></a>
+        </div>
+        <ul class="navbar-menu">
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Catalogue</a>
+                <div class="dropdown-content">
+                    <a href="page/catégorie/catégorie-carte.html">Cartes à jouer</a>
+                    <a href="page/catégorie/catégorie-mini-voiture.html">Mini Voitures</a>
+                    <a href="page/catégorie/catégorie-nerf.html">Nerfs</a>
+                    <a href="page/catégorie/catégorie-figurines.html">Figurines</a>
+                </div>
+            </li>
+            <li><a href="#a-propos">À propos</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+<body>
+    <form method="post" action="#" class="formletter">
+        <fieldset>  
+            <legend>S'inscrire</legend>
+
+            <div>
+                <label for="nom">Nom :</label>
+                <input type="text" name="nom" id="nom" placeholder="Votre nom" required>
+            </div>
+            
+            <div>
+                <label for="prenom">Prénom :</label>
+                <input type="text" name="prenom" id="prenom" placeholder="Votre prénom" required>
+            </div>
+            
+            <div>
+                <label for="mail">Adresse email :</label>
+                <input type="email" name="mail" id="mail" placeholder="Votre adresse email" required>
+            </div>
+            
+            <div>
+                <label for="password">Mot de passe :</label>
+                <input type="password" name="password" id="password" placeholder="Votre mot de passe" required>
+            </div>
+            
+            <div>
+
+                <input type="submit" value="S'inscrire">
+                <input type="reset" value="Réinitialiser">
+
+            </div>
+        </fieldset>
+    </form>
+
+    <footer>
+        <dl>
+            <dt>Téléphone</dt>
+            <dd>(+33) (0)3 20 30 40 50</dd>
+            <dt>Adresse</dt>
+            <dd>ISEN Lille - Institut supérieur<br>
+                de l'Électronique et du Numérique<br>
+                41 Boulevard Vauban<br>
+            
+            </dd>
+        </dl>
+    </footer>
+</body>
+</html>

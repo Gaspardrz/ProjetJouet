@@ -192,3 +192,6 @@ footer {
         transform: scale(1.05) rotateY(15deg);
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
       }
+      section > p{
+        text-align: center;
+      }
