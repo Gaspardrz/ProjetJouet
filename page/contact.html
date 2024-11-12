@@ -4,80 +4,97 @@
 	<meta charset="UTF-8">
     <link rel="stylesheet" href="../css/biblio.css">
 	<title>Contact</title>
-	
 </head>
 <body>
 <header>
-	<img src="../images/icon.ico" alt="Logo de l'école Junia">
-	<a href="#">Se connecter</a>
+    <div class="top-bar">
+        <div class="top-bar-right">
+            <a href="../page/connexion.html">Connexion</a>
+            <a href="../page/inscription.html">S'inscrire</a>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <a href="../index.html"><img src="images/logo.png" alt="Logo Jouet" class="logo"></a>
+        </div>
+        <ul class="navbar-menu">
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Catalogue</a>
+                <div class="dropdown-content">
+                    <a href="page/catégorie/catégorie-carte.html">Cartes à jouer</a>
+                    <a href="page/catégorie/catégorie-mini-voiture.html">Mini Voitures</a>
+                    <a href="page/catégorie/catégorie-nerf.html">Nerfs</a>
+                    <a href="page/catégorie/catégorie-figurines.html">Figurines</a>
+                </div>
+            </li>
+            <li><a href="../page/contact.html">Contact</a></li>
+        </ul>
+    </nav>
 </header>
-<nav>
-	<ul>
-		<li><a href="../index.html">Accueil</a></li>
-		<li><a href="html/activités.html">Activités</a></li>
-		<li><a href="html/recherche.html">Recherche</a></li>
-	</ul>
-	</nav>
+
 <form method="post" action="#" class="formletter">
-	<fieldset>  <!-- la balise fieldset peut être utilisé pour regrouper un ensemble de champs -->
+	<fieldset>  
 		<legend>Informations sur vous</legend>
 		
 		<label>Genre:</label>
-		<input type="radio" name="genre" id="mme">  <!-- "name" doit avoir la même valeur pour UN ENSEMBLE d'input de type radio -->
+		<input type="radio" name="genre" id="mme" value="mme">  
 		<label for="mme">Madame</label>
-		<input type="radio" name="genre" id="mr" > <!-- la valeur de l'attribut "for" de la balise label et le "id" de la balise de l'input associé doivent être la même -->
+		<input type="radio" name="genre" id="mr" value="mr"> 
 		<label for="mr">Monsieur</label>
 		
-		<br><br> <!-- La balise br sert à effectuer un retour à la ligne-->
+		<br><br> 
 		
-		<label for="nom">Nom :</label >
+		<label for="nom">Nom :</label>
 		<input type="text" name="nom" id="nom" placeholder="Votre nom">
 		<br><br>
 		
-		<label for="prenom">Prénom :</label >
-		<input type="text" name="prenom" id="prenom" value="Toto">
+		<label for="prenom">Prénom :</label>
+		<input type="text" name="prenom" id="prenom" placeholder="Votre prénom">
 		<br><br>
 		
-		<label for="courriel">Courriel : </label >
+		<label for="courriel">Courriel :</label>
 		<input type="email" name="courriel" id="courriel">
 	</fieldset>
-	
 	
 	<fieldset>
 		<legend>Votre demande</legend>
 		
 		<label for="objet">Objet du message :</label>
 		<select id="objet" name="objet">
-			<option value="0">- Séléctionner -</option>
+			<option value="0">- Sélectionner -</option>
 			<option value="sugg">Suggestions</option>
-			<option value="recl">Reclamations</option>
-			<option value="insc">Insciption</option>
+			<option value="recl">Réclamations</option>
+			<option value="insc">Inscription</option>
+			<option value="deff">Défaillance</option>
 			<option value="prob">Problèmes techniques</option>
 		</select>
 		<br><br>
   
-		<label for="description">Message :</label > <br>
-		<textarea rows="10" cols="50" name="description" id="description" maxlength="200"></textarea >
+		<label for="description">Message :</label><br>
+		<textarea rows="10" cols="50" name="description" id="description" maxlength="200"></textarea>
 		<br><br>
 		
-		<label for="document">Document:</label>
+		<label for="document">Document :</label>
 		<input type="file" id="document" name="document">
 		<br><br>
 		
-		<input type="submit" name="Envoyer" id="soumission">
-		<input type="reset">
+		<input type="submit" value="Envoyer" id="envoyer">
+		<input type="reset" value="Réinitialiser">
 	</fieldset>
-
 </form>
+
 <footer>
 	<dl>
 		<dt>Téléphone</dt>
 			<dd>(+33) (0)3 20 30 40 50</dd>
 		<dt>Adresse</dt>
-		<dd>ISEN Lille - Institut supérieur<br>
+		<dd>
+			ISEN Lille - Institut supérieur<br>
 			de Electronique et du Numérique<br>
 			41 Boulevard Vauban<br>
 			59800 Lille<br>
 		</dd>
 	</dl>
 </footer>
+</body>
+</html>
