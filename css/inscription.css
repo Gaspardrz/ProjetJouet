@@ -1,0 +1,149 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    color: black;
+}
+:root{
+    --Vert: #2a3d27 ;
+    --Vert-intermédiaire: #8db088 ;
+    --Orangé:#d46a28 ;
+    --Beige: #d4b895 ;
+    --Vert-clair: #52844a ;
+    --Noir: #000000 ;
+    --Blanc:#FFFFFF;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Makes the logo circular */
+    transition: transform 0.6s; /* Smooth transition for flip effect */
+}
+
+/* Flip animation on hover */
+.logo:hover {
+    transform: rotateY(180deg); /* Flip the logo on hover */
+}
+
+/* Background color for the page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--Beige); /* Light background for a clean look */
+    color: #333;
+}
+
+/* Header style */
+header {
+    background-color: var(--Vert);
+    padding: 20px;
+}
+
+/* Navbar links */
+.navbar-menu a {
+    color: #333;
+    font-weight: bold;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+.navbar-menu a:hover {
+    color: var(--Orangé); /* Brighten link on hover */
+}
+
+/* Footer style */
+footer {
+    background-color: var(--Vert-clair);
+    color: var(--Blanc);
+    text-align: center;
+    padding: 10px;
+}
+/* Top bar pour connexion et contacts */
+
+.top-bar {
+    color: var(--Blanc);
+    text-align: right;
+
+}
+
+.top-bar-right a {
+    color: #fff;
+    padding: 10px 10px;
+    border: solid 1px white;
+    border-radius: 10px 10px 10px 10px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.top-bar-right a:hover {
+    color: var(--Orangé);
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.navbar-logo a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar-menu li {
+    position: relative;
+}
+
+.navbar-menu a {
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+}
+
+.navbar-menu a:hover {
+    color: var(--Orangé);
+}
+
+/* Dropdown */
+.dropdown .dropbtn {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--Vert-clair);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--Vert-intermédiaire);
+    color: var(--Blanc);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+
+}
