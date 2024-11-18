@@ -163,12 +163,13 @@ footer {
 /* Les images du carrousel */
 .carousel__images {
     display: flex;
-    animation: slide 40s infinite linear;
+    animation: slide 20s infinite linear;
     transform-style: preserve-3d;
 }
 
+/* Ajout de duplication des images */
 .carousel__images img {
-    width: 400%;
+    width: 25vw; /* Réduire la taille des images pour qu'elles s'affichent en continu */
     height: 40vh;
     object-fit: cover;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Ombre pour l'effet de profondeur */
@@ -176,10 +177,10 @@ footer {
     transform: rotateY(10deg); /* Inclinaison pour effet 3D */
 }
 
-/* Animation pour faire défiler les images de manière continue */
+/* Animation pour faire défiler les images en boucle continue */
 @keyframes slide {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-400%); }
+    100% { transform: translateX(-100%); }
 }
 
 /* Effets 3D et interactions au survol */
