@@ -148,52 +148,46 @@ footer {
 
 }
 
-    /* Conteneur principal */
-    .carousel {
-        height: 40vh;
-        perspective: 1000px; /* Perspective pour l'effet 3D */
-        overflow: hidden;
-        position: relative;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        margin:auto;
-        overflow: hidden;
-        
-    
-    }
-  
-      /* Les images du carrousel */
-      .carousel__images {
-        display: flex;
-        animation: slide 10s infinite linear;
-        transform-style: preserve-3d;
-      }
-  
-      .carousel__images img {
-        width: 400%;
-        height: 40vh;
-        object-fit: cover;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Ombre pour l'effet de profondeur */
-        transition: transform 0.5s;
-        transform: rotateY(10deg); /* Inclinaison pour effet 3D */
-      }
-  
-      /* Animation pour faire défiler les images */
-      @keyframes slide {
-        0% { transform: translateX(0); }
-        20% { transform: translateX(-100%); }
-        40% { transform: translateX(-200%); }
-        60% { transform: translateX(-300%); }
-        80% { transform: translateX(-400%); }
-        100% { transform: translateX(0); }
-      }
-  
-      /* Effets 3D et interactions au survol */
-      .carousel__images img:hover {
-        transform: scale(1.05) rotateY(15deg);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
-      }
-      section > p{
-        text-align: center;
-      }
+ /* Conteneur principal */
+.carousel {
+    height: 40vh;
+    perspective: 1000px; /* Perspective pour l'effet 3D */
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+}
+
+/* Les images du carrousel */
+.carousel__images {
+    display: flex;
+    animation: slide 40s infinite linear;
+    transform-style: preserve-3d;
+}
+
+.carousel__images img {
+    width: 400%;
+    height: 40vh;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Ombre pour l'effet de profondeur */
+    transition: transform 0.5s;
+    transform: rotateY(10deg); /* Inclinaison pour effet 3D */
+}
+
+/* Animation pour faire défiler les images de manière continue */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-400%); }
+}
+
+/* Effets 3D et interactions au survol */
+.carousel__images img:hover {
+    transform: scale(1.05) rotateY(15deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+}
+
+section > p {
+    text-align: center;
+}
