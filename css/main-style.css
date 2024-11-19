@@ -4,7 +4,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-    color: black;
 }
 :root{
     --Vert: #2a3d27 ;
@@ -111,6 +110,7 @@ footer {
     color: var(--Blanc);
     font-size: 20px;
     font-weight: bold;
+    color: white;
 }
 
 /* Menu de navigation aligné à droite */
@@ -215,7 +215,7 @@ footer {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
 }
 
-section > h1 {
+h1 {
     text-align: center;
 }
 
@@ -227,23 +227,24 @@ section > h1 {
     text-align: left;
 }
 /* tableau pour le catalogue */
-#catalogue {
+.catalogue {
 	border-style:solid;
 	padding:10px;
 	width:400px;
 	margin: auto;
 	height: 500px;
 	overflow: scroll;
+    text-align: center;
 }
-#catalogue::-webkit-scrollbar {
+.catalogue::-webkit-scrollbar {
 	display: none;
 }
   
-#catalogue {
+.catalogue {
 	-ms-overflow-style: none;
 	scrollbar-width: none; 
 }
-#catalogue h3{
+.catalogue h3{
 	background-color:#006560; /*Vert de ISEN*/
 	color:white;
 	height:50px;
@@ -252,7 +253,7 @@ section > h1 {
 	position: sticky;
 	top: -10px;
 }
-#catalogue dt {
+.catalogue dt {
 	border-top: 1px solid orange;
 	background-color: orange;
 	color: white;
@@ -263,10 +264,10 @@ section > h1 {
 	top: 30px;
 
 }
-#catalogue dd {
+.catalogue dd {
 	border-top: 1px solid orange;
 }
-#catalogue dd:hover {
+.catalogue dd:hover {
 	-webkit-transform: translateX(-10px);
 	    -ms-transform: translateX(-10px);
 	        transform: translateX(-10px);
