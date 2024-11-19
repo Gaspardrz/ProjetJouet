@@ -6,11 +6,11 @@
     font-family: Arial, sans-serif;
 }
 :root{
-    --Vert: #d99688 ;
-    --Vert-intermédiaire: #fcd7d0 ;
+    --rose: #d99688 ;
+    --rose-pale: #fcd7d0 ;
     --Orangé:#d46a28 ;
     --Beige: #d4b895 ;
-    --Vert-clair: #3a3b5a ;
+    --violet-clair: #3a3b5a ;
     --Noir: #000000 ;
     --Blanc:#FFFFFF;
 }
@@ -30,13 +30,13 @@
 /* Background color for the page */
 body {
     font-family: Arial, sans-serif;
-    background-color: var(--Beige); /* Light background for a clean look */
-    color: #333;
+    background-color: var(--Blanc); /* Light background for a clean look */
+    color: var(--Blanc);
 }
 
 /* Header style */
 header {
-    background-color: var(--Vert);
+    background-color: var(--violet-clair);
     padding: 20px;
 }
 
@@ -49,7 +49,7 @@ header {
 }
 
 .navbar-menu a:hover {
-    color: var(--Orangé); /* Brighten link on hover */
+    color: var(--violet-clair); /* Brighten link on hover */
 }
 
 /* Footer style */
@@ -77,7 +77,7 @@ footer {
 }
 
 .top-bar-right a:hover {
-    color: var(--Orangé);
+    color: var(--violet-clair);
 }
 
 /* Alignement du logo, titre et menu dans la navbar */
@@ -86,7 +86,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: var(--Vert);
+    background-color: var(--violet-clair);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
