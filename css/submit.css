@@ -53,13 +53,7 @@ header {
     color: var(--Orangé); /* Brighten link on hover */
 }
 
-/* Footer style */
-footer {
-    background-color: var(--Vert-clair);
-    color: var(--Blanc);
-    text-align: center;
-    padding: 10px;
-}
+
 /* Top bar pour connexion et contacts */
 
 .top-bar {
@@ -81,46 +75,30 @@ footer {
     color: var(--Orangé);
 }
 
-/* Alignement du logo, titre et menu dans la navbar */
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: var(--Vert);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-}
 
-/* Style pour le logo, aligné à gauche */
-.navbar-logo {
-    display: flex;
-    align-items: center;
 }
 
 .navbar-logo a {
     color: #fff;
     font-size: 24px;
     text-decoration: none;
-    text-align: left;
 }
 
-/* Centrer le titre de la navbar */
-.navbar-title {
-    flex-grow: 1; /* Prend tout l'espace disponible */
-    text-align: center;
-    color: var(--Blanc);
-    font-size: 20px;
-    font-weight: bold;
-}
-
-/* Menu de navigation aligné à droite */
 .navbar-menu {
     list-style-type: none;
     display: flex;
-    gap: 15px;
 }
 
-/* Lien de navigation */
+.navbar-menu li {
+    position: relative;
+}
+
 .navbar-menu a {
     color: #fff;
     padding: 10px 15px;
@@ -128,25 +106,15 @@ footer {
     display: block;
 }
 
-/* Changement de couleur au survol */
 .navbar-menu a:hover {
     color: var(--Orangé);
 }
 
-/* Style du logo */
-.logo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%; /* Logo rond */
-    transition: transform 0.6s; /* Transition pour l'effet de rotation */
-}
-
-/* Effet de rotation du logo au survol */
-.logo:hover {
-    transform: rotateY(180deg); /* Rotation de 180 degrés */
-}
-
 /* Dropdown */
+.dropdown .dropbtn {
+    cursor: pointer;
+}
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -171,50 +139,11 @@ footer {
 
 .dropdown:hover .dropdown-content {
     display: block;
+
 }
-
-
- /* Conteneur principal */
-.carousel {
-    height: 40vh;
-    perspective: 1000px; /* Perspective pour l'effet 3D */
-    overflow: hidden;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: auto;
-}
-
-/* Les images du carrousel */
-.carousel__images {
+.content{
     display: flex;
-    animation: slide 20s infinite linear;
-    transform-style: preserve-3d;
-}
-
-/* Ajout de duplication des images */
-.carousel__images img {
-    width: 25vw; /* Réduire la taille des images pour qu'elles s'affichent en continu */
-    height: 40vh;
-    object-fit: cover;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Ombre pour l'effet de profondeur */
-    transition: transform 0.5s;
-    transform: rotateY(10deg); /* Inclinaison pour effet 3D */
-}
-
-/* Animation pour faire défiler les images en boucle continue */
-@keyframes slide {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-
-/* Effets 3D et interactions au survol */
-.carousel__images img:hover {
-    transform: scale(1.05) rotateY(15deg);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
-}
-
-section > p {
-    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
