@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -208,7 +207,31 @@ h1 {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
 }
 
+/* Style pour chaque item du carrousel */
+.carousel-item {
+    position: relative;
+    display: inline-block;
+}
 
+/* Description par-dessus l'image, cachée par défaut */
+.carousel-description {
+    position: absolute;
+    bottom: 10px; /* Positionnez la description en bas */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent pour la lisibilité */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 0; /* Masquer par défaut */
+    transition: opacity 0.3s ease; /* Transition douce */
+    pointer-events: none; /* Empêche les interactions */
+}
+
+/* Afficher la description au survol */
+.carousel-item:hover .carousel-description {
+    opacity: 1; /* Rendre visible au survol */
+}
 
 .articles {
     text-align: left;
@@ -219,7 +242,6 @@ h1 {
     text-align: left;
     color: black;
 }
-
 
 /* Footer style */
 footer {

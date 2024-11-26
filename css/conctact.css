@@ -7,11 +7,8 @@
     color: black;
 }
 :root{
-    --Vert: #2a3d27 ;
-    --Vert-intermédiaire: #8db088 ;
     --Orangé:#d46a28 ;
-    --Beige: #d4b895 ;
-    --Vert-clair: #52844a ;
+    --violet-clair: #3a3b5a;
     --Noir: #000000 ;
     --Blanc:#FFFFFF;
 }
@@ -31,13 +28,13 @@
 /* Background color for the page */
 body {
     font-family: Arial, sans-serif;
-    background-color: var(--Beige); /* Light background for a clean look */
+    background-color: var(--Blanc); /* Light background for a clean look */
     color: #333;
 }
 
 /* Header style */
 header {
-    background-color: var(--Vert);
+    background-color: var(--violet-clair);
     padding: 20px;
 }
 
@@ -118,7 +115,7 @@ header {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: var(--Vert-clair);
+    background-color: var(--violet-clair);
     min-width: 160px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -133,7 +130,7 @@ header {
 }
 
 .dropdown-content a:hover {
-    background-color: var(--Vert-intermédiaire);
+    background-color: var(--violet-clair);
     color: var(--Blanc);
 }
 
