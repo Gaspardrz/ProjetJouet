@@ -54,7 +54,7 @@ header {
 
 /* Footer style */
 footer {
-    background-color: var(--Vert-clair);
+    background-color: var(--violet-clair);
     color: var(--Blanc);
     text-align: center;
     padding: 10px;
