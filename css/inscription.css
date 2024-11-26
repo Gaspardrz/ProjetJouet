@@ -144,3 +144,10 @@ footer {
     display: block;
 
 }
+.inscription{
+    justify-content: center;
+    border: 3px solid var(--Noir);
+    border-radius: 15px 15px 15px 15px;
+    padding: 30px;
+    margin: 15px;
+}
