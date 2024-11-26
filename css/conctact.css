@@ -139,8 +139,8 @@ header {
 
 }
 .Informations_sur_vous{
-    display: flex;
     justify-content: center;
-    align-items: center;
-    
+    border: 3px solid var(--Noir);
+    border-radius: 15px 15px 15px 15px;
+    padding: 20px;
 }
