@@ -6,11 +6,8 @@
     font-family: Arial, sans-serif;
 }
 :root{
-    --rose: #d99688 ;
-    --rose-pale: #fcd7d0 ;
     --Orangé:#d46a28 ;
-    --Beige: #d4b895 ;
-    --violet-clair: #3a3b5a ;
+    --violet-clair: #3a3b5a;
     --Noir: #000000 ;
     --Blanc:#FFFFFF;
 }
@@ -39,7 +36,22 @@ header {
     background-color: var(--violet-clair);
     padding: 20px;
 }
+h1 {
+    text-align: center;
+}
 
+/* Style du logo */
+.logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Logo rond */
+    transition: transform 0.6s; /* Transition pour l'effet de rotation */
+}
+
+/* Effet de rotation du logo au survol */
+.logo:hover {
+    transform: rotateY(180deg); /* Rotation de 180 degrés */
+}
 /* Navbar links */
 .navbar-menu a {
     color: #333;
@@ -52,19 +64,12 @@ header {
     color: var(--violet-clair); /* Brighten link on hover */
 }
 
-/* Footer style */
-footer {
-    background-color: var(--violet-clair);
-    color: var(--Blanc);
-    text-align: center;
-    padding: 10px;
-}
 /* Top bar pour connexion et contacts */
 
 .top-bar {
     color: var(--Blanc);
     text-align: right;
-
+    
 }
 
 .top-bar-right a {
@@ -133,18 +138,6 @@ footer {
     color: var(--Orangé);
 }
 
-/* Style du logo */
-.logo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%; /* Logo rond */
-    transition: transform 0.6s; /* Transition pour l'effet de rotation */
-}
-
-/* Effet de rotation du logo au survol */
-.logo:hover {
-    transform: rotateY(180deg); /* Rotation de 180 degrés */
-}
 
 /* Dropdown */
 .dropdown-content {
@@ -174,7 +167,7 @@ footer {
 }
 
 
- /* Conteneur principal */
+/* Conteneur principal */
 .carousel {
     height: 40vh;
     perspective: 1000px; /* Perspective pour l'effet 3D */
@@ -215,16 +208,23 @@ footer {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
 }
 
-h1 {
-    text-align: center;
-}
+
 
 .articles {
     text-align: left;
     color: black;
-
+    
 }
 .produits {
     text-align: left;
     color: black;
+}
+
+
+/* Footer style */
+footer {
+    background-color: var(--violet-clair);
+    color: var(--Blanc);
+    text-align: center;
+    padding: 10px;
 }
