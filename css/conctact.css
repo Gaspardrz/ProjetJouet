@@ -138,3 +138,9 @@ header {
     display: block;
 
 }
+.Informations_sur_vous{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
