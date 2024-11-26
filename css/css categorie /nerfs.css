@@ -184,7 +184,6 @@ main {
     transition: transform 0.3s, box-shadow 0.3s;
     background-color: white;
     text-align: center;
-    padding: 10px;
 }
 
 .produit-card:hover {
@@ -202,6 +201,7 @@ main {
     height: 70%;
     object-fit: cover;
     transition: opacity 0.3s;
+    padding: 10px;
 }
 
 .produit-card .info {

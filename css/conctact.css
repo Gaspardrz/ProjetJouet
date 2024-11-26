@@ -139,8 +139,7 @@ header {
     display: block;
 
 }
-.Informations_sur_vous{
-    background-color: var(--violet-tres-clair);
+.Informations_sur_vous,.Votre_demande{
     justify-content: center;
     border: 3px solid var(--Noir);
     border-radius: 15px 15px 15px 15px;
