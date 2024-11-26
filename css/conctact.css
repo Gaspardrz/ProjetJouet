@@ -9,6 +9,7 @@
 :root{
     --Orangé:#d46a28 ;
     --violet-clair: #3a3b5a;
+    --violet-tres-clair: #7070a5;
     --Noir: #000000 ;
     --Blanc:#FFFFFF;
 }
@@ -139,6 +140,7 @@ header {
 
 }
 .Informations_sur_vous{
+    background-color: var(--violet-tres-clair);
     justify-content: center;
     border: 3px solid var(--Noir);
     border-radius: 15px 15px 15px 15px;
