@@ -13,6 +13,7 @@
     --Beige-foncé: #d99688 ;
     --Noir: #000000 ;
     --Blanc:#FFFFFF;
+    --violet-clair: #3a3b5a ;
 }
 
 .logo {
@@ -36,7 +37,7 @@ body {
 
 /* Header style */
 header {
-    background-color: var(--Beige);
+    background-color: var(--violet-clair);
     padding: 20px;
 }
 
@@ -109,7 +110,7 @@ footer {
 }
 
 .navbar-menu a:hover {
-    color: var(--Orangé);
+    color: var(--violet-clair);
 }
 
 /* Dropdown */
