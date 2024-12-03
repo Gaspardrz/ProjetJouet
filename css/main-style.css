@@ -37,6 +37,7 @@ header {
 }
 h1 {
     text-align: center;
+    color: var(--Blanc);
 }
 
 /* Style du logo */
