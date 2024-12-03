@@ -28,6 +28,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: var(--Blanc); /* Light background for a clean look */
     color: var(--Blanc);
+    text-align: center;
 }
 
 /* Header style */
@@ -35,8 +36,17 @@ header {
     background-color: var(--violet-clair);
     padding: 20px;
 }
-h1 {
+<<<<<<< HEAD
+h2 {
+    color: var(--Noir);
+h2 {
     text-align: center;
+    text-decoration: underline;
+    color: var(--Noir);
+    text-decoration: underline;
+}
+h1{
+    color: var(--Noir);
 }
 
 /* Style du logo */
@@ -60,7 +70,7 @@ h1 {
 }
 
 .navbar-menu a:hover {
-    color: var(--violet-clair); /* Brighten link on hover */
+    color: var(--Orangé); /* Brighten link on hover */
 }
 
 /* Top bar pour connexion et contacts */
@@ -81,7 +91,7 @@ h1 {
 }
 
 .top-bar-right a:hover {
-    color: var(--violet-clair);
+    color: var(--Orangé);
 }
 
 /* Alignement du logo, titre et menu dans la navbar */
@@ -146,10 +156,11 @@ h1 {
     min-width: 160px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    color: var(--Blanc);
 }
 
 .dropdown-content a {
-    color: #333;
+    color: var(--Blanc);
     padding: 10px 15px;
     text-decoration: none;
     display: block;
@@ -157,61 +168,105 @@ h1 {
 }
 
 .dropdown-content a:hover {
-    background-color: var(--Vert-intermédiaire);
-    color: var(--Blanc);
+    color: var(--Orangé);
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
+    background-color: var(--violet-clair);
+
 }
-
-
-/* Conteneur principal */
-.carousel {
-    height: 40vh;
-    perspective: 1000px; /* Perspective pour l'effet 3D */
-    overflow: hidden;
+main h1{
+    color: var(--Noir);
+    text-decoration: underline;
+}
+.carousel-item1,.carousel-item2,.carousel-item3,.carousel-item4,.carousel-item5,.carousel-item6,.carousel-item7,.carousel-item8,.carousel-item9,.carousel-item10{
     position: relative;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: auto;
+    width: 100%; 
+    height: 200px;
+}
+.carousel-item1 img
+{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 60%;
+    width: 30%;
 }
 
-/* Les images du carrousel */
-.carousel__images {
-    display: flex;
-    animation: slide 20s infinite linear;
-    transform-style: preserve-3d;
+.carousel-item2 img
+{
+    position: absolute;
+    top: 11%;
+    right: 0%; 
+    height: 60%;
+    width: 30%;
+}
+.carousel-item3 img
+{
+    position: absolute;
+    top: 22%;
+    left: 0%;
+    height: 60%;
+    width: 30%;
+}
+.carousel-item4 img
+{
+    position: absolute;
+    top: 33%;
+    right: 0%;
+    height: 60%;
+    width: 30%;
+}
+.carousel-item5 img
+{
+    position: absolute;
+    top: 44%;
+    left: 0%;
+    height: 60%;
+    width: 30%;
+}
+.carousel-item6 img
+{
+    position: absolute;
+    top: 55%;
+    right: 0%;
+    height: 60%;
+    width: 30%;
+}
+.carousel-item7 img
+{
+    position: absolute;
+    top: 66%;
+    left: 0%;
+    height: 60%;
+    width: 30%;
+}
+.carousel-item8 img
+{
+    position: absolute;
+    top: 77%;
+    right: 0%;
+    height: 60%;
+    width: 30%;
+}
+.carousel-item9 img
+{
+    position: absolute;
+    top: 88%;
+    left: 0%;
+    height: 60%;
+    width: 30%;
+}
+.carousel-item10 img
+{
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    height: 60%;
+    width: 30%;
 }
 
-/* Ajout de duplication des images */
-.carousel__images img {
-    width: 25vw; /* Réduire la taille des images pour qu'elles s'affichent en continu */
-    height: 40vh;
-    object-fit: cover;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Ombre pour l'effet de profondeur */
-    transition: transform 0.5s;
-    transform: rotateY(10deg); /* Inclinaison pour effet 3D */
-}
-
-/* Animation pour faire défiler les images en boucle continue */
-@keyframes slide {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-
-/* Effets 3D et interactions au survol */
-.carousel__images img:hover {
-    transform: scale(1.05) rotateY(15deg);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
-}
-
-/* Style pour chaque item du carrousel */
-.carousel-item {
-    position: relative;
-    display: inline-block;
-}
 
 /* Description par-dessus l'image, cachée par défaut */
 .carousel-description {
@@ -234,15 +289,18 @@ h1 {
 }
 
 .articles {
-    text-align: left;
+    text-align: center;
     color: black;
     
 }
 .produits {
-    text-align: left;
+    text-align: center;
     color: black;
 }
-
+.Histoire{
+    border-top: 20%;
+    margin-top: 20%;
+}
 /* Footer style */
 footer {
     background-color: var(--violet-clair);
