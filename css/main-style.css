@@ -26,14 +26,8 @@
 /* Background color for the page */
 body {
     font-family: Arial, sans-serif;
-    background-color: var(--Blanc); /* Couleur de fond */
+    background-color: var(--Blanc); /* Light background for a clean look */
     color: var(--Blanc);
-    height: 100vh; /* Assure que le body prend toute la hauteur de l'écran */
-    display: flex; /* Active le flexbox pour centrer */
-    flex-direction: column; /* Pour aligner les éléments en colonne */
-    justify-content: center; /* Centre verticalement */
-    align-items: center; /* Centre horizontalement */
-    margin: 0; /* Supprime les marges par défaut */
 }
 
 /* Header style */
@@ -177,13 +171,11 @@ h1 {
     height: 40vh;
     perspective: 1000px; /* Perspective pour l'effet 3D */
     overflow: hidden;
-    position: absolute; /* Positionnement absolu pour centrer */
-    top: 50%; /* Centrer verticalement */
-    left: 50%; /* Centrer horizontalement */
-    transform: translate(-50%, -50%); /* Ajustement pour un centrage parfait */
-    width: 60vw; /* Limite la largeur du carrousel à 60% de la largeur de la page */
-    max-width: 800px; /* Ajoute une largeur maximale */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Ombre pour donner du relief */
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
 }
 
 /* Les images du carrousel */
@@ -195,10 +187,10 @@ h1 {
 
 /* Ajout de duplication des images */
 .carousel__images img {
-    width: 100%; /* Prend toute la largeur disponible du carrousel */
-    height: 100%; /* Ajuste la hauteur à celle du conteneur */
+    width: 25vw; /* Réduire la taille des images pour qu'elles s'affichent en continu */
+    height: 40vh;
     object-fit: cover;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Ombre pour effet de profondeur */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Ombre pour l'effet de profondeur */
     transition: transform 0.5s;
     transform: rotateY(10deg); /* Inclinaison pour effet 3D */
 }
@@ -209,7 +201,7 @@ h1 {
     100% { transform: translateX(-100%); }
 }
 
-/* Effet au survol pour une interaction */
+/* Effets 3D et interactions au survol */
 .carousel__images img:hover {
     transform: scale(1.05) rotateY(15deg);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
