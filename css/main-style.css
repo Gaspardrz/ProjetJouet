@@ -26,8 +26,14 @@
 /* Background color for the page */
 body {
     font-family: Arial, sans-serif;
-    background-color: var(--Blanc); /* Light background for a clean look */
+    background-color: var(--Blanc); /* Couleur de fond */
     color: var(--Blanc);
+    height: 100vh; /* Assure que le body prend toute la hauteur de l'écran */
+    display: flex; /* Active le flexbox pour centrer */
+    flex-direction: column; /* Pour aligner les éléments en colonne */
+    justify-content: center; /* Centre verticalement */
+    align-items: center; /* Centre horizontalement */
+    margin: 0; /* Supprime les marges par défaut */
 }
 
 /* Header style */
@@ -203,7 +209,7 @@ h1 {
     100% { transform: translateX(-100%); }
 }
 
-/* Effets 3D et interactions au survol */
+/* Effet au survol pour une interaction */
 .carousel__images img:hover {
     transform: scale(1.05) rotateY(15deg);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
