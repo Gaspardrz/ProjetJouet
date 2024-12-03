@@ -171,11 +171,13 @@ h1 {
     height: 40vh;
     perspective: 1000px; /* Perspective pour l'effet 3D */
     overflow: hidden;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: auto;
+    position: absolute; /* Positionnement absolu pour centrer */
+    top: 50%; /* Centrer verticalement */
+    left: 50%; /* Centrer horizontalement */
+    transform: translate(-50%, -50%); /* Ajustement pour un centrage parfait */
+    width: 60vw; /* Limite la largeur du carrousel à 60% de la largeur de la page */
+    max-width: 800px; /* Ajoute une largeur maximale */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Ombre pour donner du relief */
 }
 
 /* Les images du carrousel */
@@ -187,10 +189,10 @@ h1 {
 
 /* Ajout de duplication des images */
 .carousel__images img {
-    width: 25vw; /* Réduire la taille des images pour qu'elles s'affichent en continu */
-    height: 40vh;
+    width: 100%; /* Prend toute la largeur disponible du carrousel */
+    height: 100%; /* Ajuste la hauteur à celle du conteneur */
     object-fit: cover;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Ombre pour l'effet de profondeur */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Ombre pour effet de profondeur */
     transition: transform 0.5s;
     transform: rotateY(10deg); /* Inclinaison pour effet 3D */
 }
