@@ -28,6 +28,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: var(--Blanc); /* Light background for a clean look */
     color: var(--Blanc);
+    text-align: center;
 }
 
 /* Header style */
