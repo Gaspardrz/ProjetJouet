@@ -39,6 +39,7 @@ header {
 h1 {
     text-align: center;
     color: var(--Noir);
+    text-decoration: underline;
 }
 
 /* Style du logo */
