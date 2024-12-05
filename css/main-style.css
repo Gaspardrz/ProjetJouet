@@ -10,6 +10,21 @@
     --Noir: #000000 ;
     --Blanc:#FFFFFF;
 }
+.subnav {
+    display: block;
+}
+.boxnav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+}
+.liennav{
+    color: var(--Blanc);
+    text-decoration: none;
+}
+ 
 
 .logo {
     width: 120px;
@@ -36,15 +51,20 @@ header {
     background-color: var(--violet-clair);
     padding: 20px;
 }
-h2 {
-    text-align: center;
+h3 {
+    text-align: left;;
     text-decoration: underline;
     color: var(--Noir);
+    margin-left: 5%;
+}
+h2 {
+    color: var(--Noir);
+    margin: 40px 0 10px 0;
+    font-family: cursive;
 }
 h1 {
-    color: var(--Noir);
+    color: white;
 }
-
 /* Style du logo */
 .logo {
     width: 120px;
@@ -63,6 +83,7 @@ h1 {
     font-weight: bold;
     padding: 10px 15px;
     text-decoration: none;
+    width: 100%;
 }
 
 .navbar-menu a:hover {
@@ -92,12 +113,10 @@ h1 {
 
 /* Alignement du logo, titre et menu dans la navbar */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 10px 20px;
     background-color: var(--violet-clair);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
 }
 
 /* Style pour le logo, aligné à gauche */
@@ -142,15 +161,7 @@ h1 {
 .navbar-menu a:hover {
     color: var(--Orangé);
 }
-/* Centrer le titre de la navbar */
-.navbar-title {
-    flex-grow: 1; /* Prend tout l'espace disponible */
-    text-align: center;
-    color: var(--Blanc);
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-}
+
 
 /* Dropdown */
 .dropdown-content {
@@ -180,7 +191,7 @@ h1 {
     background-color: var(--violet-clair);
 
 }
-main h1{
+main h2{
     color: var(--Noir);
     text-decoration: underline;
 }
@@ -293,13 +304,14 @@ main h1{
 }
 
 .articles {
-    text-align: center;
+    text-align: left;
     color: black;
-    
+    margin: 20px 4%;
 }
 .produits {
-    text-align: center;
+    text-align: left;
     color: black;
+    margin: 20px 4% 10% 4%;
 }
 .Histoire{
     border-top: 20%;
