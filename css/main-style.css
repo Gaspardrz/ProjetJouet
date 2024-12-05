@@ -142,7 +142,15 @@ h1 {
 .navbar-menu a:hover {
     color: var(--Orangé);
 }
-
+/* Centrer le titre de la navbar */
+.navbar-title {
+    flex-grow: 1; /* Prend tout l'espace disponible */
+    text-align: center;
+    color: var(--Blanc);
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
 
 /* Dropdown */
 .dropdown-content {
