@@ -149,12 +149,13 @@ h3 {
     object-fit: contain; 
     border-radius: 8px;
 }
-
-.images-description {
-    margin-top: 10px;
-    font-size: 14px;
-    text-align: center;
-    color: #333;
+.images-description1, .images-description3, .images-description5{
+    justify-content: flex-start; 
+    color: var(--Noir);
+}
+.images-description2, .images-description4{
+    justify-content: flex-end; 
+    color: var(--Noir);
 }
 
 .articles, .produits {
