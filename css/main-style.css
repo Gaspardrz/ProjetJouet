@@ -151,25 +151,25 @@ h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px; /* Espace entre l'image et le texte */
+    gap: 20px; 
     width: 100%;
 }
 
 .left-image {
-    flex-direction: row; /* Image à gauche, texte à droite */
+    flex-direction: flex-start; 
 }
 
 .right-image {
-    flex-direction: row-reverse; /* Image à droite, texte à gauche */
+    flex-direction: flex-end;
 }
 
 .images-description {
     font-size: 18px;
     color: var(--Noir);
-    text-align: justify; /* Justifie le texte */
-    flex: 1; /* Prend tout l’espace disponible */
-    max-width: unset; /* Supprime la limite de largeur */
-    padding: 10px; /* Ajoute un peu d’espace autour du texte */
+    text-align: justify;
+    flex: 1;
+    max-width: unset; 
+    padding: 10px; 
 }
 
 .articles, .produits {
