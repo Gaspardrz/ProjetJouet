@@ -126,9 +126,9 @@ h3 {
 }
 
 .images img {
-    width: 50%;
+    width: 35%;
     position: relative;
-    height: 50%;
+    height: 35%;
 }
 
 .articles, .produits {
@@ -150,24 +150,19 @@ footer {
 }
 
 i1{
-    width: 50%;
-    left: 0%;
+    left: 50%;
 }
 i2 {
-    width: 50%;
-    right: 0%;
+    right: 50%;
 }
 i3{
-    width: 50%;
-    left: 0%;
+    left: 50%;
 }
 i4 {
-    width: 50%;
-    right: 0%;
+    right: 50%;
 }
 i5{
-    width: 50%;
-    left: 0%;
+    left: 50%;
 }
 
 h1, h2, h3 {
