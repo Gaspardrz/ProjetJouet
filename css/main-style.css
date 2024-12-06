@@ -124,25 +124,12 @@ h3 {
 .top-bar-right a:hover {
     color: var(--Orangé);
 }
-.images {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; 
-}
-
 .images div {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between; /* Sépare l'image et la description aux extrémités */
     align-items: center;
-    width: 100%; 
-    padding: 10px 0; 
-}
-
-.i1, .i3, .i5 {
-    flex-direction: row;
-}
-.i2, .i4 {
-    flex-direction: row-reverse;
+    width: 100%; /* Assure que le conteneur occupe toute la largeur */
+    padding: 10px 0; /* Ajoute de l'espace vertical */
 }
 
 .images img {
@@ -151,11 +138,21 @@ h3 {
     object-fit: contain; 
     border-radius: 8px;
 }
+
 .images-description1, .images-description2, .images-description3, 
 .images-description4, .images-description5 {
     font-size: 16px;
-    color: var(--Noir); 
-    max-width: 300px; 
+    color: var(--Noir); /* Couleur personnalisée */
+    text-align: center; /* Centrage du texte */
+    max-width: 300px; /* Limite la largeur */
+}
+
+.i1, .i3, .i5 {
+    flex-direction: row; /* Image à gauche, description à droite */
+}
+
+.i2, .i4 {
+    flex-direction: row-reverse; /* Image à droite, description à gauche */
 }
 
 .articles, .produits {
