@@ -49,8 +49,10 @@ header {
     color: var(--Blanc);
     text-decoration: none;
 }
+.liennav:hover{
+    color: var(--Orangé);
+}
  
-
 h1 {
     color: var(--Blanc);
 }
@@ -69,9 +71,6 @@ h3 {
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 10px 20px;
     background-color: var(--violet-clair);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
@@ -124,31 +123,6 @@ h3 {
 
 .top-bar-right a:hover {
     color: var(--Orangé);
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: var(--violet-clair);
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: var(--Blanc);
-    padding: 10px 15px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content a:hover {
-    color: var(--Orangé);
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
 }
 
 .carousel img {
