@@ -148,11 +148,11 @@ h3 {
 }
 
 .left-image {
-    flex-direction: row; /* Image à gauche, description à droite */
+    flex-direction: flex-start; /* Image à gauche, description à droite */
 }
 
 .right-image {
-    flex-direction: row-reverse; /* Image à droite, description à gauche */
+    flex-direction: flex-end; /* Image à droite, description à gauche */
 }
 
 .images-description {
