@@ -127,50 +127,55 @@ h3 {
 .images {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 40px; /* Espacement entre les blocs */
     width: 100%;
 }
 
 .images div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Deux colonnes : une pour l'image, une pour le texte */
+    gap: 20px; /* Espacement entre image et texte */
+    align-items: center; /* Aligne le contenu verticalement */
     width: 100%;
-    padding: 10px 20px;
-    box-sizing: border-box;
 }
 
 .images img {
-    width: 400px;
-    height: 300px;
-    object-fit: contain;
+    width: 100%; /* Image prend la largeur de sa colonne */
+    height: auto;
+    object-fit: contain; /* Maintient les proportions de l'image */
     border-radius: 8px;
-}
-
-.left-image, .right-image {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px; 
-    width: 100%;
-}
-
-.left-image {
-    flex-direction: flex-start; 
-}
-
-.right-image {
-    flex-direction: flex-end;
 }
 
 .images-description {
     font-size: 18px;
     color: var(--Noir);
     text-align: justify;
-    flex: 1;
-    max-width: unset; 
-    padding: 10px; 
 }
+
+.left-image {
+    grid-template-areas: "image text"; /* Image à gauche */
+}
+
+.right-image {
+    grid-template-areas: "text image"; /* Image à droite */
+}
+
+.left-image img {
+    grid-area: image;
+}
+
+.left-image .images-description {
+    grid-area: text;
+}
+
+.right-image img {
+    grid-area: image;
+}
+
+.right-image .images-description {
+    grid-area: text;
+}
+
 
 .articles, .produits {
     text-align: left;
