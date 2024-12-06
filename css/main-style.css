@@ -127,37 +127,34 @@ h3 {
 .images {
     display: flex;
     flex-direction: column;
-    gap: 40px; /* Espacement entre les blocs */
+    gap: 40px;
     width: 100%;
 }
 
 .images div {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Deux colonnes : une pour l'image, une pour le texte */
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes égales */
     gap: 20px; /* Espacement entre image et texte */
-    align-items: center; /* Aligne le contenu verticalement */
+    align-items: center;
     width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
 }
 
 .images img {
-    width: 100%; /* Image prend la largeur de sa colonne */
+    width: 100%; /* L'image occupe toute sa colonne */
+    max-width: 400px; /* Limite la taille maximale */
     height: auto;
-    object-fit: contain; /* Maintient les proportions de l'image */
+    object-fit: contain;
     border-radius: 8px;
 }
 
-.images-description {
-    font-size: 18px;
-    color: var(--Noir);
-    text-align: justify;
-}
-
 .left-image {
-    grid-template-areas: "image text"; /* Image à gauche */
+    grid-template-areas: "image text"; /* Image à gauche, texte à droite */
 }
 
 .right-image {
-    grid-template-areas: "text image"; /* Image à droite */
+    grid-template-areas: "text image"; /* Texte à gauche, image à droite */
 }
 
 .left-image img {
@@ -176,6 +173,12 @@ h3 {
     grid-area: text;
 }
 
+.images-description {
+    font-size: 18px;
+    color: var(--Noir);
+    text-align: justify;
+    padding: 10px;
+}
 
 .articles, .produits {
     text-align: left;
@@ -222,6 +225,18 @@ h1, h2, h3 {
     }
     .images-description {
         font-size: 20px; /* Police légèrement plus grande sur PC */
+    }
+}
+@media screen and (max-width: 768px) {
+    .images div {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+        grid-template-areas: 
+            "image"
+            "text"; /* Empile image et texte */
+    }
+
+    .images img {
+        max-width: 100%; /* Prend toute la largeur disponible */
     }
 }
 
