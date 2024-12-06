@@ -124,11 +124,25 @@ h3 {
 .top-bar-right a:hover {
     color: var(--Orangé);
 }
+.images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
 
 .images img {
     width: 35%;
     position: relative;
     height: 35%;
+}
+
+.images img:nth-child(odd) {
+    left: 0;
+}
+
+.images img:nth-child(even) {
+    right: 0;
 }
 
 .articles, .produits {
@@ -147,22 +161,6 @@ footer {
     color: var(--Blanc);
     text-align: center;
     padding: 10px;
-}
-
-i1{
-    left: 50%;
-}
-i2 {
-    right: 50%;
-}
-i3{
-    left: 50%;
-}
-i4 {
-    right: 50%;
-}
-i5{
-    left: 50%;
 }
 
 h1, h2, h3 {
