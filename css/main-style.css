@@ -127,22 +127,33 @@ h3 {
 .images {
     display: flex;
     flex-direction: column;
+    gap: 20px; 
+}
+
+.images div {
+    display: flex;
     align-items: center;
-    position: relative;
+}
+
+.i1, .i3, .i5 {
+    justify-content: flex-start; 
+}
+
+.i2, .i4 {
+    justify-content: flex-end; 
 }
 
 .images img {
     width: 35%;
-    position: relative;
-    height: 35%;
+    height: auto;
+    border-radius: 8px;
 }
 
-.images img:nth-child(odd) {
-    left: 0;
-}
-
-.images img:nth-child(even) {
-    right: 0;
+.images-description {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+    color: #333;
 }
 
 .articles, .produits {
