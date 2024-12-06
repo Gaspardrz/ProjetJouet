@@ -127,47 +127,41 @@ h3 {
 .images {
     display: flex;
     flex-direction: column;
-    gap: 40px; /* Espacement entre les lignes */
-    width: 100%; /* Largeur totale */
+    gap: 40px;
+    width: 100%; 
 }
 
 .images div {
     display: flex;
-    justify-content: space-between; /* Séparer les descriptions et les images */
+    justify-content: space-between; 
     align-items: center;
-    width: 100%; /* Chaque ligne occupe toute la largeur */
+    width: 100%; 
     padding: 10px 20px;
-    box-sizing: border-box; /* Inclure les marges dans le calcul de la largeur */
+    box-sizing: border-box; 
 }
 
 .images img {
-    width: 300px;
-    height: 200px;
+    width: 400px;
+    height: 300px;
     object-fit: contain;
     border-radius: 8px;
 }
 
 .left-image {
-    flex-direction: flex-start; /* Image à gauche, description à droite */
+    flex-direction: flex-start; 
 }
 
 .right-image {
-    flex-direction: flex-end; /* Image à droite, description à gauche */
+    flex-direction: flex-end; 
 }
 
 .images-description {
-    font-size: 16px;
+    font-size: 24px;
     color: var(--Noir);
     text-align: center;
-    max-width: 300px; /* Largeur maximale pour la description */
+    max-width: 300px; 
 }
 
-.images-description {
-    font-size: 16px;
-    color: var(--Noir); /* Couleur personnalisée */
-    text-align: center;
-    max-width: 300px; /* Largeur limite pour la description */
-}
 .articles, .produits {
     text-align: left;
     color: var(--Noir);
