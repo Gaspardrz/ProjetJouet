@@ -126,9 +126,9 @@ h3 {
 }
 
 .images img {
-    width: 100%;
+    width: 50%;
     position: relative;
-    height: auto;
+    height: 50%;
 }
 
 .articles, .produits {
@@ -149,10 +149,6 @@ footer {
     padding: 10px;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
 i1{
     width: 50%;
     left: 0%;
