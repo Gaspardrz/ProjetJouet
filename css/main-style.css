@@ -220,25 +220,11 @@ h1, h2, h3 {
         flex-direction: column;
         gap: 10px;
     }
-    .images div {
-        grid-template-columns: 1fr 2fr; /* Donne plus d'espace au texte */
-    }
     .images-description {
         font-size: 20px; /* Police légèrement plus grande sur PC */
     }
 }
-@media screen and (max-width: 768px) {
-    .images div {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-        grid-template-areas: 
-            "image"
-            "text"; /* Empile image et texte */
-    }
 
-    .images img {
-        max-width: 100%; /* Prend toute la largeur disponible */
-    }
-}
 
 @media (max-width: 600px) {
     .navbar {
