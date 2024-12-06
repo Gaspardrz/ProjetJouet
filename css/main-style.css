@@ -132,15 +132,17 @@ h3 {
 
 .images div {
     display: flex;
+    justify-content: space-between; 
     align-items: center;
+    width: 100%; 
+    padding: 10px 0; 
 }
 
 .i1, .i3, .i5 {
-    justify-content: flex-start; 
+    flex-direction: row;
 }
-
 .i2, .i4 {
-    justify-content: flex-end; 
+    flex-direction: row-reverse;
 }
 
 .images img {
@@ -149,13 +151,11 @@ h3 {
     object-fit: contain; 
     border-radius: 8px;
 }
-.images-description1, .images-description3, .images-description5{
-    justify-content: flex-end; 
-    color: var(--Noir);
-}
-.images-description2, .images-description4{
-    justify-content: flex-start; 
-    color: var(--Noir);
+.images-description1, .images-description2, .images-description3, 
+.images-description4, .images-description5 {
+    font-size: 16px;
+    color: var(--Noir); 
+    max-width: 300px; 
 }
 
 .articles, .produits {
