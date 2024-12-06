@@ -4,11 +4,36 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-:root{
-    --Orangé:#d46a28 ;
+
+:root {
+    --Orangé: #d46a28;
     --violet-clair: #3a3b5a;
-    --Noir: #000000 ;
-    --Blanc:#FFFFFF;
+    --Noir: #000000;
+    --Blanc: #FFFFFF;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--Blanc);
+    color: var(--Noir);
+    text-align: center;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: var(--violet-clair);
+    padding: 20px;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    transition: transform 0.6s;
+}
+
+.logo:hover {
+    transform: rotateY(180deg);
 }
 .subnav {
     display: block;
@@ -26,83 +51,73 @@
 }
  
 
-.logo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%; /* Makes the logo circular */
-    transition: transform 0.6s; /* Smooth transition for flip effect */
-}
-
-/* Flip animation on hover */
-.logo:hover {
-    transform: rotateY(180deg); /* Flip the logo on hover */
-}
-
-/* Background color for the page */
-body {
-    font-family: Arial, sans-serif;
-    background-color: var(--Blanc); /* Light background for a clean look */
+h1 {
     color: var(--Blanc);
-    text-align: center;
 }
 
-/* Header style */
-header {
-    background-color: var(--violet-clair);
-    padding: 20px;
-}
-h3 {
-    text-align: left;;
-    text-decoration: underline;
-    color: var(--Noir);
-    margin-left: 5%;
-}
 h2 {
     color: var(--Noir);
     margin: 40px 0 10px 0;
     font-family: cursive;
 }
-h1 {
-    color: white;
-}
-/* Style du logo */
-.logo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%; /* Logo rond */
-    transition: transform 0.6s; /* Transition pour l'effet de rotation */
+
+h3 {
+    text-align: left;
+    text-decoration: underline;
+    color: var(--Noir);
+    margin-left: 5%;
 }
 
-/* Effet de rotation du logo au survol */
-.logo:hover {
-    transform: rotateY(180deg); /* Rotation de 180 degrés */
-}
-/* Navbar links */
-.navbar-menu a {
-    color: #333;
-    font-weight: bold;
-    padding: 10px 15px;
-    text-decoration: none;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--violet-clair);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
     width: 100%;
 }
 
-.navbar-menu a:hover {
-    color: var(--Orangé); /* Brighten link on hover */
+.navbar-logo {
+    display: flex;
+    align-items: center;
 }
 
-/* Top bar pour connexion et contacts */
+.navbar-title {
+    flex-grow: 1;
+    text-align: center;
+    color: var(--Blanc);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar-menu a {
+    color: var(--Blanc);
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+}
+
+.navbar-menu a:hover {
+    color: var(--Orangé);
+}
 
 .top-bar {
     color: var(--Blanc);
     text-align: right;
-    
 }
 
 .top-bar-right a {
-    color: #fff;
+    color: var(--Blanc);
     padding: 10px 10px;
-    border: solid 1px white;
-    border-radius: 10px 10px 10px 10px;
+    border: solid 1px var(--Blanc);
+    border-radius: 10px;
     text-decoration: none;
     font-size: 14px;
 }
@@ -111,67 +126,13 @@ h1 {
     color: var(--Orangé);
 }
 
-/* Alignement du logo, titre et menu dans la navbar */
-.navbar {
-    padding: 10px 20px;
-    background-color: var(--violet-clair);
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-    width: 100%;
-}
-
-/* Style pour le logo, aligné à gauche */
-.navbar-logo {
-    display: flex;
-    align-items: center;
-}
-
-.navbar-logo a {
-    color: #fff;
-    font-size: 24px;
-    text-decoration: none;
-    text-align: left;
-}
-
-/* Centrer le titre de la navbar */
-.navbar-title {
-    flex-grow: 1; /* Prend tout l'espace disponible */
-    text-align: center;
-    color: var(--Blanc);
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-}
-
-/* Menu de navigation aligné à droite */
-.navbar-menu {
-    list-style-type: none;
-    display: flex;
-    gap: 15px;
-}
-
-/* Lien de navigation */
-.navbar-menu a {
-    color: #fff;
-    padding: 10px 15px;
-    text-decoration: none;
-    display: block;
-}
-
-/* Changement de couleur au survol */
-.navbar-menu a:hover {
-    color: var(--Orangé);
-}
-
-
-/* Dropdown */
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: var(--Vert-clair);
+    background-color: var(--violet-clair);
     min-width: 160px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    color: var(--Blanc);
 }
 
 .dropdown-content a {
@@ -188,41 +149,43 @@ h1 {
 
 .dropdown:hover .dropdown-content {
     display: block;
-    background-color: var(--violet-clair);
+}
 
-}
-main h2{
-    color: var(--Noir);
-    text-decoration: underline;
-}
-.carousel img{
-    width: 100%; 
+.carousel img {
+    width: 100%;
     position: relative;
     height: auto;
-
-
 }
 
-.articles {
+.articles, .produits {
     text-align: left;
-    color: black;
+    color: var(--Noir);
     margin: 20px 4%;
 }
-.produits {
-    text-align: left;
-    color: black;
-    margin: 20px 4% 10% 4%;
-}
-.Histoire{
+
+.Histoire {
     border-top: 20%;
     margin-top: 20%;
 }
-/* Footer style */
+
 footer {
     background-color: var(--violet-clair);
     color: var(--Blanc);
     text-align: center;
     padding: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3 {
+    font-size: calc(1.5rem + 1vw);
+}
+
+.navbar-menu a, .dropdown-content a {
+    font-size: 14px;
 }
 
 @media (max-width: 1024px) {
@@ -241,7 +204,6 @@ footer {
     }
 }
 
-/* Styles pour téléphones (écrans inférieurs à 600px) */
 @media (max-width: 600px) {
     .navbar {
         flex-direction: column;
@@ -279,22 +241,6 @@ footer {
         padding: 10px 5px;
     }
 }
-/* Images flexibles */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-
-h1, h2, h3 {
-    font-size: calc(1.5rem + 1vw); 
-}
-
-
-.navbar-menu a, .dropdown-content a {
-    font-size: 14px;
-}
-
 
 @media (max-width: 400px) {
     h1, h2, h3 {
