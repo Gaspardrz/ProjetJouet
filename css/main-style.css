@@ -128,16 +128,16 @@ h3 {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    width: 100%; 
+    width: 100%;
 }
 
 .images div {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
-    width: 100%; 
+    width: 100%;
     padding: 10px 20px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 .images img {
@@ -147,19 +147,29 @@ h3 {
     border-radius: 8px;
 }
 
+.left-image, .right-image {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Espace entre l'image et le texte */
+    width: 100%;
+}
+
 .left-image {
-    flex-direction: flex-start; 
+    flex-direction: row; /* Image à gauche, texte à droite */
 }
 
 .right-image {
-    flex-direction: flex-end; 
+    flex-direction: row-reverse; /* Image à droite, texte à gauche */
 }
 
 .images-description {
-    font-size: 24px;
+    font-size: 18px;
     color: var(--Noir);
-    text-align: center;
-    max-width: 300px; 
+    text-align: justify; /* Justifie le texte */
+    flex: 1; /* Prend tout l’espace disponible */
+    max-width: unset; /* Supprime la limite de largeur */
+    padding: 10px; /* Ajoute un peu d’espace autour du texte */
 }
 
 .articles, .produits {
