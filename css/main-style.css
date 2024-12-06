@@ -124,27 +124,42 @@ h3 {
 .top-bar-right a:hover {
     color: var(--Orangé);
 }
+.images {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Espacement entre les lignes */
+    width: 100%; /* Occuper toute la largeur de la page */
+}
+
 .images div {
     display: flex;
-    justify-content: space-between; /* Sépare l'image et la description aux extrémités */
+    justify-content: space-between; /* Espacer l'image et la description */
     align-items: center;
-    width: 100%; /* Assure que le conteneur occupe toute la largeur */
-    padding: 10px 0; /* Ajoute de l'espace vertical */
+    width: 100%; /* Étendre chaque ligne à la largeur de l'écran */
+    padding: 10px 20px; /* Ajouter de l'espace autour des éléments */
+    box-sizing: border-box;
 }
 
 .images img {
-    width: 300px; 
+    width: 300px;
     height: 200px;
-    object-fit: contain; 
+    object-fit: contain;
     border-radius: 8px;
 }
 
-.images-description1, .images-description2, .images-description3, 
-.images-description4, .images-description5 {
+.images div:nth-child(odd) {
+    flex-direction: row; /* Image à gauche, description à droite */
+}
+
+.images div:nth-child(even) {
+    flex-direction: row-reverse; /* Image à droite, description à gauche */
+}
+
+.images div > .images-description {
     font-size: 16px;
     color: var(--Noir); /* Couleur personnalisée */
-    text-align: center; /* Centrage du texte */
-    max-width: 300px; /* Limite la largeur */
+    text-align: center;
+    max-width: 300px; /* Limite la largeur de la description */
 }
 
 .i1, .i3, .i5 {
