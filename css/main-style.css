@@ -144,7 +144,7 @@ h3 {
 }
 
 .images img {
-    width: 35%;
+    width: auto;
     height: auto;
     border-radius: 8px;
 }
