@@ -127,14 +127,13 @@ h3 {
 .images {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 40px; /* Espacement entre chaque bloc image/texte */
     width: 100%;
 }
 
 .images div {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 colonnes égales */
-    gap: 20px; /* Espacement entre image et texte */
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     padding: 10px 20px;
@@ -142,35 +141,18 @@ h3 {
 }
 
 .images img {
-    width: 100%; /* L'image occupe toute sa colonne */
-    max-width: 400px; /* Limite la taille maximale */
+    width: 400px;
     height: auto;
-    object-fit: contain;
+    object-fit: contain; /* Pour préserver les proportions des images */
     border-radius: 8px;
 }
 
 .left-image {
-    grid-template-areas: "image text"; /* Image à gauche, texte à droite */
+    flex-direction: flex-start; /* Image à gauche, texte à droite */
 }
 
 .right-image {
-    grid-template-areas: "text image"; /* Texte à gauche, image à droite */
-}
-
-.left-image img {
-    grid-area: image;
-}
-
-.left-image .images-description {
-    grid-area: text;
-}
-
-.right-image img {
-    grid-area: image;
-}
-
-.right-image .images-description {
-    grid-area: text;
+    flex-direction: flex-end; /* Image à droite, texte à gauche */
 }
 
 .images-description {
@@ -178,6 +160,7 @@ h3 {
     color: var(--Noir);
     text-align: justify;
     padding: 10px;
+    max-width: 500px; /* Largeur maximale du texte */
 }
 
 .articles, .produits {
