@@ -201,7 +201,7 @@ h3 {
     transform: translateX(-50%);
     width: 300px; 
     height: 200px; 
-    border: 2px solid var(--Orangé);
+    border: 2px solid var(--violet-clair);
     border-radius: 8px;
     background-color: var(--Blanc);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
@@ -304,7 +304,7 @@ h1, h2, h3 {
     .preview-container .preview {
         width: 250px;
         height: 150px;
-        top: -20px; /* Ajuste la position */
+        top: -20px; 
     }
 }
 
