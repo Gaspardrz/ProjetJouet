@@ -138,9 +138,6 @@ h3 {
     width: 100%;
     padding: 10px 20px;
     box-sizing: border-box;
-    border: 2px solid var(--violet-clair); /* Bordure pour chaque bloc image/texte */
-    border-radius: 10px; /* Ajoute des coins arrondis */
-    background-color: var(--Blanc); /* Fond blanc pour chaque bloc */
 }
 
 .images img {
@@ -165,6 +162,9 @@ h3 {
     padding: 10px;
     max-width: unset;
     flex-grow: 1;
+    border: 2px solid var(--violet-clair); /* Bordure pour chaque bloc image/texte */
+    border-radius: 10px; /* Ajoute des coins arrondis */
+    background-color: var(--Blanc); /* Fond blanc pour chaque bloc */
 }
 
 .articles, .produits {
