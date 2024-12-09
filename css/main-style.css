@@ -128,8 +128,10 @@ h3 {
 .images {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     gap: 40px; 
     width: 100%;
+    padding: 10px;
 }
 
 .images div {
@@ -278,18 +280,15 @@ h1, h2, h3 {
     }
 }
 @media screen and (max-width: 768px) {
-    .images div {
-        flex-direction: column;
-        text-align: center;
+    .left-image{
+        flex-direction: flex-start;
     }
-
-    .images img {
-        width: 100%; 
-        max-width: 100%; 
+    .right-image{
+        flex-direction: flex-end;
     }
     .preview-container {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
     }
 
