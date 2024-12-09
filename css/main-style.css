@@ -169,7 +169,7 @@ h3 {
 }
 
 .articles, .produits {
-    text-align: left;
+    text-align: center;
     color: var(--Noir);
     margin: 20px 4%;
 }
