@@ -138,9 +138,9 @@ h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     padding: 10px 20px;
     box-sizing: border-box;
+    width: 100%;
 }
 
 .images img {
@@ -280,11 +280,25 @@ h1, h2, h3 {
     }
 }
 @media screen and (max-width: 768px) {
-    .left-image{
-        flex-direction: flex-start;
+    .images div {
+        flex-direction: column; 
+        align-items: center; 
     }
     .right-image{
+        flex-direction: flex-start;
+    }
+    .left-image{
         flex-direction: flex-end;
+    }
+
+    .images img {
+        max-width: 100%;
+    }
+
+    .images-description {
+        font-size: 16px; 
+        text-align: center; 
+        margin-top: 15px; 
     }
     .preview-container {
         flex-direction: column;
