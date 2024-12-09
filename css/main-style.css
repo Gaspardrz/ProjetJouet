@@ -138,7 +138,7 @@ h3 {
     width: 100%;
     padding: 10px 20px;
     box-sizing: border-box;
-    border: 2px solid var(--Orangé); /* Bordure pour chaque bloc image/texte */
+    border: 2px solid var(--violet-clair); /* Bordure pour chaque bloc image/texte */
     border-radius: 10px; /* Ajoute des coins arrondis */
     background-color: var(--Blanc); /* Fond blanc pour chaque bloc */
 }
@@ -148,7 +148,6 @@ h3 {
     height: auto;
     object-fit: contain; 
     border-radius: 8px;
-    border: 2px solid var(--violet-clair); /* Bordure autour de chaque image */
 }
 
 .left-image {
@@ -166,9 +165,6 @@ h3 {
     padding: 10px;
     max-width: unset;
     flex-grow: 1;
-    border: 2px solid var(--Orangé); /* Bordure autour de la description */
-    border-radius: 8px;
-    background-color: var(--Blanc); /* Fond blanc pour la description */
 }
 
 .articles, .produits {
