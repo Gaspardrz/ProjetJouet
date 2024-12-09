@@ -55,6 +55,7 @@ header {
  
 h1 {
     color: var(--Blanc);
+    text-decoration: underline;
 }
 
 h2 {
@@ -127,7 +128,7 @@ h3 {
 .images {
     display: flex;
     flex-direction: column;
-    gap: 40px; /* Espacement entre chaque bloc image/texte */
+    gap: 40px; 
     width: 100%;
 }
 
@@ -148,11 +149,11 @@ h3 {
 }
 
 .left-image {
-    flex-direction: flex-start; /* Image à gauche, texte à droite */
+    flex-direction: flex-start;
 }
 
 .right-image {
-    flex-direction: flex-end; /* Image à droite, texte à gauche */
+    flex-direction: flex-end; 
 }
 
 .images-description {
@@ -162,9 +163,9 @@ h3 {
     padding: 10px;
     max-width: unset;
     flex-grow: 1;
-    border: 2px solid var(--violet-clair); /* Bordure pour chaque bloc image/texte */
-    border-radius: 10px; /* Ajoute des coins arrondis */
-    background-color: var(--Blanc); /* Fond blanc pour chaque bloc */
+    border: 2px solid var(--violet-clair); 
+    border-radius: 10px; 
+    background-color: var(--Blanc); 
 }
 
 .articles, .produits {
