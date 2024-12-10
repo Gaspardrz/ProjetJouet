@@ -15,6 +15,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--Blanc);
+    background-image: linear-gradient(to right, #4e549f, #918dcede);
     color: var(--Noir);
     text-align: center;
     overflow-x: hidden;
