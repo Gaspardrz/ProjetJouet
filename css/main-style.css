@@ -292,7 +292,7 @@ h3 {
         align-items: center;
     }
 
-    .right-image .left-image {
+    .right-image, .left-image {
         flex-direction: flex-start;
     }
 
@@ -365,7 +365,7 @@ h3 {
     footer {
         padding: 10px 5px;
     }
-    .right-image .left-image {
+    .right-image, .left-image {
         flex-direction: flex-start;
     }
 }
@@ -376,7 +376,7 @@ h3 {
     h3 {
         font-size: 16px;
     }
-    .right-image .left-image {
+    .right-image, .left-image {
         flex-direction: flex-start;
     }
 }
