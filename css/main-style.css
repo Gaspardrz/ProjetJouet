@@ -298,6 +298,7 @@ h3 {
 
 
     .images img {
+        order: 1;
         max-width: 100%;
     }
 
@@ -305,6 +306,7 @@ h3 {
         font-size: 16px;
         text-align: center;
         margin-top: 15px;
+        order: 2;
     }
 
     .preview-container {
@@ -365,6 +367,14 @@ h3 {
     footer {
         padding: 10px 5px;
     }
+    .images img {
+        order: 1;
+        max-width: 100%;
+    }
+    .images-description {
+        text-align: center;
+        order: 2;
+    }
     .right-image, .left-image {
         flex-direction: flex-start;
     }
@@ -375,6 +385,14 @@ h3 {
     h2,
     h3 {
         font-size: 16px;
+    }
+    .images img {
+        order: 1;
+        max-width: 100%;
+    }
+    .images-description {
+        text-align: center;
+        order: 2;
     }
     .right-image, .left-image {
         flex-direction: flex-start;
