@@ -152,8 +152,8 @@ h3 {
     height: auto;
     object-fit: contain;
     border-radius: 8px;
-    background-image: linear-gradient(to right, #4e549f, #918dcede);
 }
+
 
 .left-image {
     flex-direction: flex-start;
