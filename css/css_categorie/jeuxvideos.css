@@ -64,9 +64,8 @@ h2 {
 }
 
 h3 {
-    text-align: left;
-    text-decoration: underline;
-    color: var(--Noir);
+    text-align: center;
+    color:#7324d3;
     margin-left: 5%;
 }
 
