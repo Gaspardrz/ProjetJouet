@@ -64,8 +64,8 @@ h2 {
 }
 
 h3 {
-    text-align: center;
-    color:#7324d3;
+    text-align: left;
+    color:var(--Noir);
     margin-left: 5%;
 }
 
@@ -150,10 +150,6 @@ footer {
 
 img {
     height: auto;
-}
-
-h1, h2, h3 {
-    font-size: calc(1.5rem + 1vw);
 }
 
 .navbar-menu a, .dropdown-content a {
