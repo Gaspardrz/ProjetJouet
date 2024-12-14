@@ -1,3 +1,4 @@
+/* Réinitialisation pour une mise en page uniforme */
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +6,7 @@
     font-family: Arial, sans-serif;
 }
 
+/* Définition des couleurs principales pour une maintenance plus facile */
 :root {
     --Orangé: #d46a28;
     --violet-clair: #3a3b5a;
@@ -32,27 +34,31 @@ header {
     transition: transform 0.6s;
 }
 
+/* Effet de rotation au survol du logo */
 .logo:hover {
     transform: rotateY(180deg);
 }
+
 .subnav {
     display: block;
 }
-.boxnav{
+
+.boxnav {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
-
 }
-.liennav{
+
+.liennav {
     color: var(--Blanc);
     text-decoration: none;
 }
-.liennav:hover{
+
+.liennav:hover {
     color: var(--Orangé);
 }
- 
+
 h1 {
     color: var(--Blanc);
 }
@@ -65,7 +71,6 @@ h2 {
 
 h3 {
     text-align: left;
-    text-decoration: underline;
     color: var(--Noir);
     margin-left: 5%;
 }
@@ -150,18 +155,15 @@ footer {
 }
 
 img {
-    max-width: 100%;
     height: auto;
 }
 
-h1, h2, h3 {
-    font-size: calc(1.5rem + 1vw);
-}
-
+/* Taille réduite des polices dans les menus et dropdowns */
 .navbar-menu a, .dropdown-content a {
     font-size: 14px;
 }
 
+/* Mise en page adaptative pour les tablettes */
 @media (max-width: 1024px) {
     .navbar {
         flex-direction: column;
@@ -178,6 +180,7 @@ h1, h2, h3 {
     }
 }
 
+/* Mise en page adaptative pour les smartphones */
 @media (max-width: 600px) {
     .navbar {
         flex-direction: column;
@@ -216,6 +219,7 @@ h1, h2, h3 {
     }
 }
 
+/* Mise en page pour les très petits écrans */
 @media (max-width: 400px) {
     h1, h2, h3 {
         font-size: 16px;
@@ -245,7 +249,7 @@ main {
     padding: 20px;
 }
 
-/* Section des produits */
+/* Conteneur de produits avec disposition flexible */
 .produit-container {
     display: flex;
     flex-wrap: wrap;
@@ -254,6 +258,7 @@ main {
     padding: 20px;
 }
 
+/* Style des cartes produit */
 .produit-card {
     position: relative;
     width: 220px;
@@ -264,8 +269,11 @@ main {
     transition: transform 0.3s, box-shadow 0.3s;
     background-color: white;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Animation au survol des cartes produit */
 .produit-card:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -278,14 +286,21 @@ main {
 
 .produit-card img {
     width: 100%;
-    height: 70%;
-    object-fit: cover;
+    height: 100%;
+    max-height: 70%; 
+    display: block;
+    margin: 0 auto;
+    object-fit: cover; 
+    object-position: center; 
+    border-top-left-radius: 8px; 
+    border-top-right-radius: 8px; 
     transition: opacity 0.3s;
-    padding: 10px;
 }
 
 .produit-card .info {
     padding: 10px;
+    text-align: center;
+    flex-grow: 1;
 }
 
 .produit-card h3 {
