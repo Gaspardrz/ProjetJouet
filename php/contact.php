@@ -1,48 +1,50 @@
 <?php
+session_start();
+
+$host = 'localhost';
+$dbname = 'infoconnexion';
+$username = 'root';
+$password = 'root';
+
+try {
+    $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    die("Erreur de connexion : " . $e->getMessage());
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $servername = "localhost";
-    $username = "username";
-    $password = "password";
-    $dbname = "database_name";
+    $errors = [];
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $email = $_POST['email'] ?? '';
+    $password = $_POST['password'] ?? '';
 
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    if (empty($email) || empty($password)) {
+        $errors[] = "Email et mot de passe obligatoires.";
     }
 
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
+    if (empty($errors)) {
+        $stmt = $conn->prepare("SELECT * FROM client WHERE MailCLien = :email");
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+        $user = $stmt->fetch();
 
-    $sql = "INSERT INTO contacts (name, email, message) VALUES ('$name', '$email', '$message')";
+        if ($user && password_verify($password, $user['MdpClient'])) {
+            $_SESSION['user'] = $user;
+            $_SESSION['prenom'] = $user['Prénom'];
+            $_SESSION['nom'] = $user['Nom'];
+            $_SESSION['email'] = $user['MailCLien'];
 
-    if ($conn->query($sql) === TRUE) {
-        echo "Message sent successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+            header("Location: espace-client.php");
+            exit();
+        } else {
+            $errors[] = "Identifiants incorrects.";
+        }
     }
 
-    $conn->close();
+    foreach ($errors as $error) {
+        echo "<p style='color:red;'>$error</p>";
+    }
 }
 ?>
-
-<!DOCTYPE html>
-<html>
-<body>
-
-<h2>Contact Form</h2>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-  Name: <input type="text" name="name">
-  <br><br>
-  E-mail: <input type="text" name="email">
-  <br><br>
-  Message: <textarea name="message" rows="5" cols="40"></textarea>
-  <br><br>
-  <input type="submit" name="submit" value="Submit">
-</form>
-
-</body>
-</html>

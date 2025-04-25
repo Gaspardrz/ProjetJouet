@@ -221,9 +221,9 @@ h1, h2, h3 {
     }
 }
 /* Styliser le bouton "Se connecter" */
-input[type="submit"] ,input[type="reset"]{
+input[type="submit"] ,input[type="reset"],input[type="confirm_password"]{
     background-color: rgba(0, 0, 0, 0); /* Couleur de fond gris */
-    color: #000000; /* Couleur du texte noir */
+    color: #ffffff; /* Couleur du texte noir */
     border: none; /* Pas de bordure */
     padding: 10px 20px; /* Espacement interne */
     border-radius: 5px; /* Bordures arrondies */
@@ -231,12 +231,12 @@ input[type="submit"] ,input[type="reset"]{
     font-size: 16px; /* Taille de la police */
 }
 
-input[type="submit"]:hover ,input[type="reset"]{
+input[type="submit"]:hover ,input[type="reset"]:hover,input[type="confirm_password"]:hover{
     background: #1e3744; /* Couleur de fond gris foncé au survol */
     color: white;
 }
 /* Styliser les champs "Email" et "Mot de passe" */
-input[type="email"], input[type="password"], input#prenom, input#nom {
+input[type="email"], input[type="password"], input#prenom, input#nom ,input[type="confirm_password"]{
     border: 1px solid gray; /* Bordure grise */
     padding: 10px; /* Espacement interne */
     border-radius: 0px 15px 0px 10px; /* Bordures arrondies */
@@ -246,7 +246,17 @@ input[type="email"], input[type="password"], input#prenom, input#nom {
     margin-top: 25px; /* Espacement entre les champs */
 }
 
-input[type="email"]:focus, input[type="password"]:focus {
+input[type="email"]:focus{
+    background-color: white;
+    outline: none; /* Supprime le contour par défaut */
+}
+input[type="password"]:focus {
+    background-color: white;
+    outline: none; /* Supprime le contour par défaut */
+}
+
+
+input[type="confirm_password"]:focus {
     background-color: white;
     outline: none; /* Supprime le contour par défaut */
 }

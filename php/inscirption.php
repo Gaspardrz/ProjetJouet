@@ -29,6 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         foreach ($errors as $error) {
             echo "<p style='color: red;'>$error</p>";
         }
+        // Add a "Retour" button
+        echo "<a href='inscription.html' style='color: blue; text-decoration: underline;'>Retour</a>";
     } else {
         echo "<p style='color: green;'>Inscription réussie !</p>";
         // Here you can add code to save the data to a database or perform other actions

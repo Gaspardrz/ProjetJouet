@@ -57,7 +57,10 @@
                 <label for="password">Mot de passe :</label>
                 <input type="password" name="password" id="password" placeholder="Votre mot de passe" required>
             </div>
-
+            <div>
+                <label for="confirm_password">Confirmer le mot de passe :</label>
+                <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirmez votre mot de passe" required>
+            </div>
             <!-- Ajout du champ CSRF -->
             <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
 

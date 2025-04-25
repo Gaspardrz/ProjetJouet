@@ -39,7 +39,7 @@ $user = $_SESSION['user'];
             color: #444;
         }
 
-        a.logout {
+        a {
             display: inline-block;
             margin-top: 20px;
             padding: 10px 15px;
@@ -49,7 +49,7 @@ $user = $_SESSION['user'];
             border-radius: 5px;
         }
 
-        a.logout:hover {
+        a:hover {
             background-color: #aa4f1e;
         }
     </style>
@@ -59,8 +59,8 @@ $user = $_SESSION['user'];
     <div class="box">
         <h1>Bienvenue, <?php echo htmlspecialchars($user['Prénom']) . " " . htmlspecialchars($user['Nom']); ?> !</h1>
         <p>Adresse email : <?php echo htmlspecialchars($user['MailCLien']); ?></p>
-
-        <a class="logout" href="logout.php">Se déconnecter</a>
+        <a class="shopping" href="../page/Shopping.php">Retourner sur le site</a>
+        <a class="logout" href="../logout.php">Se déconnecter</a>
     </div>
 
 </body>
