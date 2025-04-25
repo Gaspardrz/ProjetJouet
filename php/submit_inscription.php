@@ -1,4 +1,6 @@
 <?php 
+include __DIR__ . '/../php/includes/header.php';
+include __DIR__ . '/php/includes/footer.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Configuration de la connexion à la base de données
     $host = 'localhost';

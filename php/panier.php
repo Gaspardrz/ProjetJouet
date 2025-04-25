@@ -1,67 +1,75 @@
 <?php
-// filepath: c:/Users/chpri/Documents/code/projet jouer/ProjetJouet/php/panier.php
 session_start();
-require_once 'db_connection.php'; // Fichier pour la connexion à la base de données
+$pdo = new PDO('mysql:host=localhost;dbname=infoconnexion;charset=utf8', 'root', 'root');
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-if (!isset($conn) || $conn->connect_error) {
-    die("Erreur de connexion à la base de données : " . $conn->connect_error);
-}
+// Fonction pour ajouter un produit au panier
+if (isset($_GET['add'])) {
+    $productId = (int)$_GET['add']; // ID du produit
+    $quantity = 1; // Quantité fixe par défaut
 
-// Vérifie si l'utilisateur est connecté
-if (!isset($_SESSION['user_id'])) {
-    die("Veuillez vous connecter pour accéder au panier.");
-}
-
-$user_id = $_SESSION['user_id'];
-
-// Ajout d'un produit au panier
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'add') {
-    $product_id = intval($_POST['product_id']);
-    $quantity = isset($_POST['quantity']) ? intval($_POST['quantity']) : 1; // Default quantity to 1 if not provided
-    $stmt = $conn->prepare("INSERT INTO panier (user_id, product_id, quantity) VALUES (?, ?, ?) 
-                            ON DUPLICATE KEY UPDATE quantity = quantity + ?");
-    if ($stmt) {
-        $stmt->bind_param("iiii", $user_id, $product_id, $quantity, $quantity);
-        $stmt->execute();
-        $stmt->close();
-        echo json_encode(['status' => 'success']);
+    // Vérifie si le produit est déjà dans le panier, sinon l'ajoute
+    if (isset($_SESSION['cart'][$productId])) {
+        $_SESSION['cart'][$productId] += $quantity;
     } else {
-        die("Erreur lors de la préparation de la requête : " . $conn->error);
-    }
-    exit;
-}
-
-// Suppression d'un produit du panier
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'delete') {
-    if ($stmt) {
-        $stmt->bind_param("i", $user_id);
-    } else {
-        die("Erreur lors de la préparation de la requête : " . $conn->error);
+        $_SESSION['cart'][$productId] = $quantity;
     }
 
-    $stmt = $conn->prepare("DELETE FROM panier WHERE user_id = ? AND product_id = ?");
-    $stmt->bind_param("ii", $user_id, $product_id);
-    $stmt->execute();
-    $stmt->close();
-    echo json_encode(['status' => 'success']);
-    $stmt = $conn->prepare("DELETE FROM panier WHERE user_id = ? AND product_id = ?");
-    if ($stmt) {
-        $stmt->bind_param("ii", $user_id, $product_id);
-    } else {
-        die("Erreur lors de la préparation de la requête : " . $conn->error);
-    }
-                            JOIN produits pr ON p.product_id = pr.id 
-                            WHERE p.user_id = ?");
-    $stmt->bind_param("i", $user_id);
-    $product_id = intval($_POST['product_id']);
-    $stmt = $conn->prepare("DELETE FROM panier WHERE user_id = ? AND product_id = ?");
-    if ($stmt) {
-        $stmt->bind_param("ii", $user_id, $product_id);
-        $stmt->execute();
-        $stmt->close();
-        echo json_encode(['status' => 'success']);
-    } else {
-        die("Erreur lors de la préparation de la requête : " . $conn->error);
-    }
-    exit;
+    header('Location: panier.php'); // Redirige vers le panier après ajout
+    exit();
 }
+
+// Fonction pour retirer un produit du panier
+if (isset($_GET['remove'])) {
+    $productId = (int)$_GET['remove']; // ID du produit à retirer
+
+    unset($_SESSION['cart'][$productId]);
+
+    header('Location: panier.php'); // Redirige vers le panier après suppression
+    exit();
+}
+
+// Affichage du panier
+$cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
+$cartTotal = 0;
+
+// Afficher le panier avec les produits
+?>
+<?php include __DIR__ . '/../php/includes/header.php'; ?>
+<h2>Votre Panier</h2>
+
+<?php if (empty($cart)): ?>
+    <p>Votre panier est vide.</p>
+<?php else: ?>
+    <table>
+        <tr>
+            <th>Nom du produit</th>
+            <th>Quantité</th>
+            <th>Prix</th>
+            <th>Actions</th>
+        </tr>
+
+        <?php foreach ($cart as $productId => $quantity): ?>
+            <?php
+            // Récupérer les informations du produit depuis la BDD
+            $stmt = $pdo->prepare("SELECT * FROM produits WHERE id = ?");
+            $stmt->execute([$productId]);
+            $product = $stmt->fetch();
+            $productPrice = $product['prix'];
+            $productName = $product['nom'];
+            $productTotal = $productPrice * $quantity;
+            $cartTotal += $productTotal;
+            ?>
+            <tr>
+                <td><?= htmlspecialchars($productName) ?></td>
+                <td><?= $quantity ?></td>
+                <td><?= number_format($productTotal, 2) ?> €</td>
+                <td><a href="panier.php?remove=<?= $productId ?>">Supprimer</a></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+
+    <h3>Total : <?= number_format($cartTotal, 2) ?> €</h3>
+    <a href="payment.php">Procéder au paiement</a>
+<?php endif; ?>
+<?php include __DIR__ . '/../php/includes/footer.php'; ?>

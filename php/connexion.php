@@ -1,4 +1,6 @@
 <?php 
+include __DIR__ . '/php/includes/footer.php';
+include __DIR__ . '/../php/includes/header.php';
 session_start(); // Démarrer la session
 
 // Configuration de la connexion à la base de données

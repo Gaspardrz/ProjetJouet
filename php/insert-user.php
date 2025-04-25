@@ -1,4 +1,6 @@
 <?php
+include __DIR__ . '/../php/includes/header.php';
+include __DIR__ . '/php/includes/footer.php';
 $host = 'localhost';
 $dbname = 'infoconnexion';
 $username = 'root';
