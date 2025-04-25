@@ -5,26 +5,22 @@
     font-family: Arial, sans-serif;
 }
 
+
 :root {
     --Orangé: #d46a28;
-    --Orangé-foncé: #aa4f1e;
     --violet-clair: #3a3b5a;
     --Noir: #000000;
     --Blanc: #FFFFFF;
-    --Gris-clair: #eef2f7;
-    --Gris-foncé: #444;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-color: var(--Gris-clair);
-    color: var(--Noir);
+    background-image: linear-gradient(to right, #16222a, #1e3744);    color: var(--Noir);
     text-align: center;
-    padding: 40px;
+    overflow-x: hidden;
 }
 
 header {
-    background-color: var(--violet-clair);
     padding: 20px;
 }
 
@@ -38,9 +34,26 @@ header {
 .logo:hover {
     transform: rotateY(180deg);
 }
+.subnav {
+    display: block;
+}
+.boxnav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
 
+}
+.liennav{
+    color: var(--Blanc);
+    text-decoration: none;
+}
+.liennav:hover{
+    color: var(--Noir);
+}
+ 
 h1 {
-    color: var(--Gris-foncé);
+    color: var(--Blanc);
 }
 
 h2 {
@@ -58,8 +71,8 @@ h3 {
 
 .navbar {
     padding: 10px 20px;
-    background-color: var(--violet-clair);
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    background-color: grey;
+    box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.2);
     width: 100%;
 }
 
@@ -90,7 +103,7 @@ h3 {
 }
 
 .navbar-menu a:hover {
-    color: var(--Orangé);
+    color: var(--Noir);
 }
 
 .top-bar {
@@ -101,44 +114,51 @@ h3 {
 .top-bar-right a {
     color: var(--Blanc);
     padding: 10px 10px;
-    border: solid 1px var(--Blanc);
     border-radius: 10px;
     text-decoration: none;
     font-size: 14px;
 }
 
 .top-bar-right a:hover {
-    color: var(--Orangé);
-}
-
-.box {
-    background-color: var(--Blanc);
-    padding: 30px;
-    border-radius: 10px;
-    width: 60%;
-    margin: 0 auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-a.logout {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 15px;
-    background-color: var(--Orangé);
     color: var(--Blanc);
-    text-decoration: none;
-    border-radius: 5px;
+    background: linear-gradient(to right, #16222a, #1e3744);
 }
 
-a.logout:hover {
-    background-color: var(--Orangé-foncé);
+.images img {
+    width: 100%;
+    position: relative;
+    height: auto;
+}
+
+.articles, .produits {
+    text-align: left;
+    color: var(--Noir);
+    margin: 20px 4%;
+}
+
+.Histoire {
+    border-top: 20%;
+    margin-top: 20%;
 }
 
 footer {
-    background-color: var(--violet-clair);
+    margin-top: 350px;
     color: var(--Blanc);
     text-align: center;
     padding: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3 {
+    font-size: calc(1.5rem + 1vw);
+}
+
+.navbar-menu a, .dropdown-content a {
+    font-size: 14px;
 }
 
 @media (max-width: 1024px) {
@@ -182,8 +202,12 @@ footer {
         height: 60px;
     }
 
-    .box {
-        width: 90%;
+    .articles, .produits {
+        margin: 10px 2%;
+    }
+
+    h2 {
+        font-size: 18px;
     }
 
     footer {
@@ -195,4 +219,34 @@ footer {
     h1, h2, h3 {
         font-size: 16px;
     }
+}
+/* Styliser le bouton "Se connecter" */
+input[type="submit"] ,input[type="reset"]{
+    background-color: rgba(0, 0, 0, 0); /* Couleur de fond gris */
+    color: #000000; /* Couleur du texte noir */
+    border: none; /* Pas de bordure */
+    padding: 10px 20px; /* Espacement interne */
+    border-radius: 5px; /* Bordures arrondies */
+    cursor: pointer; /* Curseur pointeur */
+    font-size: 16px; /* Taille de la police */
+}
+
+input[type="submit"]:hover ,input[type="reset"]{
+    background: #1e3744; /* Couleur de fond gris foncé au survol */
+    color: white;
+}
+/* Styliser les champs "Email" et "Mot de passe" */
+input[type="email"], input[type="password"], input#prenom, input#nom {
+    border: 1px solid gray; /* Bordure grise */
+    padding: 10px; /* Espacement interne */
+    border-radius: 0px 15px 0px 10px; /* Bordures arrondies */
+    width: 50%; /* Largeur à 100% du conteneur */
+    font-size: 16px; /* Taille de la police */
+    margin-bottom: 25px; /* Espacement entre les champs */
+    margin-top: 25px; /* Espacement entre les champs */
+}
+
+input[type="email"]:focus, input[type="password"]:focus {
+    background-color: white;
+    outline: none; /* Supprime le contour par défaut */
 }

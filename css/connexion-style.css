@@ -229,16 +229,29 @@ input[type="submit"] {
     border-radius: 5px; /* Bordures arrondies */
     cursor: pointer; /* Curseur pointeur */
     font-size: 16px; /* Taille de la police */
+    color: white;
 }
 
-input[type="submit"]:hover {
+
+input[type="submit"] ,input[type="reset"]{
+    background-color: rgba(0, 0, 0, 0); /* Couleur de fond gris */
+    color: #ffffff; /* Couleur du texte noir */
+    border: none; /* Pas de bordure */
+    padding: 10px 20px; /* Espacement interne */
+    border-radius: 5px; /* Bordures arrondies */
+    cursor: pointer; /* Curseur pointeur */
+    font-size: 16px; /* Taille de la police */
+}
+
+input[type="submit"]:hover ,input[type="reset"]{
     background: #1e3744; /* Couleur de fond gris foncé au survol */
     color: white;
 }
 /* Styliser les champs "Email" et "Mot de passe" */
-input[type="email"], input[type="password"] {
+input[type="email"], input[type="password"],input[type="prenom"],input[type="nom"] {
     border: 1px ; /* Bordure grise */
     padding: 10px; /* Espacement interne */
+   
     border-radius: 0px 15px 0px 10px; /* Bordures arrondies */
     width: 50%; /* Largeur à 100% du conteneur */
     font-size: 16px; /* Taille de la police */
