@@ -5,33 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../css/css_categorie/nerfs.css">
     <meta charset="UTF-8">
-    <script>
-        async function ajouterAuPanier(productId) {
-            try {
-                const response = await fetch('../../php/panier.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        action: 'add',
-                        product_id: productId,
-                        quantity: 1
-                    })
-                });
-
-                const result = await response.json();
-                if (result.status === 'success') {
-                    alert('Produit ajouté au panier avec succès !');
-                } else {
-                    alert('Erreur lors de l\'ajout au panier.');
-                }
-            } catch (error) {
-                console.error('Erreur:', error);
-                alert('Une erreur est survenue.');
-            }
-        }
-    </script>
+ 
 </head>
 <body>
     <header>   

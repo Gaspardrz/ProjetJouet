@@ -16,14 +16,13 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: linear-gradient(to right, #4e549f, #918dcede);
+    background-image: linear-gradient(to right, #16222a, #1e3744);
     color: var(--Noir);
     text-align: center;
     overflow-x: hidden;
 }
 
 header {
-    background-color: var(--violet-clair);
     padding: 20px;
 }
 
@@ -49,17 +48,18 @@ header {
     align-items: center;
     width: 100%;
 }
+.boxnav a:hover {
+    color: #000000;
+}
 
 .liennav {
     color: var(--Blanc);
     text-decoration: none;
 }
 
-.liennav:hover {
-    color: var(--Orangé);
-}
 
 h1 {
+    justify-content: center;
     color: var(--Blanc);
 }
 
@@ -77,8 +77,8 @@ h3 {
 
 .navbar {
     padding: 10px 20px;
-    background-color: var(--violet-clair);
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    background-color: grey;
+    box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.2);
     width: 100%;
 }
 
@@ -120,14 +120,14 @@ h3 {
 .top-bar-right a {
     color: var(--Blanc);
     padding: 10px 10px;
-    border: solid 1px var(--Blanc);
     border-radius: 10px;
     text-decoration: none;
     font-size: 14px;
 }
 
 .top-bar-right a:hover {
-    color: var(--Orangé);
+    color: var(--Blanc);
+    background: linear-gradient(to right, #16222a, #1e3744);
 }
 
 .images img {
@@ -148,7 +148,6 @@ h3 {
 }
 
 footer {
-    background-color: var(--violet-clair);
     color: var(--Blanc);
     text-align: center;
     padding: 10px;
@@ -267,7 +266,7 @@ main {
     border: 1px solid #ddd;
     border-radius: 8px;
     transition: transform 0.3s, box-shadow 0.3s;
-    background-image: linear-gradient(to right, #4e549f, #918dcede);
+    background-image: linear-gradient(to right, grey,white);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -315,7 +314,6 @@ main {
 
 /* Footer */
 footer {
-    background-color: #3A3B5A;
     color: white;
     text-align: center;
     padding: 10px 0;

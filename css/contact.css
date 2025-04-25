@@ -14,14 +14,12 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: linear-gradient(to right, #4e549f, #918dcede);
-    color: var(--Noir);
+    background-image: linear-gradient(to right, #16222a, #1e3744);   color: var(--Noir);
     text-align: center;
     overflow-x: hidden;
 }
 
 header {
-    background-color: var(--violet-clair);
     padding: 20px;
 }
 
@@ -50,7 +48,7 @@ header {
     text-decoration: none;
 }
 .liennav:hover{
-    color: var(--Orangé);
+    color: var(--blanc);
 }
  
 h1 {
@@ -58,22 +56,22 @@ h1 {
 }
 
 h2 {
-    color: var(--Noir);
+    color: var(--blanc);
     margin: 40px 0 10px 0;
     font-family: cursive;
 }
 
-h3 {
+h3,h4,h5 {
     text-align: left;
     text-decoration: underline;
-    color: var(--Noir);
+    color: var(--blanc);
     margin-left: 5%;
 }
 
 .navbar {
     padding: 10px 20px;
-    background-color: var(--violet-clair);
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    background-color: grey;
+    box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.2);
     width: 100%;
 }
 
@@ -104,7 +102,7 @@ h3 {
 }
 
 .navbar-menu a:hover {
-    color: var(--Orangé);
+    color: var(--blanc);
 }
 
 .top-bar {
@@ -115,14 +113,14 @@ h3 {
 .top-bar-right a {
     color: var(--Blanc);
     padding: 10px 10px;
-    border: solid 1px var(--Blanc);
     border-radius: 10px;
     text-decoration: none;
     font-size: 14px;
 }
 
 .top-bar-right a:hover {
-    color: var(--Orangé);
+    color: var(--Blanc);
+    background: linear-gradient(to right, #16222a, #1e3744);;
 }
 
 .images img {
@@ -143,7 +141,6 @@ h3 {
 }
 
 footer {
-    background-color: var(--violet-clair);
     color: var(--Blanc);
     text-align: center;
     padding: 10px;
@@ -224,7 +221,7 @@ h1, h2, h3 {
 
 .Informations_sur_vous{
     justify-content: center;
-    border: 3px solid var(--Noir);
+
     border-radius: 15px 15px 15px 15px;
     padding: 30px;
     margin-right: 25%;
@@ -233,10 +230,33 @@ h1, h2, h3 {
 }
 .Votre_demande{
     justify-content: center;
-    border: 3px solid var(--Noir);
     border-radius: 15px 15px 15px 15px;
     padding: 30px;
     margin-right: 25%;
     margin-left: 20%;
     margin-bottom: 5px;
+}
+fieldset.Informations_sur_vous {
+    color: var(--Blanc); /* Couleur du texte en blanc */
+}
+
+fieldset.Informations_sur_vous label {
+    color: var(--Blanc); /* Couleur des labels en blanc */
+}
+
+fieldset.Informations_sur_vous legend {
+    color: var(--Blanc); /* Couleur de la légende en blanc */
+}
+
+
+fieldset.Votre_demande {
+    color: var(--Blanc); /* Couleur du texte en blanc */
+}
+
+fieldset.Votre_demande label {
+    color: var(--Blanc); /* Couleur des labels en blanc */
+}
+
+fieldset.Votre_demande legend {
+    color: var(--Blanc); /* Couleur de la légende en blanc */
 }

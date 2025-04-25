@@ -3,87 +3,9 @@
 <head>
     <title>Panier - Toy'isen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../ProjetJouet/css/main-style.css">
+    <link rel="stylesheet" href="../../ProjetJouet/css/main-style.css">
     <meta charset="UTF-8">
-    <script>
-        async function chargerPanier() {
-            try {
-                const response = await fetch('../../php/panier.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ action: 'get' })
-                });
-
-                const result = await response.json();
-                if (result.status === 'success') {
-                    afficherPanier(result.items);
-                } else {
-                    alert('Erreur lors du chargement du panier.');
-                }
-            } catch (error) {
-                console.error('Erreur:', error);
-                alert('Une erreur est survenue.');
-            }
-        }
-
-        function afficherPanier(items) {
-            const panierContainer = document.getElementById('panier-container');
-            panierContainer.innerHTML = '';
-
-            if (items.length === 0) {
-                panierContainer.innerHTML = '<p>Votre panier est vide.</p>';
-                return;
-            }
-
-            items.forEach(item => {
-                const produitDiv = document.createElement('div');
-                produitDiv.className = 'produit';
-
-                produitDiv.innerHTML = `
-                    <img src="${item.image}" alt="${item.name}">
-                    <div class="info">
-                        <h3>${item.name}</h3>
-                        <p>${item.description}</p>
-                        <p>Quantité: ${item.quantity}</p>
-                        <p>Prix: ${item.price} €</p>
-                        <button onclick="retirerDuPanier(${item.id})">Retirer</button>
-                    </div>
-                `;
-
-                panierContainer.appendChild(produitDiv);
-            });
-        }
-
-        async function retirerDuPanier(productId) {
-            try {
-                const response = await fetch('../../php/panier.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        action: 'remove',
-                        product_id: productId
-                    })
-                });
-
-                const result = await response.json();
-                if (result.status === 'success') {
-                    alert('Produit retiré du panier avec succès !');
-                    chargerPanier();
-                } else {
-                    alert('Erreur lors du retrait du produit.');
-                }
-            } catch (error) {
-                console.error('Erreur:', error);
-                alert('Une erreur est survenue.');
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', chargerPanier);
-    </script>
+    
 </head>
 <body>
     <header>
@@ -91,7 +13,7 @@
             <div class="subnav">
                 <div class="boxnav">
                     <div class="navbar-logo">
-                        <a href="../../index.html"><img src="../../images/logo.png" alt="Logo Jouet" class="logo"></a>
+                        <a href="../../index.html"><img src="../../ProjetJouet/images/logo.png" alt="Logo Jouet" class="logo"></a>
                     </div>
                     <div class="navbar-title">
                         <h1> Toy'isen </h1>

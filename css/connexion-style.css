@@ -5,6 +5,7 @@
     font-family: Arial, sans-serif;
 }
 
+
 :root {
     --Orangé: #d46a28;
     --violet-clair: #3a3b5a;
@@ -14,14 +15,12 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: linear-gradient(90deg,rgba(131, 128, 168, 1) 0%, rgba(9, 9, 121, 1) 47%, rgba(124, 190, 207, 1) 100%);
-    color: var(--Noir);
+    background-image: linear-gradient(to right, #16222a, #1e3744);    color: var(--Noir);
     text-align: center;
     overflow-x: hidden;
 }
 
 header {
-    background-color: var(--violet-clair);
     padding: 20px;
 }
 
@@ -50,7 +49,7 @@ header {
     text-decoration: none;
 }
 .liennav:hover{
-    color: var(--Orangé);
+    color: var(--Noir);
 }
  
 h1 {
@@ -72,8 +71,8 @@ h3 {
 
 .navbar {
     padding: 10px 20px;
-    background-color: var(--violet-clair);
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    background-color: grey;
+    box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.2);
     width: 100%;
 }
 
@@ -104,7 +103,7 @@ h3 {
 }
 
 .navbar-menu a:hover {
-    color: var(--Orangé);
+    color: var(--Noir);
 }
 
 .top-bar {
@@ -115,14 +114,14 @@ h3 {
 .top-bar-right a {
     color: var(--Blanc);
     padding: 10px 10px;
-    border: solid 1px var(--Blanc);
     border-radius: 10px;
     text-decoration: none;
     font-size: 14px;
 }
 
 .top-bar-right a:hover {
-    color: var(--Orangé);
+    color: var(--Blanc);
+    background: linear-gradient(to right, #16222a, #1e3744);
 }
 
 .images img {
@@ -143,7 +142,7 @@ h3 {
 }
 
 footer {
-    background-color: var(--violet-clair);
+    margin-top: 350px;
     color: var(--Blanc);
     text-align: center;
     padding: 10px;
@@ -220,4 +219,35 @@ h1, h2, h3 {
     h1, h2, h3 {
         font-size: 16px;
     }
+}
+/* Styliser le bouton "Se connecter" */
+input[type="submit"] {
+    background-color: rgba(0, 0, 0, 0); /* Couleur de fond gris */
+    color: #000000; /* Couleur du texte noir */
+    border: none; /* Pas de bordure */
+    padding: 10px 20px; /* Espacement interne */
+    border-radius: 5px; /* Bordures arrondies */
+    cursor: pointer; /* Curseur pointeur */
+    font-size: 16px; /* Taille de la police */
+}
+
+input[type="submit"]:hover {
+    background: #1e3744; /* Couleur de fond gris foncé au survol */
+    color: white;
+}
+/* Styliser les champs "Email" et "Mot de passe" */
+input[type="email"], input[type="password"] {
+    border: 1px ; /* Bordure grise */
+    padding: 10px; /* Espacement interne */
+    border-radius: 0px 15px 0px 10px; /* Bordures arrondies */
+    width: 50%; /* Largeur à 100% du conteneur */
+    font-size: 16px; /* Taille de la police */
+    margin-bottom: 25px; /* Espacement entre les champs */
+    margin-Top: 25px; /* Espacement entre les champs */
+
+}
+
+input[type="email"]:focus, input[type="password"]:focus {
+    background-color: white;
+    outline: none; /* Supprime le contour par défaut */
 }

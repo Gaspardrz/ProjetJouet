@@ -4,7 +4,11 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+.RetourAcceuil{
+    padding: 50px;
+    color:white;
 
+}
 :root {
     --Orangé: #000000;
     --violet-clair: #a4a589;
@@ -127,7 +131,7 @@ h3 {
     color: var(--Blanc);
 }
 .top-bar-right :hover {
-background-image: linear-gradient(to right, #16222a, #1e3744);
+    background-image: linear-gradient(to right, #16222a, #1e3744);
 }
 
 .images {
