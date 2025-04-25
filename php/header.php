@@ -18,7 +18,7 @@
         <div class="subnav">
             <div class="boxnav">
                 <div class="navbar-logo">
-                    <a href="../index.php"><img src="../images/logo.png" alt="Logo Jouet" class="logo"></a>
+                    <a href="../php/index.php"><img src="../images/logo.png" alt="Logo Jouet" class="logo"></a>
                 </div>
                 <div class="navbar-title">
                     <h1>Toy'Isen</h1>
@@ -46,4 +46,3 @@
 </header>
 
 <?php
-include __DIR__ . '/footer.php';?>

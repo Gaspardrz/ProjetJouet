@@ -1,7 +1,8 @@
 <?php 
-include __DIR__ . '/header.php';
 
 session_start();
+include __DIR__ . '/header.php';
+
 
 // Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION['user'])) {
@@ -24,8 +25,8 @@ $user = $_SESSION['user'];
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            color: #333;
+            background-color:rgb(255, 255, 255);
+            color: rgb(0,0,0) ;
             margin: 0;
             padding: 0;
         }
@@ -45,7 +46,7 @@ $user = $_SESSION['user'];
         }
 
         h1 {
-            color: #444;
+           color rgb(0,0,0) ;
         }
 
         p {

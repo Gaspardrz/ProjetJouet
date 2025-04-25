@@ -1,6 +1,5 @@
 <?php 
 
-include __DIR__ . '/header.php';
 session_start(); // Démarrer la session
 
 // Configuration de la connexion à la base de données
