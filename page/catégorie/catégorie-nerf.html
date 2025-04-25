@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../css/css_categorie/nerfs.css">
     <meta charset="UTF-8">
+    <script>
+        async function ajouterAuPanier(productId) {
+            try {
+                const response = await fetch('../../php/panier.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        action: 'add',
+                        product_id: productId,
+                        quantity: 1
+                    })
+                });
+
+                const result = await response.json();
+                if (result.status === 'success') {
+                    alert('Produit ajouté au panier avec succès !');
+                } else {
+                    alert('Erreur lors de l\'ajout au panier.');
+                }
+            } catch (error) {
+                console.error('Erreur:', error);
+                alert('Une erreur est survenue.');
+            }
+        }
+    </script>
 </head>
 <body>
     <header>   
@@ -33,11 +60,10 @@
                 </div>
             </div>
         </nav>
-</header> 
+    </header> 
     <main>
         <h2>Nos Nerfs</h2>
         <div class="produit-container">
-            
             <div class="produit-card">
                 <a href="strike.html" target="_blank">
                     <img src="../../images/nerf/strike.jpg" alt="Nerfs Strike">
@@ -46,52 +72,57 @@
                         <p>Envie de nouveauté ? Découvrez la gamme strike.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(1)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a href="pro.html" target="_blank">
                     <img src="../../images/nerf/nerf pro.jpg" alt="Nerfs Pro">
                     <div class="info">
                         <h3>Nerfs Pro</h3>
-                        <p>Vous commencez a exceler dans l'art du nerf ? passez a la vitesse supérieure</p>
+                        <p>Vous commencez à exceller dans l'art du nerf ? Passez à la vitesse supérieure.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(2)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a href="raptorstrike.html" target="_blank">
                     <img src="../../images/nerf/raptorstrike.jpg" alt="Nerfs Raptorstrike">
                     <div class="info">
-                        <h3>Nerfs Rapstorstrike</h3>
+                        <h3>Nerfs Raptorstrike</h3>
                         <p>Découvrez la nouvelle carabine Nerf Raptorstrike.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(3)">Ajouter au panier</button>
             </div>
-            
             <div class="produit-card">
                 <a href="blanc.html" target="_blank">
                     <img src="../../images/nerf/rival blanc.jpg" alt="Nerfs Rival blanc">
                     <div class="info">
                         <h3>Nerfs Rival Ghost Team</h3>
-                        <p>Choisissez votre camp à votre guise</p>
+                        <p>Choisissez votre camp à votre guise.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(4)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a href="bleu.html" target="_blank">
                     <img src="../../images/nerf/rival bleu.jpg" alt="Nerfs Rival Bleu">
                     <div class="info">
                         <h3>Nerfs Blue Team</h3>
-                        <p>passez à la vitesse supérieur pour battre la red team</p>
+                        <p>Passez à la vitesse supérieure pour battre la Red Team.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(5)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a href="rhino.html" target="_blank">
                     <img src="../../images/nerf/red team.jpg" alt="Nerfs Rival Rouge">
                     <div class="info">
                         <h3>Nerfs Rival Red Team</h3>
-                        <p>Plutôt du genre a choisir l'equipe rouge ? Obtez pour la Red team.</p>
+                        <p>Plutôt du genre à choisir l'équipe rouge ? Optez pour la Red Team.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(6)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
@@ -101,35 +132,38 @@
                         <p>Les blasters de la gamme Nerf Elite 2.0 permettent d'optimiser sa stratégie.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(7)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
                     <img src="../../images/nerf/double punch.jpg" alt="double punch">
                     <div class="info">
-                        <h3>Nerfs double punch</h3>
-                        <p>pour 2x plus de tirs</p>
+                        <h3>Nerfs Double Punch</h3>
+                        <p>Pour 2x plus de tirs.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(8)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
                     <img src="../../images/nerf/easy play.jpg" alt="easy play">
                     <div class="info">
-                        <h3>Nerfs junior</h3>
-                        <p>Pour plus de facilité et apprendre les bases du tir</p>
+                        <h3>Nerfs Junior</h3>
+                        <p>Pour plus de facilité et apprendre les bases du tir.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(9)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
                     <img src="../../images/nerf/bleu 3.jpg" alt="Nerfs Rival Bleu 3">
                     <div class="info">
                         <h3>Nerfs Blue Team 2.0</h3>
-                        <p>une autre manière de jouer dans la team bleu.</p>
+                        <p>Une autre manière de jouer dans la Team Bleu.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(10)">Ajouter au panier</button>
             </div>
-            
         </div>
     </main>
     <footer>

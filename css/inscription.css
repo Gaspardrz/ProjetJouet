@@ -7,17 +7,20 @@
 
 :root {
     --Orangé: #d46a28;
+    --Orangé-foncé: #aa4f1e;
     --violet-clair: #3a3b5a;
     --Noir: #000000;
     --Blanc: #FFFFFF;
+    --Gris-clair: #eef2f7;
+    --Gris-foncé: #444;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-image: linear-gradient(to right, #4e549f, #918dcede);
+    background-color: var(--Gris-clair);
     color: var(--Noir);
     text-align: center;
-    overflow-x: hidden;
+    padding: 40px;
 }
 
 header {
@@ -35,26 +38,9 @@ header {
 .logo:hover {
     transform: rotateY(180deg);
 }
-.subnav {
-    display: block;
-}
-.boxnav{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
 
-}
-.liennav{
-    color: var(--Blanc);
-    text-decoration: none;
-}
-.liennav:hover{
-    color: var(--Orangé);
-}
- 
 h1 {
-    color: var(--Blanc);
+    color: var(--Gris-foncé);
 }
 
 h2 {
@@ -125,21 +111,27 @@ h3 {
     color: var(--Orangé);
 }
 
-.images img {
-    width: 100%;
-    position: relative;
-    height: auto;
+.box {
+    background-color: var(--Blanc);
+    padding: 30px;
+    border-radius: 10px;
+    width: 60%;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.articles, .produits {
-    text-align: left;
-    color: var(--Noir);
-    margin: 20px 4%;
+a.logout {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: var(--Orangé);
+    color: var(--Blanc);
+    text-decoration: none;
+    border-radius: 5px;
 }
 
-.Histoire {
-    border-top: 20%;
-    margin-top: 20%;
+a.logout:hover {
+    background-color: var(--Orangé-foncé);
 }
 
 footer {
@@ -147,19 +139,6 @@ footer {
     color: var(--Blanc);
     text-align: center;
     padding: 10px;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-h1, h2, h3 {
-    font-size: calc(1.5rem + 1vw);
-}
-
-.navbar-menu a, .dropdown-content a {
-    font-size: 14px;
 }
 
 @media (max-width: 1024px) {
@@ -203,12 +182,8 @@ h1, h2, h3 {
         height: 60px;
     }
 
-    .articles, .produits {
-        margin: 10px 2%;
-    }
-
-    h2 {
-        font-size: 18px;
+    .box {
+        width: 90%;
     }
 
     footer {
@@ -220,14 +195,4 @@ h1, h2, h3 {
     h1, h2, h3 {
         font-size: 16px;
     }
-}
-
-.inscription{
-    justify-content: center;
-    border: 3px solid var(--Noir);
-    border-radius: 15px 15px 15px 15px;
-    padding: 30px;
-    margin-right: 25%;
-    margin-left: 20%;
-    margin-bottom: 5px;
 }

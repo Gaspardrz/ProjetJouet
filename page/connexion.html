@@ -14,15 +14,13 @@
                         <a href="../index.html"><img src="../images/logo.png" alt="Logo Jouet" class="logo"></a>
                     </div>
                     <div class="navbar-title">
-                        <h1> Toy'isen </h1>
+                        <h1>Toy'isen</h1>
                     </div>
-            
                     <div class="top-bar-right">
-                        <a href="../page/connexion.html">Connexion</a>
-                        <a href="../page/inscription.html">S'inscrire</a>
+                        <a href="connexion.html">Connexion</a>
+                        <a href="inscription.html">S'inscrire</a>
                     </div>
                 </div>
-
                 <div class="boxnav">
                     <a class="liennav" href="../page/catégorie/catégorie-carte.html">Cartes à jouer</a>
                     <a class="liennav" href="../page/catégorie/catégorie-mini-voiture.html">Mini Voitures</a>
@@ -32,36 +30,26 @@
                 </div>
             </div>
         </nav>
-</header>
-    <form method="post" action="#" class="formletter">
-        <fieldset>  
-            <legend>Login</legend>
-            
-            <label for="nom">Identifiant/Mail :</label>
-            <input type="text" name="nom" id="nom" placeholder="Votre identifiant ou mail">
-            <br><br>
-            
-            <label for="Password">Mot de passe :</label>
-            <input type="password" name="password" id="Password" placeholder="Votre mot de passe">
-            
-            <br><br>
-            
-            <input type="submit" value="Se connecter">
-            <input type="reset" value="Réinitialiser">
-
-        </fieldset>
-
+    </header>
+    <form method="POST" action="../php/connexion.php">
+        <label for="email">Email :</label>
+        <input type="email" name="email" required>
+        <br>
+        <label for="password">Mot de passe :</label>
+        <input type="password" name="password" required>
+        <br>
+        <input type="submit" value="Se connecter">
     </form>
-
+    
     <footer>
         <dl>
             <dt>Téléphone</dt>
             <dd>(+33) (0)7 69 21 27 93</dd>
             <dt>Adresse</dt>
-            <dd>Noa de CIR 1 - Lille<br>
+            <dd>
+                Noa de CIR 1 - Lille<br>
                 TIER 3<br>
                 13 Rue de St-Omer<br>
-            
             </dd>
         </dl>
         <p>© 2024 Toy'isen - Tous droits réservés.</p>

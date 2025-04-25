@@ -1,0 +1,83 @@
+<!-- filepath: c:\Users\chpri\Documents\code\projet jouer\ProjetJouet\page\payement.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Paiement - Toy'isen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../ProjetJouet/css/main-style.css">
+    <meta charset="UTF-8">
+    <script>
+        function effectuerPaiement() {
+            alert('Votre commande est passée avec succès ! Merci pour votre confiance.');
+            window.location.href = '../../index.html';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="subnav">
+                <div class="boxnav">
+                    <div class="navbar-logo">
+                        <a href="../../index.html"><img src="../../images/logo.png" alt="Logo Jouet" class="logo"></a>
+                    </div>
+                    <div class="navbar-title">
+                        <h1> Toy'isen </h1>
+                    </div>
+                    <div class="top-bar-right">
+                        <a href="../../ProjetJouet/page/panier.html">Panier</a>
+                        <a href="../../page/connexion.html">Connexion</a>
+                        <a href="../../page/inscription.html">S'inscrire</a>
+                    </div>
+                </div>
+                <div class="boxnav">
+                    <a class="liennav" href="../../page/catégorie/catégorie-carte.html">Cartes à jouer</a>
+                    <a class="liennav" href="../../page/catégorie/catégorie-mini-voiture.html">Mini Voitures</a>
+                    <a class="liennav" href="../../page/catégorie/catégorie-nerf.html">Nerfs</a>
+                    <a class="liennav" href="../../page/catégorie/catégorie-figurines.html">Figurines</a>
+                    <a class="liennav" href="../../page/catégorie/catégorie-jeuxvideos.html">Jeux Vidéos</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h2>Paiement</h2>
+        <div class="payement-container">
+            <form id="payement-form">
+                <div class="form-group">
+                    <label for="nom">Nom complet :</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="adresse">Adresse :</label>
+                    <input type="text" id="adresse" name="adresse" required>
+                </div>
+                <div class="form-group">
+                    <label for="ville">Ville :</label>
+                    <input type="text" id="ville" name="ville" required>
+                </div>
+                <div class="form-group">
+                    <label for="code-postal">Code postal :</label>
+                    <input type="text" id="code-postal" name="code-postal" required>
+                </div>
+                <div class="form-group">
+                    <label for="carte">Numéro de carte bancaire :</label>
+                    <input type="text" id="carte" name="carte" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiration">Date d'expiration :</label>
+                    <input type="month" id="expiration" name="expiration" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV :</label>
+                    <input type="text" id="cvv" name="cvv" required>
+                </div>
+                <button type="button" onclick="window.location.href='PayementEffectué.html'">Payer</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Toy'isen - Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

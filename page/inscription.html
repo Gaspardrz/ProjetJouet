@@ -17,6 +17,7 @@
                 </div>
         
                 <div class="top-bar-right">
+                    <a href="../page/panier.html">Panier</a>
                     <a href="../page/connexion.html">Connexion</a>
                     <a href="../page/inscription.html">S'inscrire</a>
                 </div>
@@ -33,7 +34,7 @@
     </nav>
 </header>
 <body>
-    <form method="post" action="#" class="formletter">
+    <form method="post" action="../php/submit_inscription.php" class="formletter">
         <fieldset class="inscription">  
             <legend>S'inscrire</legend>
 
@@ -56,11 +57,13 @@
                 <label for="password">Mot de passe :</label>
                 <input type="password" name="password" id="password" placeholder="Votre mot de passe" required>
             </div>
-            
+
+            <!-- Ajout du champ CSRF -->
+            <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+
             <div>
                 <input type="submit" value="S'inscrire">
                 <input type="reset" value="Réinitialiser">
-
             </div>
         </fieldset>
     </form>
@@ -70,10 +73,9 @@
             <dt>Téléphone</dt>
             <dd>(+33) (0)7 69 21 27 93</dd>
             <dt>Adresse</dt>
-            <dd>Noa de CIR 1 - Lille<br>
+            <dd>CIR 1 - Lille<br>
                 TIER 3<br>
                 13 Rue de St-Omer<br>
-            
             </dd>
         </dl>
         <p>© 2024 Toy'isen - Tous droits réservés.</p>

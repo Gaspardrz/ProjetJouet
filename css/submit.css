@@ -6,15 +6,15 @@
 }
 
 :root {
-    --Orangé: #d46a28;
-    --violet-clair: #3a3b5a;
+    --Orangé: #000000;
+    --violet-clair: grey;
     --Noir: #000000;
     --Blanc: #FFFFFF;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-image: linear-gradient(to right, #4e549f, #918dcede);
+    background-image: linear-gradient(to right, #16222a, #1e3744);
     color: var(--Noir);
     text-align: center;
     overflow-x: hidden;

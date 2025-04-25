@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../css/css_categorie/voiture.css">
     <meta charset="UTF-8">
+    <script>
+        async function ajouterAuPanier(productId) {
+            try {
+                const response = await fetch('../../php/panier.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        action: 'add',
+                        product_id: productId,
+                        quantity: 1
+                    })
+                });
+
+                const result = await response.json();
+                if (result.status === 'success') {
+                    alert('Produit ajouté au panier avec succès !');
+                } else {
+                    alert('Erreur lors de l\'ajout au panier.');
+                }
+            } catch (error) {
+                console.error('Erreur:', error);
+                alert('Une erreur est survenue.');
+            }
+        }
+    </script>
 </head>
 <body>
     <header>   
@@ -33,94 +60,81 @@
                 </div>
             </div>
         </nav>
-</header>
+    </header>
     <main>
         <h2>Nos Jeux-Vidéos</h2>
         <div class="produit-container">
             <div class="produit-card">
-                    <img src="../../images/jeuxvideos/FC25.jpg"alt="FC 25">
-                    <div class="info">
-                        <h3>FC 25</h3>
-                        <p>Le plus grand jeu de foot jamais créer, vivez une expérience unique</p>
-                    </div>
-                </a>
+                <img src="../../images/jeuxvideos/FC25.jpg" alt="FC 25">
+                <div class="info">
+                    <h3>FC 25</h3>
+                    <p>Le plus grand jeu de foot jamais créé, vivez une expérience unique.</p>
+                </div>
+                <button onclick="ajouterAuPanier(21)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
-                    <img src="../../images/jeuxvideos/NBA-2K25.jpg" alt="NBA2K25">
-                    <div class="info">
-                        <h3>NBA 2K25</h3>
-                        <p>Vous préférez le basket au foot ? Alors ce jeu est fait pour vous</p>
-                    </div>
-                </a>
+                <img src="../../images/jeuxvideos/NBA-2K25.jpg" alt="NBA2K25">
+                <div class="info">
+                    <h3>NBA 2K25</h3>
+                    <p>Vous préférez le basket au foot ? Alors ce jeu est fait pour vous.</p>
+                </div>
+                <button onclick="ajouterAuPanier(22)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
-                
-                    <img src="../../images/jeuxvideos/ladybug.jpg" alt="miraculous ladybug ">
-                    <div class="info">
-                        <h3>miraculous ladybug</h3>
-                        <p>protegez paris avec l'aide de la plus grande héroïne de la capitale !</p>
-                    </div>
-                </a>
+                <img src="../../images/jeuxvideos/ladybug.jpg" alt="Miraculous Ladybug">
+                <div class="info">
+                    <h3>Miraculous Ladybug</h3>
+                    <p>Protégez Paris avec l'aide de la plus grande héroïne de la capitale !</p>
+                </div>
+                <button onclick="ajouterAuPanier(23)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
-                <a>
-                    <img src="../../images/jeuxvideos/harry potter.jpg" alt="lego harry potter">
-                    <div class="info">
-                        <h3>lego harry potter</h3>
-                        <p>Etudier dans la plus grande école de sorcier n'est ce pas incroyable ? </p>
-                    </div>
-                </a>
+                <img src="../../images/jeuxvideos/harry potter.jpg" alt="Lego Harry Potter">
+                <div class="info">
+                    <h3>Lego Harry Potter</h3>
+                    <p>Étudiez dans la plus grande école de sorcellerie, n'est-ce pas incroyable ?</p>
+                </div>
+                <button onclick="ajouterAuPanier(24)">Ajouter au panier</button>
             </div>
-            
-                <div class="produit-card">
-                        <a>
-                            <img src="../../images/jeuxvideos/ratchete.jpg"alt="Ratchet et Clank">
-                        <div class="info">
-                            <h3>Ratchet et Clank</h3>
-                            <p>le renard le plus populaire de l'espace est de retour avec son ami robot !</p>
-                        </div>
-                    </a>
+            <div class="produit-card">
+                <img src="../../images/jeuxvideos/ratchete.jpg" alt="Ratchet et Clank">
+                <div class="info">
+                    <h3>Ratchet et Clank</h3>
+                    <p>Le renard le plus populaire de l'espace est de retour avec son ami robot !</p>
                 </div>
-          
-                <div class="produit-card">
-                    <a>
-                        <img src="../../images/jeuxvideos/Dragon-Ball.jpg"alt="sparking zero">
-                        <div class="info">
-                            <h3>Sparking zero !!</h3>
-                            <p>le retour de la plus grande saga, rejoignez goku pour de nouvelles aventures !</p>
-                        </div>
-                    </a>
+                <button onclick="ajouterAuPanier(25)">Ajouter au panier</button>
+            </div>
+            <div class="produit-card">
+                <img src="../../images/jeuxvideos/Dragon-Ball.jpg" alt="Sparking Zero">
+                <div class="info">
+                    <h3>Sparking Zero !!</h3>
+                    <p>Le retour de la plus grande saga, rejoignez Goku pour de nouvelles aventures !</p>
                 </div>
-            
-                <div class="produit-card">
-                    <a>
-                        <img src="../../images/jeuxvideos/sonic.jpg"alt="sonic frontiers">
-                        <div class="info">
-                            <h3>Sonic frontiers</h3>
-                            <p>l'emblématique hérisson bleu, venez voir comment il court vite !</p>
-                        </div>
-                    </a>
+                <button onclick="ajouterAuPanier(26)">Ajouter au panier</button>
+            </div>
+            <div class="produit-card">
+                <img src="../../images/jeuxvideos/sonic.jpg" alt="Sonic Frontiers">
+                <div class="info">
+                    <h3>Sonic Frontiers</h3>
+                    <p>L'emblématique hérisson bleu, venez voir comment il court vite !</p>
                 </div>
-            
-                <div class="produit-card">
-                    <a>
-                        <img src="../../images/jeuxvideos/Park-Beyond.jpg"alt="Park beyond">
-                        <div class="info">
-                            <h3>Park beyond</h3>
-                            <p>vous êtes le maitre de votre parc faites venir un maximum de client</p>
-                        </div>
-                    </a>
+                <button onclick="ajouterAuPanier(27)">Ajouter au panier</button>
+            </div>
+            <div class="produit-card">
+                <img src="../../images/jeuxvideos/Park-Beyond.jpg" alt="Park Beyond">
+                <div class="info">
+                    <h3>Park Beyond</h3>
+                    <p>Vous êtes le maître de votre parc, faites venir un maximum de clients.</p>
                 </div>
-            
-                <div class="produit-card">
-                    <a>
-                        <img src="../../images/jeuxvideos/LEGO-Star-Wars.jpg"alt="lego stars wars">
-                        <div class="info">
-                            <h3>lego: star wars la saga skywalkers</h3>
-                            <p>jouez dans l'univers des 9 films avec un tout nouveau jeu </p>
-                        </div>
-                    </a>
+                <button onclick="ajouterAuPanier(28)">Ajouter au panier</button>
+            </div>
+            <div class="produit-card">
+                <img src="../../images/jeuxvideos/LEGO-Star-Wars.jpg" alt="Lego Star Wars">
+                <div class="info">
+                    <h3>Lego: Star Wars - La Saga Skywalker</h3>
+                    <p>Jouez dans l'univers des 9 films avec un tout nouveau jeu.</p>
                 </div>
+                <button onclick="ajouterAuPanier(29)">Ajouter au panier</button>
             </div>
         </div>
     </main>

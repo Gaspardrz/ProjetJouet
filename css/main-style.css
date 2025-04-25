@@ -6,22 +6,21 @@
 }
 
 :root {
-    --Orangé: #d46a28;
-    --violet-clair: #3a3b5a;
+    --Orangé: #000000;
+    --violet-clair: #a4a589;
     --Noir: #000000;
     --Blanc: #FFFFFF;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-image: linear-gradient(to right, #4e549f, #918dcede);
-    color: var(--Noir);
+    background-image: linear-gradient(to right, #16222a, #1e3744);
+    color: var(--Blanc);
     text-align: center;
     overflow-x: hidden;
 }
 
 header {
-    background-color: var(--violet-clair);
     padding: 20px;
 }
 
@@ -53,7 +52,7 @@ header {
 }
 
 .liennav:hover {
-    color: var(--Orangé);
+    color: #16222a;
 }
 
 h1 {
@@ -61,7 +60,7 @@ h1 {
 }
 
 h2 {
-    color: var(--Noir);
+    color: var(--Blanc);
     margin: 40px 0 10px 0;
     font-family: cursive;
     text-decoration: underline;
@@ -76,8 +75,8 @@ h3 {
 
 .navbar {
     padding: 10px 20px;
-    background-color: var(--violet-clair);
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    background-color: grey;
+    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.2);
     width: 100%;
 }
 
@@ -119,14 +118,16 @@ h3 {
 .top-bar-right a {
     color: var(--Blanc);
     padding: 10px 10px;
-    border: solid 1px var(--Blanc);
     border-radius: 10px;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .top-bar-right a:hover {
-    color: var(--Orangé);
+    color: var(--Blanc);
+}
+.top-bar-right :hover {
+background-image: linear-gradient(to right, #16222a, #1e3744);
 }
 
 .images {
@@ -160,14 +161,12 @@ h3 {
 
 .images-description {
     font-size: 18px;
-    color: var(--Noir);
+    color: var(--Blanc);
     text-align: justify;
     padding: 10px;
     max-width: unset;
     flex-grow: 1;
-    border: 2px solid var(--violet-clair);
-    border-radius: 10px;
-    background-image: linear-gradient(to right, #4e549f, #918dcede);
+    font-family: 'Roboto';
 }
 
 .preview-container .preview img {
@@ -229,7 +228,7 @@ h3 {
 .articles,
 .produits {
     text-align: center;
-    color: var(--Noir);
+    color: var(--Blanc);
     margin: 20px 4%;
 }
 
@@ -239,8 +238,7 @@ h3 {
 }
 
 footer {
-    background-color: var(--violet-clair);
-    color: var(--Blanc);
+       color: var(--Blanc);
     text-align: center;
     padding: 10px;
 }
@@ -249,6 +247,7 @@ h1,
 h2,
 h3 {
     font-size: calc(1.5rem + 1vw);
+    color: var(--Blanc);
 }
 
 .navbar-menu a,
@@ -264,6 +263,7 @@ h3 {
     }
 
     .navbar-title {
+        text-align: center;
         font-size: 18px;
     }
 

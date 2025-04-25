@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../css/css_categorie/figurine.css">
     <meta charset="UTF-8">
+    <script>
+        async function ajouterAuPanier(productId) {
+            try {
+                const response = await fetch('../../php/panier.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        action: 'add',
+                        product_id: productId,
+                        quantity: 1
+                    })
+                });
+
+                const result = await response.json();
+                if (result.status === 'success') {
+                    alert('Produit ajouté au panier avec succès !');
+                } else {
+                    alert('Erreur lors de l\'ajout au panier.');
+                }
+            } catch (error) {
+                console.error('Erreur:', error);
+                alert('Une erreur est survenue.');
+            }
+        }
+    </script>
 </head>
 <body>
     <header>   
@@ -33,7 +60,7 @@
                 </div>
             </div>
         </nav>
-</header>
+    </header>
     <main>
         <h2>Nos Figurines</h2>
         <div class="produit-container">
@@ -41,91 +68,101 @@
                 <a>
                     <img src="../../images/figurine/goku-enfant.jpg" alt="goku poing du gorille">
                     <div class="info">
-                        <h3>Figurine Goku Enant</h3>
-                        <p>A l'éffigie de son goku lors de son kamehameha ultime.</p>
+                        <h3>Figurine Goku Enfant</h3>
+                        <p>A l'effigie de Goku lors de son kamehameha ultime.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(30)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
                     <img src="../../images/figurine/gundam.jpg" alt="gundam">
                     <div class="info">
-                        <h3>gundam gunpla</h3>
-                        <p>a l'éffigie du majestueux gundam gunpla</p>
+                        <h3>Gundam Gunpla</h3>
+                        <p>A l'effigie du majestueux Gundam Gunpla.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(31)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
                     <img src="../../images/figurine/luffy.jpg" alt="luffy gear 5">
                     <div class="info">
-                        <h3>Figurine luffy gear 5</h3>
-                        <p>il est là pour vous donner le sourire !!!</p>
+                        <h3>Figurine Luffy Gear 5</h3>
+                        <p>Il est là pour vous donner le sourire !!!</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(32)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
                     <img src="../../images/figurine/metal sonic.jpg" alt="metal sonic">
                     <div class="info">
-                        <h3>Figurine metal sonic</h3>
-                        <p>le monstre terriblement mignon</p>
+                        <h3>Figurine Metal Sonic</h3>
+                        <p>Le monstre terriblement mignon.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(33)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
                     <img src="../../images/figurine/jinx.jpg" alt="jinx">
                     <div class="info">
                         <h3>Jinx</h3>
-                        <p>la plus gande légende de lol, elle est venue pour tout prendre !</p>
+                        <p>La plus grande légende de LoL, elle est venue pour tout prendre !</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(34)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
                     <img src="../../images/figurine/sanji.jpg" alt="sanji">
                     <div class="info">
-                        <h3>shanks</h3>
-                        <p>une figurine à l'éffigie du capitaine de l'équipage du roux</p>
+                        <h3>Shanks</h3>
+                        <p>Une figurine à l'effigie du capitaine de l'équipage du Roux.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(35)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
                     <img src="../../images/figurine/nier automata.jpg" alt="nier automata">
                     <div class="info">
-                        <h3>nier automata 2b</h3>
-                        <p>le premier prototype nier automata</p>
+                        <h3>Nier Automata 2B</h3>
+                        <p>Le premier prototype Nier Automata.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(36)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
                     <img src="../../images/figurine/for honor.jpg" alt="for honor">
                     <div class="info">
-                        <h3>for honor</h3>
-                        <p>une figurine à l'éffigie d'un soldat de for honor</p>
+                        <h3>For Honor</h3>
+                        <p>Une figurine à l'effigie d'un soldat de For Honor.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(37)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
                     <img src="../../images/figurine/alien.jpg" alt="alien">
                     <div class="info">
                         <h3>Alien</h3>
-                        <p>le monstre iconique de la saga alien</p>
+                        <p>Le monstre iconique de la saga Alien.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(38)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
                     <img src="../../images/figurine/zoro.jpg" alt="zoro">
                     <div class="info">
-                        <h3>zoro</h3>
-                        <p>le fidèle accolyte de luffy et rival de sanji</p>
+                        <h3>Zoro</h3>
+                        <p>Le fidèle acolyte de Luffy et rival de Sanji.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(39)">Ajouter au panier</button>
             </div>
         </div>
     </main>

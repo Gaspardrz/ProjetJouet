@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../css/css_categorie/voiture.css">
     <meta charset="UTF-8">
+    <script>
+        async function ajouterAuPanier(productId) {
+            try {
+                const response = await fetch('../../php/panier.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        action: 'add',
+                        product_id: productId,
+                        quantity: 1
+                    })
+                });
+
+                const result = await response.json();
+                if (result.status === 'success') {
+                    alert('Produit ajouté au panier avec succès !');
+                } else {
+                    alert('Erreur lors de l\'ajout au panier.');
+                }
+            } catch (error) {
+                console.error('Erreur:', error);
+                alert('Une erreur est survenue.');
+            }
+        }
+    </script>
 </head>
 <body>
     <header>   
@@ -33,99 +60,109 @@
                 </div>
             </div>
         </nav>
-</header>
+    </header>
     <main>
-        <h2>Nos Mini Voiture</h2>
+        <h2>Nos Mini Voitures</h2>
         <div class="produit-container">
             <div class="produit-card">
                 <a>
-                    <img src="../../images/mini voiture/ford GT.jpg" alt="ford GT">
+                    <img src="../../images/mini voiture/ford GT.jpg" alt="Ford GT">
                     <div class="info">
                         <h3>Ford GT</h3>
-                        <p>Vainqueur du mans 1966 , la Ford GT arrive sur vos mini circuit.</p>
+                        <p>Vainqueur du Mans 1966, la Ford GT arrive sur vos mini circuits.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(11)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
                     <img src="../../images/mini voiture/voiture rally.jpg" alt="Voiture Rally">
                     <div class="info">
                         <h3>Voiture de Rally</h3>
-                        <p>Envie de moin d'asphalte et de plus de terre ? Découvrez cette voiture de rally.</p>
+                        <p>Envie de moins d'asphalte et de plus de terre ? Découvrez cette voiture de rally.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(12)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
-                    <img src="../../images/mini voiture/ferrari.jpg" alt="Voiture de course ">
+                    <img src="../../images/mini voiture/ferrari.jpg" alt="Ferrari">
                     <div class="info">
-                        <h3>Ferrari course</h3>
-                        <p>Cette ferrari vous emmenera a la victoire dans n'importe quelle situation.</p>
+                        <h3>Ferrari Course</h3>
+                        <p>Cette Ferrari vous emmènera à la victoire dans n'importe quelle situation.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(13)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
-                    <img src="../../images/mini voiture/doc hudson.jpg" alt="Voiture de course ">
+                    <img src="../../images/mini voiture/doc hudson.jpg" alt="Doc Hudson">
                     <div class="info">
-                        <h3>doc hudson</h3>
-                        <p>le légendaire doc hudson vainqueur de la piston cup</p>
+                        <h3>Doc Hudson</h3>
+                        <p>Le légendaire Doc Hudson, vainqueur de la Piston Cup.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(14)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
-                    <img src="../../images/mini voiture/cars.jpg" alt="cars">
+                    <img src="../../images/mini voiture/cars.jpg" alt="McQueen téléguidé">
                     <div class="info">
-                        <h3>mcqueen téléguidé</h3>
-                        <p>le personnage principal de cars qu tu peux conduire</p>
+                        <h3>McQueen Téléguidé</h3>
+                        <p>Le personnage principal de Cars que tu peux conduire.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(15)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
-                    <img src="../../images/mini voiture/majorette.jpg" alt="majorette">
+                    <img src="../../images/mini voiture/majorette.jpg" alt="Majorette">
                     <div class="info">
-                        <h3>voiture de majorette</h3>
-                        <p>la voiture toute pimpante </p>
+                        <h3>Voiture Majorette</h3>
+                        <p>La voiture toute pimpante.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(16)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
-                    <img src="../../images/mini voiture/bburago.jpg" alt="burago">
+                    <img src="../../images/mini voiture/bburago.jpg" alt="Burago">
                     <div class="info">
-                        <h3>burago 3000</h3>
-                        <p>Voiture sportive en métal au 1/24èmePortes ouvrantes</p>
+                        <h3>Burago 3000</h3>
+                        <p>Voiture sportive en métal au 1/24ème. Portes ouvrantes.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(17)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
-                    <img src="../../images/mini voiture/hot wheels.jpg" alt="hot wheels">
+                    <img src="../../images/mini voiture/hot wheels.jpg" alt="Hot Wheels">
                     <div class="info">
-                        <h3>pack hot wheels</h3>
-                        <p>retrouvez 5 modèles de hot wheels toujours plus rapide</p>
+                        <h3>Pack Hot Wheels</h3>
+                        <p>Retrouvez 5 modèles de Hot Wheels toujours plus rapides.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(18)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
-                    <img src="../../images/mini voiture/bburago pack.jpg" alt="pac bburago">
+                    <img src="../../images/mini voiture/bburago pack.jpg" alt="Pack Burago">
                     <div class="info">
-                        <h3>pack burago</h3>
-                        <p>retrouvez 8 modèles d'exceptions exclusives burago</p>
+                        <h3>Pack Burago</h3>
+                        <p>Retrouvez 8 modèles d'exception exclusifs Burago.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(19)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
-                    <img src="../../images/mini voiture/bleu.jpg" alt="Tunning edition">
+                    <img src="../../images/mini voiture/bleu.jpg" alt="Tuning Edition">
                     <div class="info">
-                        <h3>Tunning Edition</h3>
-                        <p>Envie de moin de vitesse et de plus de style ? découvrez la voiture tunning édition.</p>
+                        <h3>Tuning Edition</h3>
+                        <p>Envie de moins de vitesse et de plus de style ? Découvrez la voiture Tuning Edition.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(20)">Ajouter au panier</button>
             </div>
         </div>
     </main>

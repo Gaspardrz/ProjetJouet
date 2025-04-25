@@ -14,7 +14,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: linear-gradient(to right, #4e549f, #918dcede);
+    background-image: linear-gradient(90deg,rgba(131, 128, 168, 1) 0%, rgba(9, 9, 121, 1) 47%, rgba(124, 190, 207, 1) 100%);
     color: var(--Noir);
     text-align: center;
     overflow-x: hidden;

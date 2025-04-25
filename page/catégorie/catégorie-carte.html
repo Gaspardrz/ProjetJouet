@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../css/css_categorie/cartes.css">
     <meta charset="UTF-8">
+    <script>
+        async function ajouterAuPanier(productId) {
+            try {
+                const response = await fetch('../../php/panier.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        action: 'add',
+                        product_id: productId,
+                        quantity: 1
+                    })
+                });
+
+                const result = await response.json();
+                if (result.status === 'success') {
+                    alert('Produit ajouté au panier avec succès !');
+                } else {
+                    alert('Erreur lors de l\'ajout au panier.');
+                }
+            } catch (error) {
+                console.error('Erreur:', error);
+                alert('Une erreur est survenue.');
+            }
+        }
+    </script>
 </head>
 <body>
     <header>   
@@ -19,6 +46,7 @@
                     </div>
             
                     <div class="top-bar-right">
+                        <a href="../../page/panier.html" class="panier-bouton">Panier</a>
                         <a href="../../page/connexion.html">Connexion</a>
                         <a href="../../page/inscription.html">S'inscrire</a>
                     </div>
@@ -33,12 +61,10 @@
                 </div>
             </div>
         </nav>
-</header>
+    </header>
     <main>
         <h2>Nos Cartes Pokémon</h2>
         <div class="produit-container">
-            
-            
             <div class="produit-card">
                 <a href="amphinobi.html" target="_blank">
                     <img src="../../images/cartes/amphinobi.jpg" alt="Amphinobi EX">
@@ -47,6 +73,7 @@
                         <p>La célèbre grenouille ninja en version EX.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(40)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a href="koraidon.html" target="_blank">
@@ -56,15 +83,17 @@
                         <p>Le pokemon légendaire de type combat de la région de Paldea.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(41)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a href="pikachuvmax.html" target="_blank">
-                    <img src="../../images/cartes/pikachu vmax.jpg" alt="pikachu VMAX">
+                    <img src="../../images/cartes/pikachu vmax.jpg" alt="Pikachu VMAX">
                     <div class="info">
                         <h3>Pikachu VMAX</h3>
                         <p>Le Pokemon phare de la franchise en version VMAX.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(42)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a href="dialgavstar.html" target="_blank">
@@ -74,72 +103,77 @@
                         <p>Le pokemon dieu du temps sous forme originelle en version VSTAR.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(43)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a href="tortank.html" target="_blank">
                     <img src="../../images/cartes/tortank ex.jpg" alt="Tortank EX">
                     <div class="info">
                         <h3>Tortank EX</h3>
-                        <p>L'un des 3 starters originels de la franchise en version EX</p>
+                        <p>L'un des 3 starters originels de la franchise en version EX.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(44)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a href="pyroli.html" target="_blank">
                     <img src="../../images/cartes/pyroli vmax.jpg" alt="Pyroli VMAX">
                     <div class="info">
                         <h3>Pyroli VMAX</h3>
-                        <p>L'évolution de type feu de évoli en version VMAX.</p>
+                        <p>L'évolution de type feu de Evoli en version VMAX.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(45)">Ajouter au panier</button>
             </div>
-            
             <div class="produit-card">
                 <a href="miraidonex.html" target="_blank">
                     <img src="../../images/cartes/miraidon.jpg" alt="Miraidon EX">
                     <div class="info">
                         <h3>Miraidon EX</h3>
-                        <p>Le pokemon légendaire de type electrique de la région de Paldea.</p>
+                        <p>Le pokemon légendaire de type électrique de la région de Paldea.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(46)">Ajouter au panier</button>
             </div>
-            
             <div class="produit-card">
                 <a href="rayquaza.html" target="_blank">
                     <img src="../../images/cartes/rayquaza.jpg" alt="Rayquaza VMAX">
                     <div class="info">
                         <h3>Rayquaza VMAX</h3>
-                        <p>Le pokemon dieu de l'éspace en version EX.</p>
+                        <p>Le pokemon dieu de l'espace en version VMAX.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(47)">Ajouter au panier</button>
             </div>
-            
             <div class="produit-card">
                 <a href="florizare.html" target="_blank">
-                    <img src="../../images/cartes/florizare.jpg" alt="Florizare gx">
+                    <img src="../../images/cartes/florizare.jpg" alt="Florizare GX">
                     <div class="info">
                         <h3>Florizare GX</h3>
-                        <p>L'un des 3 starters originel enversion GX</p>
+                        <p>L'un des 3 starters originels en version GX.</p>
                     </div>
                 </a>
-            </div>  
+                <button onclick="ajouterAuPanier(48)">Ajouter au panier</button>
+            </div>
             <div class="produit-card">
                 <a href="necrozmagx.html" target="_blank">
-                    <img src="../../images/cartes/necrozma.jpg" alt="necrozmagx">
+                    <img src="../../images/cartes/necrozma.jpg" alt="Necrozma GX">
                     <div class="info">
                         <h3>Necrozma GX</h3>
-                        <p>Le pokemon légendaire de la région de alula en version GX.</p>
+                        <p>Le pokemon légendaire de la région d'Alola en version GX.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(49)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a href="arceux.html" target="_blank">
-                    <img src="../../images/cartes/arceux" alt="arceus">
+                    <img src="../../images/cartes/arceux.jpg" alt="Arceus Gigantamax">
                     <div class="info">
-                        <h3>Arceux Gigantamax</h3>
-                        <p>Le pokemon Dieux en version Gigantamax</p>
+                        <h3>Arceus Gigantamax</h3>
+                        <p>Le pokemon Dieu en version Gigantamax.</p>
                     </div>
                 </a>
+                <button onclick="ajouterAuPanier(50)">Ajouter au panier</button>
             </div>
         </div>
     </main>
