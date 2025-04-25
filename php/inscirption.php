@@ -1,6 +1,5 @@
 <?php
-include __DIR__ . '/../php/includes/header.php';
-include __DIR__ . '/php/includes/footer.php';
+include __DIR__ . '/header.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = [];
 
@@ -38,4 +37,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Here you can add code to save the data to a database or perform other actions
     }
 }
+include __DIR__ . '/footer.php';
 ?>

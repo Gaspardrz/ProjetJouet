@@ -1,4 +1,6 @@
 <?php
+include __DIR__ . '/header.php';
+
 session_start();
 
 // Vérifie si le panier n'est pas vide
@@ -13,3 +15,4 @@ $_SESSION['cart'] = []; // Réinitialise le panier
 // Redirige vers la page de confirmation de paiement
 header('Location: payement-effectue.php');
 exit();
+include __DIR__ . '/footer.php';

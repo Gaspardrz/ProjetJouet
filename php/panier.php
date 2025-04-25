@@ -1,4 +1,6 @@
 <?php
+include __DIR__ . '/header.php';
+
 session_start();
 $pdo = new PDO('mysql:host=localhost;dbname=infoconnexion;charset=utf8', 'root', 'root');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -72,4 +74,4 @@ $cartTotal = 0;
     <h3>Total : <?= number_format($cartTotal, 2) ?> €</h3>
     <a href="payment.php">Procéder au paiement</a>
 <?php endif; ?>
-<?php include __DIR__ . '/../php/includes/footer.php'; ?>
+<?php include __DIR__ . '/footer.php'; ?>

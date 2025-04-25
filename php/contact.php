@@ -1,6 +1,5 @@
 <?php
-include __DIR__ . '/../php/includes/header.php';
-include __DIR__ . '/php/includes/footer.php';
+include __DIR__ . '/header.php';
 session_start();
 
 $host = 'localhost';
@@ -49,4 +48,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<p style='color:red;'>$error</p>";
     }
 }
+include __DIR__ . '/footer.php';
 ?>

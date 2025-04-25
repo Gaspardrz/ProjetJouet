@@ -1,6 +1,5 @@
 <?php
-include __DIR__ . '/php/includes/footer.php';
-
+include __DIR__ . '/header.php';
 session_start();
 header('Content-Type: application/json');
 
@@ -21,4 +20,5 @@ switch($data['action'] ?? '') {
     break;
   default:
     echo json_encode(['status'=>'error','message'=>'Action inconnue']);
+    include __DIR__ . '/footer.php';
 }

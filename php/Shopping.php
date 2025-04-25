@@ -1,6 +1,5 @@
 <?php
-include __DIR__ . '/../php/includes/header.php';
-include __DIR__ . '/php/includes/footer.php';
+include __DIR__ . '/header.php';
 session_start();
 
 // Vérifiez si l'utilisateur est connecté
@@ -17,6 +16,7 @@ $username = $_SESSION['username']; // Par exemple, si vous stockez le nom d'util
 // Redirigez vers la page d'accueil tout en maintenant la session active
 header('Location: ../index.html');
 exit();
+include __DIR__ . '/footer.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">

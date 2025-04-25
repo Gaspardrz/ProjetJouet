@@ -1,6 +1,5 @@
 <?php
-include __DIR__ . '/../php/includes/header.php';
-include __DIR__ . '/php/includes/footer.php';
+include __DIR__ . '/header.php';
 $host = 'localhost';
 $dbname = 'infoconnexion';
 $username = 'root';
@@ -32,3 +31,4 @@ try {
 } catch (PDOException $e) {
     echo "❌ Erreur : " . $e->getMessage();
 }
+include __DIR__ . '/footer.php';

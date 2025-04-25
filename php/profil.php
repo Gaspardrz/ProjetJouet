@@ -1,4 +1,5 @@
 <?php
+include __DIR__ . '/header.php';
 session_start();
 $pdo = new PDO('mysql:host=localhost;dbname=infoconnexion;charset=utf8', 'root', 'root');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -90,4 +91,4 @@ if (isset($_GET['logout'])) {
 
 <a href="profil.php?logout=true"><button>Se déconnecter</button></a>
 
-<?php include 'includes/footer.php'; ?>
+<?php include __DIR__ . '/footer.php'; ?>
