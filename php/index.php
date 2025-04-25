@@ -10,7 +10,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/main-style.css">
     <meta charset="UTF-8">
-    <link rel="icon" href="images/logo.png">
+    <link rel="icon" href="../images/logo.png">
 </head>
 <body>
     <header>
@@ -18,7 +18,7 @@ session_start();
             <div class="subnav">
                 <div class="boxnav">
                     <div class="navbar-logo">
-                        <a href="index.php"><img src="images/logo.png" alt="Logo Jouet" class="logo"></a>
+                        <a href="index.php"><img src="../images/logo.png" alt="Logo Jouet" class="logo"></a>
                     </div>
                     <div class="navbar-title">
                         <h1> Toy'isen </h1>
@@ -33,8 +33,8 @@ session_start();
                             <a href="profil.php?logout=true"><button>Se déconnecter</button></a>
                         <?php else: ?>
                             <!-- Si l'utilisateur n'est pas connecté, afficher les liens de connexion -->
-                            <a href="page/connexion.html">Connexion</a>
-                            <a href="page/inscription.html">S'inscrire</a>
+                            <a href="../page/connexion.html">Connexion</a>
+                            <a href="../page/inscription.html">S'inscrire</a>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -55,9 +55,9 @@ session_start();
         <div class="images">
             <div class="left-image preview-container">
                 <a href="page/catégorie/catégorie-carte.html" class="preview-link">
-                    <img src="images/cartes.jpg" alt="Carte Yu-Gi-Oh">
+                    <img src="../images/cartes.jpg" alt="Carte Yu-Gi-Oh">
                     <div class="preview">
-                        <img src="images/preview/preview-carte.png" alt="Preview Yu-Gi-Oh" />
+                        <img src="../imagesimages/preview/preview-carte.png" alt="Preview Yu-Gi-Oh" />
                     </div>
                 </a>
                 <div class="images-description">
@@ -70,18 +70,18 @@ session_start();
                     Les minivoitures, c’est la passion de la vitesse en miniature ! Collectionnez, jouez et recréez des courses légendaires avec ces modèles détaillés qui raviront petits et grands.
                 </div>
                 <a href="page/catégorie/catégorie-mini-voiture.html" class="preview-link">
-                    <img src="images/voitures.jpg" alt="Mini voiture">
+                    <img src="../images/voitures.jpg" alt="Mini voiture">
                     <div class="preview">
-                        <img src="images/preview/preview-voitures.png" alt="Preview Mini-Voitures" />
+                        <img src="../images/preview/preview-voitures.png" alt="Preview Mini-Voitures" />
                     </div>
                 </a>
             </div>
             
             <div class="left-image preview-container">
                 <a href="page/catégorie/catégorie-nerf.html" class="preview-link">
-                    <img src="images/nerfs.jpg" alt="Pistolet Nerf">
+                    <img src="../images/nerfs.jpg" alt="Pistolet Nerf">
                     <div class="preview">
-                        <img src="images/preview/preview-nerf.png" alt="Preview Nerfs" />
+                        <img src="../images/preview/preview-nerf.png" alt="Preview Nerfs" />
                     </div>
                 </a>
                 <div class="images-description">
@@ -94,18 +94,18 @@ session_start();
                     Les figurines, c’est l’occasion de collectionner vos héros préférés ! Recréez des scènes iconiques ou exposez des personnages détaillés qui apportent de la magie à votre collection.
                 </div>
                 <a href="page/catégorie/catégorie-figurines.html" class="preview-link">
-                    <img src="images/figurines.jpg" alt="Figurine Funko Pop">
+                    <img src="../images/figurines.jpg" alt="Figurine Funko Pop">
                     <div class="preview">
-                        <img src="images/preview/preview-figurine.png" alt="Preview Figurines" />
+                        <img src="../images/preview/preview-figurine.png" alt="Preview Figurines" />
                     </div>
                 </a>
             </div>
             
             <div class="left-image preview-container">
                 <a href="page/catégorie/catégorie-jeuxvideos.html" class="preview-link">
-                    <img src="images/figurine LOL.png" alt="Jeux Vidéos">
+                    <img src="../images/figurine LOL.png" alt="Jeux Vidéos">
                     <div class="preview">
-                        <img src="images/preview/preview-jeux.png" alt="Preview Jeux Vidéos" />
+                        <img src="../images/preview/preview-jeux.png" alt="Preview Jeux Vidéos" />
                     </div>
                 </a>
                 <div class="images-description">
