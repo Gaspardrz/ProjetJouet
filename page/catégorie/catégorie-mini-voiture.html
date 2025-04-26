@@ -5,33 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../css/css_categorie/figurine.css">
     <meta charset="UTF-8">
-    <script>
-        async function ajouterAuPanier(productId) {
-            try {
-                const response = await fetch('../../php/panier.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        action: 'add',
-                        product_id: productId,
-                        quantity: 1
-                    })
-                });
 
-                const result = await response.json();
-                if (result.status === 'success') {
-                    alert('Produit ajouté au panier avec succès !');
-                } else {
-                    alert('Erreur lors de l\'ajout au panier.');
-                }
-            } catch (error) {
-                console.error('Erreur:', error);
-                alert('Une erreur est survenue.');
-            }
-        }
-    </script>
 </head>
 <body>
     <header>   
@@ -72,7 +46,6 @@
                         <p>Vainqueur du Mans 1966, la Ford GT arrive sur vos mini circuits.</p>
                     </div>
                 </a>
-                <button onclick="ajouterAuPanier(11)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
@@ -82,7 +55,6 @@
                         <p>Envie de moins d'asphalte et de plus de terre ? Découvrez cette voiture de rally.</p>
                     </div>
                 </a>
-                <button onclick="ajouterAuPanier(12)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
@@ -92,7 +64,6 @@
                         <p>Cette Ferrari vous emmènera à la victoire dans n'importe quelle situation.</p>
                     </div>
                 </a>
-                <button onclick="ajouterAuPanier(13)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
@@ -102,7 +73,6 @@
                         <p>Le légendaire Doc Hudson, vainqueur de la Piston Cup.</p>
                     </div>
                 </a>
-                <button onclick="ajouterAuPanier(14)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
@@ -112,7 +82,6 @@
                         <p>Le personnage principal de Cars que tu peux conduire.</p>
                     </div>
                 </a>
-                <button onclick="ajouterAuPanier(15)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
@@ -122,7 +91,6 @@
                         <p>La voiture toute pimpante.</p>
                     </div>
                 </a>
-                <button onclick="ajouterAuPanier(16)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
@@ -132,7 +100,6 @@
                         <p>Voiture sportive en métal au 1/24ème. Portes ouvrantes.</p>
                     </div>
                 </a>
-                <button onclick="ajouterAuPanier(17)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
@@ -142,7 +109,6 @@
                         <p>Retrouvez 5 modèles de Hot Wheels toujours plus rapides.</p>
                     </div>
                 </a>
-                <button onclick="ajouterAuPanier(18)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
@@ -152,7 +118,6 @@
                         <p>Retrouvez 8 modèles d'exception exclusifs Burago.</p>
                     </div>
                 </a>
-                <button onclick="ajouterAuPanier(19)">Ajouter au panier</button>
             </div>
             <div class="produit-card">
                 <a>
@@ -162,7 +127,6 @@
                         <p>Envie de moins de vitesse et de plus de style ? Découvrez la voiture Tuning Edition.</p>
                     </div>
                 </a>
-                <button onclick="ajouterAuPanier(20)">Ajouter au panier</button>
             </div>
         </div>
     </main>
