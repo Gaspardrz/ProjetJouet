@@ -14,13 +14,6 @@ if (!isset($pdo)) {
     }
 }
 
-try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Erreur de connexion : " . $e->getMessage());
-}
-
 // Récupération des données depuis la table `cartes`
 $query = $pdo->query("SELECT id, image, titre AS title, description, prix FROM cartes");
 $products = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -30,7 +23,7 @@ $products = $query->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <title>Cartes à Jouer - Toy'isen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../css/css_categorie/figurine.css">
+    <link rel="stylesheet" type="text/css" href="/projet jouer - Copie (2)/ProjetJouet/css/css_categorie/figurine.css">
     <meta charset="UTF-8">
 </head>
 <body>
@@ -39,25 +32,30 @@ $products = $query->fetchAll(PDO::FETCH_ASSOC);
             <div class="subnav">
                 <div class="boxnav">
                     <div class="navbar-logo">
-                        <a href="../../index.html"><img src="../../images/logo.png" alt="Logo Jouet" class="logo"></a>
+                        <a href="/projet jouer - Copie (2)/ProjetJouet/php/index.php"><img src="/projet jouer - Copie (2)/ProjetJouet/images/logo.png" alt="Logo Jouet" class="logo"></a>
                     </div>
                     <div class="navbar-title">
                         <h1> Toy'isen </h1>
                     </div>
             
                     <div class="top-bar-right">
-                        <a href="../../page/connexion.html">Connexion</a>
-                        <a href="../../page/inscription.html">S'inscrire</a>
+                        <?php if (isset($_SESSION['user_id'])): ?>
+                            <a href="/projet jouer - Copie (2)/ProjetJouet/php/profil.php">Mon Profil</a>
+                            <a href="/projet jouer - Copie (2)/ProjetJouet/php/logout.php">Se Déconnecter</a>
+                        <?php else: ?>
+                            <a href="/projet jouer - Copie (2)/ProjetJouet/page/connexion.html">Connexion</a>
+                            <a href="/projet jouer - Copie (2)/ProjetJouet/page/inscription.html">S'inscrire</a>
+                        <?php endif; ?>
                     </div>
                 </div>
 
                 <div class="boxnav">
-                <a class="liennav" href="../php/catégorie_carte.php/Cartes.php">Cartes à jouer</a>
-                <a class="liennav" href="../php/catégorie_carte.php/Voitures.php">Mini Voitures</a>
-                <a class="liennav" href="../php/catégorie_carte.php/Nerfs.php">Nerfs</a>
-                <a class="liennav" href="../php/catégorie_carte.php/Figurines.php">Figurines</a>
-                <a class="liennav" href="../php/catégorie_carte.php/Jeux.php">Jeux Vidéos</a>
-            </div>
+                    <a class="liennav" href="/projet jouer - Copie (2)/ProjetJouet/php/catégorie_carte.php/Cartes.php">Cartes à jouer</a>
+                    <a class="liennav" href="/projet jouer - Copie (2)/ProjetJouet/php/catégorie_carte.php/Voitures.php">Mini Voitures</a>
+                    <a class="liennav" href="/projet jouer - Copie (2)/ProjetJouet/php/catégorie_carte.php/Nerfs.php">Nerfs</a>
+                    <a class="liennav" href="/projet jouer - Copie (2)/ProjetJouet/php/catégorie_carte.php/Figurines.php">Figurines</a>
+                    <a class="liennav" href="/projet jouer - Copie (2)/ProjetJouet/php/catégorie_carte.php/Jeux.php">Jeux Vidéos</a>
+                </div>
             </div>
         </nav>
     </header>
@@ -72,7 +70,7 @@ $products = $query->fetchAll(PDO::FETCH_ASSOC);
                         <p><?= htmlspecialchars($product['description']) ?></p>
                         <p><strong>Prix : <?= htmlspecialchars($product['prix']) ?> €</strong></p>
                     </div>
-                    <form action="../../php/panier.php" method="post">
+                    <form action="/projet jouer - Copie (2)/ProjetJouet/php/panier.php" method="post">
                         <input type="hidden" name="action" value="add">
                         <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
                         <input type="hidden" name="quantity" value="1">
