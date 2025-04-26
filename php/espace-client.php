@@ -3,11 +3,10 @@
 session_start();
 include __DIR__ . '/header.php';
 
-
 // Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION['user'])) {
     // Rediriger vers la page de connexion si non connecté
-    header("Location: connexion.php");
+    header("Location: /projet jouer - Copie (2)/ProjetJouet/php/connexion.php");
     exit();
 }
 
@@ -25,8 +24,8 @@ $user = $_SESSION['user'];
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color:rgb(255, 255, 255);
-            color: rgb(0,0,0) ;
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
             margin: 0;
             padding: 0;
         }
@@ -46,7 +45,7 @@ $user = $_SESSION['user'];
         }
 
         h1 {
-           color rgb(0,0,0) ;
+            color: rgb(0, 0, 0);
         }
 
         p {
@@ -87,8 +86,8 @@ $user = $_SESSION['user'];
             <p class="user-info">Adresse email : <?php echo htmlspecialchars($user['MailCLien']); ?></p>
 
             <div class="buttons">
-                <a href="../php/Shopping.php">Accéder à la page Shopping</a>
-                <a href="../php/logout.php">Se déconnecter</a>
+                <a href="/projet jouer - Copie (2)/ProjetJouet/php/index.php">Accéder à la page Shopping</a>
+                <a href="/projet jouer - Copie (2)/ProjetJouet/php/logout.php">Se déconnecter</a>
             </div>
         </div>
     </div>
