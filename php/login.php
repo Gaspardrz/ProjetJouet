@@ -4,7 +4,7 @@ session_start(); // Démarrer la session
 
 // Configuration de la connexion à la base de données
 $host = 'localhost';
-$dbname = 'infoconnexion';
+$dbname = 'Projet25_infoclient';
 $username = 'root'; // Nom d'utilisateur de la base de données
 $password = 'root'; // Mot de passe de la base de données (par défaut sur MAMP, c'est souvent 'root')
 

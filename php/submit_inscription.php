@@ -1,87 +1,83 @@
-<?php 
-include __DIR__ . '/header.php';
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Configuration de la connexion à la base de données
-    $host = 'localhost';
-    $dbname = 'infoconnexion';
-    $username = 'root';  // Utilisateur de la base de données
-    $password = 'root';  // Mot de passe de la base de données (par défaut sur MAMP c'est 'root')
+<?php
+// Connexion à la base de données
+$host = 'localhost';
+$dbname = 'projet25_infoclient';
+$username = 'root';
+$password = 'root';
 
-    try {
-        // Connexion à la base de données avec PDO
-        $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-        // Définit le mode d'erreur pour afficher les erreurs
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (PDOException $e) {
-        die("Erreur de connexion à la base de données : " . $e->getMessage());
+try {
+    $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    die("Erreur de connexion à la base de données : " . $e->getMessage());
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $errors = [];
+
+    // Validation de l'email
+    if (empty($_POST['mail'])) {
+        $errors[] = "L'adresse email est obligatoire.";
+    } elseif (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "L'adresse email n'est pas valide.";
+    } else {
+        $email = htmlspecialchars($_POST['mail']);
     }
 
-    // Récupération des données du formulaire
-    $name = htmlspecialchars($_POST['nom']);
-    $prenom = htmlspecialchars($_POST['prenom']);
-    $email = htmlspecialchars($_POST['mail']);
-    $password = $_POST['password'];
-
-    // Vérification de l'existence de l'email dans la table `client` avant de procéder
-    $stmt = $conn->prepare("SELECT * FROM client WHERE MailCLien = :email");
-    $stmt->bindParam(':email', $email);
-    $stmt->execute();
-
-    if ($stmt->rowCount() > 0) {
-        echo "Cet email est déjà utilisé pour un compte existant.";
+    // Validation du mot de passe
+    if (empty($_POST['password'])) {
+        $errors[] = "Le mot de passe est obligatoire.";
     } else {
-        // Vérification de l'existence de l'email dans la table `créationcompte`
-        $stmt = $conn->prepare("SELECT * FROM créationcompte WHERE Mail = :email");
-        $stmt->bindParam(':email', $email);
-        $stmt->execute();
+        $password = $_POST['password'];
+        $uppercase = preg_match('@[A-Z]@', $password);
+        $lowercase = preg_match('@[a-z]@', $password);
+        $number = preg_match('@[0-9]@', $password);
+        $specialChars = preg_match('@[^\w]@', $password);
 
-        if ($stmt->rowCount() > 0) {
-            // Hachage du mot de passe
-            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-            // Transfert des données de `créationcompte` à `client`
-            try {
-                // Préparer l'insertion dans la table `client`
-                $transferStmt = $conn->prepare("
-                    INSERT INTO client (MailCLien, MdpClient, Nom, Prénom)
-                    SELECT Mail, MDP, Nom, Prénom FROM créationcompte WHERE Mail = :email
-                ");
-                $transferStmt->bindParam(':email', $email);
-                $transferStmt->execute();
-
-                // Suppression des données de `créationcompte` après transfert
-                $deleteStmt = $conn->prepare("DELETE FROM créationcompte WHERE Mail = :email");
-                $deleteStmt->bindParam(':email', $email);
-                $deleteStmt->execute();
-
-                // Redirection vers la page de connexion
-                header("Location: ../page/connexion.html");
-                exit();
-            } catch (PDOException $e) {
-                echo "Erreur lors du transfert ou de l'inscription : " . $e->getMessage();
-            }
+        if (!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) {
+            $errors[] = "Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial.";
         } else {
-            // Si l'email n'existe pas dans `créationcompte`, on l'insère directement
-            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+            // Hachage du mot de passe
+            $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+        }
+    }
 
-            // Insertion des données dans la table `créationcompte`
-            try {
-                $stmt = $conn->prepare("INSERT INTO créationcompte (Mail, MDP, Nom, Prénom) VALUES (:email, :password, :nom, :prenom)");
-                $stmt->bindParam(':email', $email);
-                $stmt->bindParam(':password', $hashedPassword);
-                $stmt->bindParam(':nom', $name);
-                $stmt->bindParam(':prenom', $prenom);
+    // Validation du prénom
+    if (empty($_POST['prenom'])) {
+        $errors[] = "Le prénom est obligatoire.";
+    } else {
+        $prenom = htmlspecialchars($_POST['prenom']);
+    }
 
-                $stmt->execute();
+    // Validation du nom
+    if (empty($_POST['nom'])) {
+        $errors[] = "Le nom est obligatoire.";
+    } else {
+        $nom = htmlspecialchars($_POST['nom']);
+    }
 
-                // Redirection vers la page de connexion
-                header("Location: ../page/connexion.html");
-                exit();
-            } catch (PDOException $e) {
-                echo "Erreur lors de l'inscription : " . $e->getMessage();
-            }
+    if (!empty($errors)) {
+        foreach ($errors as $error) {
+            echo "<p style='color: red;'>$error</p>";
+        }
+        echo "<a href='/projet jouer - Copie (2)/ProjetJouet/page/inscription.html' style='color: blue; text-decoration: underline;'>Retour</a>";
+    } else {
+        try {
+            // Insertion dans la table `client`
+            $stmt = $conn->prepare("INSERT INTO client (MailCLien, MdpClient, Nom, Prénom) VALUES (:email, :password, :nom, :prenom)");
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':password', $hashedPassword);
+            $stmt->bindParam(':nom', $nom);
+            $stmt->bindParam(':prenom', $prenom);
+            $stmt->execute();
+
+            echo "<p style='color: green;'>Inscription réussie !</p>";
+            echo "<a href='/projet jouer - Copie (2)/ProjetJouet/php/connexion.php' style='color: blue; text-decoration: underline;'>Se connecter</a>";
+        } catch (PDOException $e) {
+            echo "<p style='color: red;'>Erreur lors de l'inscription : " . $e->getMessage() . "</p>";
+            echo "<a href='/projet jouer - Copie (2)/ProjetJouet/page/inscription.html' style='color: blue; text-decoration: underline;'>Retour</a>";
         }
     }
 }
-include __DIR__ . '/footer.php';
 ?>

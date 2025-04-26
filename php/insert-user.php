@@ -1,7 +1,7 @@
 <?php
 include __DIR__ . '/header.php';
 $host = 'localhost';
-$dbname = 'infoconnexion';
+$dbname = 'projet25_infoclient';
 $username = 'root';
 $password = 'root';
 

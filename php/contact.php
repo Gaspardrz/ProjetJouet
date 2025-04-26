@@ -3,7 +3,7 @@ include __DIR__ . '/header.php';
 session_start();
 
 $host = 'localhost';
-$dbname = 'infoconnexion';
+$dbname = 'projet25_infoclient';
 $username = 'root';
 $password = 'root';
 
