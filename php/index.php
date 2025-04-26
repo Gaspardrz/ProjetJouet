@@ -40,7 +40,7 @@ session_start();
                 </div>
 
                 <div class="boxnav">
-                    <a class="liennav" href="../page/catégorie/catégorie-carte.html">Cartes à jouer</a>
+                    <a class="liennav" href="catégorie_carte.php/Cartes.php">Cartes à jouer</a>
                     <a class="liennav" href="../page/catégorie/catégorie-mini-voiture.html">Mini Voitures</a>
                     <a class="liennav" href="../page/catégorie/catégorie-nerf.html">Nerfs</a>
                     <a class="liennav" href="../page/catégorie/catégorie-figurines.html">Figurines</a>
