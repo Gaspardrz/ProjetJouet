@@ -87,8 +87,8 @@ $user = $_SESSION['user'];
             <p class="user-info">Adresse email : <?php echo htmlspecialchars($user['MailCLien']); ?></p>
 
             <div class="buttons">
-                <a href="../page/Shopping.php">Retourner sur le site</a>
-                <a href="../logout.php">Se déconnecter</a>
+                <a href="../php/Shopping.php">Accéder à la page Shopping</a>
+                <a href="../php/logout.php">Se déconnecter</a>
             </div>
         </div>
     </div>

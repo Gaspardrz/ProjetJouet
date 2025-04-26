@@ -17,7 +17,7 @@
 body {
     font-family: Arial, sans-serif;
     background-image: linear-gradient(to right, #16222a, #1e3744);
-    color: var(--Noir);
+    color: var(--Blanc);
     text-align: center;
     overflow-x: hidden;
 }
@@ -63,7 +63,7 @@ h1 {
 }
 
 h2 {
-    color: var(--Noir);
+    color: var(--Blanc);
     margin: 40px 0 10px 0;
     font-family: cursive;
 }

@@ -40,11 +40,11 @@ session_start();
                 </div>
 
                 <div class="boxnav">
-                    <a class="liennav" href="page/catégorie/catégorie-carte.html">Cartes à jouer</a>
-                    <a class="liennav" href="page/catégorie/catégorie-mini-voiture.html">Mini Voitures</a>
-                    <a class="liennav" href="page/catégorie/catégorie-nerf.html">Nerfs</a>
-                    <a class="liennav" href="page/catégorie/catégorie-figurines.html">Figurines</a>
-                    <a class="liennav" href="page/catégorie/catégorie-jeuxvideos.html">Jeux Vidéos</a>
+                    <a class="liennav" href="../page/catégorie/catégorie-carte.html">Cartes à jouer</a>
+                    <a class="liennav" href="../page/catégorie/catégorie-mini-voiture.html">Mini Voitures</a>
+                    <a class="liennav" href="../page/catégorie/catégorie-nerf.html">Nerfs</a>
+                    <a class="liennav" href="../page/catégorie/catégorie-figurines.html">Figurines</a>
+                    <a class="liennav" href="../page/catégorie/catégorie-jeuxvideos.html">Jeux Vidéos</a>
                 </div>
             </div>
         </nav>
@@ -54,7 +54,7 @@ session_start();
         <h2>Bienvenue sur le site de Toy'isen, le spécialiste des jouets pour enfants.</h2>
         <div class="images">
             <div class="left-image preview-container">
-                <a href="page/catégorie/catégorie-carte.html" class="preview-link">
+                <a href="../page/catégorie/catégorie-carte.html" class="preview-link">
                     <img src="../images/cartes.jpg" alt="Carte Yu-Gi-Oh">
                     <div class="preview">
                         <img src="../imagesimages/preview/preview-carte.png" alt="Preview Yu-Gi-Oh" />
@@ -69,7 +69,7 @@ session_start();
                 <div class="images-description">
                     Les minivoitures, c’est la passion de la vitesse en miniature ! Collectionnez, jouez et recréez des courses légendaires avec ces modèles détaillés qui raviront petits et grands.
                 </div>
-                <a href="page/catégorie/catégorie-mini-voiture.html" class="preview-link">
+                <a href="../page/catégorie/catégorie-mini-voiture.html" class="preview-link">
                     <img src="../images/voitures.jpg" alt="Mini voiture">
                     <div class="preview">
                         <img src="../images/preview/preview-voitures.png" alt="Preview Mini-Voitures" />
@@ -78,7 +78,7 @@ session_start();
             </div>
             
             <div class="left-image preview-container">
-                <a href="page/catégorie/catégorie-nerf.html" class="preview-link">
+                <a href="../page/catégorie/catégorie-nerf.html" class="preview-link">
                     <img src="../images/nerfs.jpg" alt="Pistolet Nerf">
                     <div class="preview">
                         <img src="../images/preview/preview-nerf.png" alt="Preview Nerfs" />
@@ -93,7 +93,7 @@ session_start();
                 <div class="images-description">
                     Les figurines, c’est l’occasion de collectionner vos héros préférés ! Recréez des scènes iconiques ou exposez des personnages détaillés qui apportent de la magie à votre collection.
                 </div>
-                <a href="page/catégorie/catégorie-figurines.html" class="preview-link">
+                <a href="../page/catégorie/catégorie-figurines.html" class="preview-link">
                     <img src="../images/figurines.jpg" alt="Figurine Funko Pop">
                     <div class="preview">
                         <img src="../images/preview/preview-figurine.png" alt="Preview Figurines" />
@@ -102,7 +102,7 @@ session_start();
             </div>
             
             <div class="left-image preview-container">
-                <a href="page/catégorie/catégorie-jeuxvideos.html" class="preview-link">
+                <a href="../page/catégorie/catégorie-jeuxvideos.html" class="preview-link">
                     <img src="../images/figurine LOL.png" alt="Jeux Vidéos">
                     <div class="preview">
                         <img src="../images/preview/preview-jeux.png" alt="Preview Jeux Vidéos" />

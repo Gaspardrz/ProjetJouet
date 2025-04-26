@@ -14,9 +14,8 @@ $user_id = $_SESSION['user_id'];
 $username = $_SESSION['username']; // Par exemple, si vous stockez le nom d'utilisateur
 
 // Redirigez vers la page d'accueil tout en maintenant la session active
-header('Location: ../index.html');
-exit();
-include __DIR__ . '/footer.php';
+header('Location: /ProjetJouet/index.html');
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -29,3 +28,5 @@ include __DIR__ . '/footer.php';
     <p>Explorez nos produits !</p>
 </body>
 </html>
+<?php
+include __DIR__ . '/footer.php';
