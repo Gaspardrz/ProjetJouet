@@ -5,34 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../css/css_categorie/figurine.css">
     <meta charset="UTF-8">
-    <script>
-        async function ajouterAuPanier(productId) {
-            try {
-                const response = await fetch('../../php/panier.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        action: 'add',
-                        product_id: productId,
-                        quantity: 1
-                    })
-                });
 
-                const result = await response.json();
-                if (result.status === 'success') {
-                    alert('Produit ajouté au panier avec succès !');
-                } else {
-                    alert('Erreur lors de l\'ajout au panier.');
-                }
-            } catch (error) {
-                console.error('Erreur:', error);
-                alert('Une erreur est survenue.');
-            }
-        }
-    </script>
-    </script>
 </head>
 <body>
     <header>   
@@ -97,7 +70,7 @@
             </div>
             <div class="produit-card">
                 <a>
-                    <img src="../../images/figurine/metal sonic.jpg" alt="metal sonic">
+                    <img src="../../images/figurine/metalsonic.jpg" alt="metal sonic">
                     <div class="info">
                         <h3>Figurine Metal Sonic</h3>
                         <p>Le monstre terriblement mignon.</p>
@@ -127,7 +100,7 @@
             </div>
             <div class="produit-card">
                 <a>
-                    <img src="../../images/figurine/nier automata.jpg" alt="nier automata">
+                    <img src="../../images/figurine/nierautomata.jpg" alt="nier automata">
                     <div class="info">
                         <h3>Nier Automata 2B</h3>
                         <p>Le premier prototype Nier Automata.</p>
@@ -137,7 +110,7 @@
             </div>
             <div class="produit-card">
                 <a>
-                    <img src="../../images/figurine/for honor.jpg" alt="for honor">
+                    <img src="../../images/figurine/forhonor.jpg" alt="for honor">
                     <div class="info">
                         <h3>For Honor</h3>
                         <p>Une figurine à l'effigie d'un soldat de For Honor.</p>
