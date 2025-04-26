@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root", "", "infoconnexion");
+$conn = new mysqli("localhost", "root", "root", "projet25_infoclient");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = $_POST["username"];
