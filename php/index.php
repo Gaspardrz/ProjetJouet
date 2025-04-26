@@ -23,19 +23,15 @@ session_start();
                         <h1> Toy'isen </h1>
                     </div>
             
-                    <div class="top-bar-right">
-                        <?php if (isset($_SESSION['user_id'])): ?>
-                            <!-- Si l'utilisateur est connecté, afficher sa photo de profil -->
-                            <a href="/projet jouer - Copie (2)/ProjetJouet/php/profil.php">
-                                <img src="/projet jouer - Copie (2)/ProjetJouet/uploads/<?= $_SESSION['photo_profil']; ?>" alt="Photo de Profil" class="profile-photo" width="40" height="40" style="border-radius: 50%; border: 2px solid #fff;">
-                            </a>
-                            <a href="/projet jouer - Copie (2)/ProjetJouet/php/profil.php?logout=true"><button>Se déconnecter</button></a>
-                        <?php else: ?>
-                            <!-- Si l'utilisateur n'est pas connecté, afficher les liens de connexion -->
-                            <a href="/projet jouer - Copie (2)/ProjetJouet/page/connexion.html">Connexion</a>
-                            <a href="/projet jouer - Copie (2)/ProjetJouet/page/inscription.html">S'inscrire</a>
-                        <?php endif; ?>
-                    </div>
+                <div class="top-bar-right">
+                    <?php if (isset($_SESSION['user'])): ?>
+                        <a href="/projet jouer - Copie (2)/ProjetJouet/php/espace-client.php">Profil</a>
+                        <a href="/projet jouer - Copie (2)/ProjetJouet/php/logout.php">Déconnexion</a>
+                    <?php else: ?>
+                        <a href="/projet jouer - Copie (2)/ProjetJouet/php/connexion.php">Connexion</a>
+                        <a href="/projet jouer - Copie (2)/ProjetJouet/php/inscription.php">S'inscrire</a>
+                    <?php endif; ?>
+                </div>
                 </div>
 
                 <div class="boxnav">

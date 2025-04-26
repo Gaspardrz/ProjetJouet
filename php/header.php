@@ -24,14 +24,8 @@
                     <h1>Toy'Isen</h1>
                 </div>
                 <div class="top-bar-right">
-                    <?php if (isset($_SESSION['user'])): ?>
-                        <a href="/projet jouer - Copie (2)/ProjetJouet/php/espace-client.php">Profil</a>
-                        <a href="/projet jouer - Copie (2)/ProjetJouet/php/logout.php">Déconnexion</a>
-                    <?php else: ?>
-                        <a href="/projet jouer - Copie (2)/ProjetJouet/php/connexion.php">Connexion</a>
-                        <a href="/projet jouer - Copie (2)/ProjetJouet/php/inscription.php">S'inscrire</a>
-                    <?php endif; ?>
-                </div>
+                <a href="/projet jouer - Copie (2)/ProjetJouet/php/espace-client.php">Profil</a>
+                <a href="/projet jouer - Copie (2)/ProjetJouet/php/logout.php">Déconnexion</a>
             </div>
 
             <div class="boxnav">

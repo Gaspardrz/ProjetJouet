@@ -2,7 +2,7 @@
 // Vérification si la connexion à la base de données est déjà établie
 if (!isset($pdo)) {
     $host = 'localhost';
-    $dbname = 'infoconnexion';
+    $dbname = 'projet25_infoclient';
     $username = 'root';
     $password = 'root';
 
@@ -39,9 +39,9 @@ $products = $query->fetchAll(PDO::FETCH_ASSOC);
                     </div>
             
                     <div class="top-bar-right">
-                        <a href="/projet jouer - Copie (2)/ProjetJouet/page/connexion.html">Connexion</a>
-                        <a href="/projet jouer - Copie (2)/ProjetJouet/page/inscription.html">S'inscrire</a>
-                    </div>
+                    <a href="/projet jouer - Copie (2)/ProjetJouet/php/espace-client.php">Profil</a>
+                    <a href="/projet jouer - Copie (2)/ProjetJouet/php/logout.php">Déconnexion</a>
+                </div>
                 </div>
 
                 <div class="boxnav">
