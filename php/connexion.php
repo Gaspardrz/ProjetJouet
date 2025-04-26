@@ -16,7 +16,6 @@ try {
     die("Erreur de connexion à la base de données : " . $e->getMessage());
 }
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = [];
 
@@ -56,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION['email'] = $user['MailCLien'];
 
                     // Redirection vers l'espace client
-                    header("Location: espace-client.php");
+                    header("Location: /projet jouer - Copie (2)/ProjetJouet/php/espace-client.php");
                     exit();
                 } else {
                     $errors[] = "Mot de passe incorrect.";
@@ -69,10 +68,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // Affichage des erreurs si besoin
-    foreach ($errors as $error) {
-        echo "<p style='color: red;'>$error</p>";
+    // Si des erreurs existent, les afficher et rediriger vers connexion.html
+    if (!empty($errors)) {
+        $_SESSION['errors'] = $errors; // Stocker les erreurs dans la session
+        header("Location: /projet jouer - Copie (2)/ProjetJouet/page/connexion.html"); // Redirection vers connexion.html avec un chemin absolu
+        exit();
     }
 }
-include __DIR__ . '/footer.php';
 ?>
