@@ -15,7 +15,7 @@ if (!isset($pdo)) {
 }
 
 // Récupération des données depuis la table `figurines`
-$query = $pdo->query("SELECT id, image, titre AS title, description, prix FROM figurines");
+$query = $pdo->query("SELECT id, image_path AS image, nom AS title, description, prix FROM figurines");
 $products = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>

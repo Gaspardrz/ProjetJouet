@@ -14,8 +14,8 @@ if (!isset($pdo)) {
     }
 }
 
-// Récupération des données depuis la table `nerfs`
-$query = $pdo->query("SELECT id, image, titre AS title, description, prix FROM nerfs");
+// Récupération des données depuis la table `nerf`
+$query = $pdo->query("SELECT id, image_path AS image, nom AS title, description, prix FROM nerf");
 $products = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>

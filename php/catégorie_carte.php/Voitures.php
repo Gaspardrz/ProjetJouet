@@ -14,8 +14,8 @@ if (!isset($pdo)) {
     }
 }
 
-// Récupération des données depuis la table `mini_voitures`
-$query = $pdo->query("SELECT id, image, titre AS title, description, prix FROM mini_voitures");
+// Récupération des données depuis la table `minivoitures`
+$query = $pdo->query("SELECT id, image_path AS image, nom AS title, description, prix FROM minivoitures");
 $products = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>

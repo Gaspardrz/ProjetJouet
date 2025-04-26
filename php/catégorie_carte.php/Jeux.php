@@ -14,8 +14,8 @@ if (!isset($pdo)) {
     }
 }
 
-// Récupération des données depuis la table `jeux_videos`
-$query = $pdo->query("SELECT id, image, titre AS title, description, prix FROM jeux_videos");
+// Récupération des données depuis la table `jeuxvideos`
+$query = $pdo->query("SELECT id, image_path AS image, nom AS title, description, prix FROM jeuxvideos");
 $products = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>

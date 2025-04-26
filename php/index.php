@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 ?>
 
@@ -8,9 +7,9 @@ session_start();
 <head>
     <title>Toy'Isen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/main-style.css">
+    <link rel="stylesheet" type="text/css" href="/projet jouer - Copie (2)/ProjetJouet/css/main-style.css">
     <meta charset="UTF-8">
-    <link rel="icon" href="../images/logo.png">
+    <link rel="icon" href="/projet jouer - Copie (2)/ProjetJouet/images/logo.png">
 </head>
 <body>
     <header>
@@ -18,7 +17,7 @@ session_start();
             <div class="subnav">
                 <div class="boxnav">
                     <div class="navbar-logo">
-                        <a href="index.php"><img src="../images/logo.png" alt="Logo Jouet" class="logo"></a>
+                        <a href="/projet jouer - Copie (2)/ProjetJouet/php/index.php"><img src="/projet jouer - Copie (2)/ProjetJouet/images/logo.png" alt="Logo Jouet" class="logo"></a>
                     </div>
                     <div class="navbar-title">
                         <h1> Toy'isen </h1>
@@ -27,24 +26,24 @@ session_start();
                     <div class="top-bar-right">
                         <?php if (isset($_SESSION['user_id'])): ?>
                             <!-- Si l'utilisateur est connecté, afficher sa photo de profil -->
-                            <a href="profil.php">
-                                <img src="uploads/<?= $_SESSION['photo_profil']; ?>" alt="Photo de Profil" class="profile-photo" width="40" height="40" style="border-radius: 50%; border: 2px solid #fff;">
+                            <a href="/projet jouer - Copie (2)/ProjetJouet/php/profil.php">
+                                <img src="/projet jouer - Copie (2)/ProjetJouet/uploads/<?= $_SESSION['photo_profil']; ?>" alt="Photo de Profil" class="profile-photo" width="40" height="40" style="border-radius: 50%; border: 2px solid #fff;">
                             </a>
-                            <a href="profil.php?logout=true"><button>Se déconnecter</button></a>
+                            <a href="/projet jouer - Copie (2)/ProjetJouet/php/profil.php?logout=true"><button>Se déconnecter</button></a>
                         <?php else: ?>
                             <!-- Si l'utilisateur n'est pas connecté, afficher les liens de connexion -->
-                            <a href="../page/connexion.html">Connexion</a>
-                            <a href="../page/inscription.html">S'inscrire</a>
+                            <a href="/projet jouer - Copie (2)/ProjetJouet/page/connexion.html">Connexion</a>
+                            <a href="/projet jouer - Copie (2)/ProjetJouet/page/inscription.html">S'inscrire</a>
                         <?php endif; ?>
                     </div>
                 </div>
 
                 <div class="boxnav">
-                    <a class="liennav" href="catégorie_carte.php/Cartes.php">Cartes à jouer</a>
-                    <a class="liennav" href="../page/catégorie/catégorie-mini-voiture.html">Mini Voitures</a>
-                    <a class="liennav" href="../page/catégorie/catégorie-nerf.html">Nerfs</a>
-                    <a class="liennav" href="../page/catégorie/catégorie-figurines.html">Figurines</a>
-                    <a class="liennav" href="../page/catégorie/catégorie-jeuxvideos.html">Jeux Vidéos</a>
+                    <a class="liennav" href="/projet jouer - Copie (2)/ProjetJouet/php/catégorie_carte.php/Cartes.php">Cartes à jouer</a>
+                    <a class="liennav" href="/projet jouer - Copie (2)/ProjetJouet/php/catégorie_carte.php/Voitures.php">Mini Voitures</a>
+                    <a class="liennav" href="/projet jouer - Copie (2)/ProjetJouet/php/catégorie_carte.php/Nerfs.php">Nerfs</a>
+                    <a class="liennav" href="/projet jouer - Copie (2)/ProjetJouet/php/catégorie_carte.php/Figurines.php">Figurines</a>
+                    <a class="liennav" href="/projet jouer - Copie (2)/ProjetJouet/php/catégorie_carte.php/Jeux.php">Jeux Vidéos</a>
                 </div>
             </div>
         </nav>
@@ -54,10 +53,10 @@ session_start();
         <h2>Bienvenue sur le site de Toy'isen, le spécialiste des jouets pour enfants.</h2>
         <div class="images">
             <div class="left-image preview-container">
-                <a href="../page/catégorie/catégorie-carte.html" class="preview-link">
-                    <img src="../images/cartes.jpg" alt="Carte Yu-Gi-Oh">
+                <a href="/projet jouer - Copie (2)/ProjetJouet/php/catégorie_carte.php/Cartes.php" class="preview-link">
+                    <img src="/projet jouer - Copie (2)/ProjetJouet/images/cartes.jpg" alt="Carte Yu-Gi-Oh">
                     <div class="preview">
-                        <img src="../imagesimages/preview/preview-carte.png" alt="Preview Yu-Gi-Oh" />
+                        <img src="/projet jouer - Copie (2)/ProjetJouet/images/preview/preview-carte.png" alt="Preview Yu-Gi-Oh" />
                     </div>
                 </a>
                 <div class="images-description">
@@ -69,19 +68,19 @@ session_start();
                 <div class="images-description">
                     Les minivoitures, c’est la passion de la vitesse en miniature ! Collectionnez, jouez et recréez des courses légendaires avec ces modèles détaillés qui raviront petits et grands.
                 </div>
-                <a href="../page/catégorie/catégorie-mini-voiture.html" class="preview-link">
-                    <img src="../images/voitures.jpg" alt="Mini voiture">
+                <a href="/projet jouer - Copie (2)/ProjetJouet/php/catégorie_carte.php/Voitures.php" class="preview-link">
+                    <img src="/projet jouer - Copie (2)/ProjetJouet/images/voitures.jpg" alt="Mini voiture">
                     <div class="preview">
-                        <img src="../images/preview/preview-voitures.png" alt="Preview Mini-Voitures" />
+                        <img src="/projet jouer - Copie (2)/ProjetJouet/images/preview/preview-voitures.png" alt="Preview Mini-Voitures" />
                     </div>
                 </a>
             </div>
             
             <div class="left-image preview-container">
-                <a href="../page/catégorie/catégorie-nerf.html" class="preview-link">
-                    <img src="../images/nerfs.jpg" alt="Pistolet Nerf">
+                <a href="/projet jouer - Copie (2)/ProjetJouet/php/catégorie_carte.php/Nerfs.php" class="preview-link">
+                    <img src="/projet jouer - Copie (2)/ProjetJouet/images/nerfs.jpg" alt="Pistolet Nerf">
                     <div class="preview">
-                        <img src="../images/preview/preview-nerf.png" alt="Preview Nerfs" />
+                        <img src="/projet jouer - Copie (2)/ProjetJouet/images/preview/preview-nerf.png" alt="Preview Nerfs" />
                     </div>
                 </a>
                 <div class="images-description">
@@ -93,19 +92,19 @@ session_start();
                 <div class="images-description">
                     Les figurines, c’est l’occasion de collectionner vos héros préférés ! Recréez des scènes iconiques ou exposez des personnages détaillés qui apportent de la magie à votre collection.
                 </div>
-                <a href="../page/catégorie/catégorie-figurines.html" class="preview-link">
-                    <img src="../images/figurines.jpg" alt="Figurine Funko Pop">
+                <a href="/projet jouer - Copie (2)/ProjetJouet/php/catégorie_carte.php/Figurines.php" class="preview-link">
+                    <img src="/projet jouer - Copie (2)/ProjetJouet/images/figurines.jpg" alt="Figurine Funko Pop">
                     <div class="preview">
-                        <img src="../images/preview/preview-figurine.png" alt="Preview Figurines" />
+                        <img src="/projet jouer - Copie (2)/ProjetJouet/images/preview/preview-figurine.png" alt="Preview Figurines" />
                     </div>
                 </a>
             </div>
             
             <div class="left-image preview-container">
-                <a href="../page/catégorie/catégorie-jeuxvideos.html" class="preview-link">
-                    <img src="../images/figurine LOL.png" alt="Jeux Vidéos">
+                <a href="/projet jouer - Copie (2)/ProjetJouet/php/catégorie_carte.php/Jeux.php" class="preview-link">
+                    <img src="/projet jouer - Copie (2)/ProjetJouet/images/figurine LOL.png" alt="Jeux Vidéos">
                     <div class="preview">
-                        <img src="../images/preview/preview-jeux.png" alt="Preview Jeux Vidéos" />
+                        <img src="/projet jouer - Copie (2)/ProjetJouet/images/preview/preview-jeux.png" alt="Preview Jeux Vidéos" />
                     </div>
                 </a>
                 <div class="images-description">
