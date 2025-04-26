@@ -1,33 +1,29 @@
 <?php
-// filepath: c:/MAMP/htdocs/projet jouer - Copie (2)/ProjetJouet/php/catégorie_carte.php/Cartes.php
+// Vérification si la connexion à la base de données est déjà établie
+if (!isset($pdo)) {
+    $host = 'localhost';
+    $dbname = 'infoconnexion';
+    $username = 'root';
+    $password = '';
 
-// Sample data for "Cartes à jouer" products
-$products = [
-    [
-        'id' => 31,
-        'image' => '../../images/cartes/pokemon.jpg',
-        'title' => 'Cartes Pokémon',
-        'description' => 'Collectionnez et jouez avec les cartes Pokémon les plus rares.',
-    ],
-    [
-        'id' => 32,
-        'image' => '../../images/cartes/magic.jpg',
-        'title' => 'Cartes Magic: The Gathering',
-        'description' => 'Découvrez le jeu de cartes stratégique le plus populaire.',
-    ],
-    [
-        'id' => 33,
-        'image' => '../../images/cartes/yugioh.jpg',
-        'title' => 'Cartes Yu-Gi-Oh!',
-        'description' => 'Invoquez vos monstres et devenez le roi des duels.',
-    ],
-    [
-        'id' => 34,
-        'image' => '../../images/cartes/uno.jpg',
-        'title' => 'Cartes Uno',
-        'description' => 'Le jeu de cartes familial incontournable.',
-    ],
-];
+    try {
+        $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $e) {
+        die("Erreur de connexion : " . $e->getMessage());
+    }
+}
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Erreur de connexion : " . $e->getMessage());
+}
+
+// Récupération des données depuis la table `cartes`
+$query = $pdo->query("SELECT id, image, titre AS title, description, prix FROM cartes");
+$products = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -56,12 +52,12 @@ $products = [
                 </div>
 
                 <div class="boxnav">
-                    <a class="liennav" href="../../page/catégorie/catégorie-carte.html">Cartes à jouer</a>
-                    <a class="liennav" href="../../page/catégorie/catégorie-mini-voiture.html">Mini Voitures</a>
-                    <a class="liennav" href="../../page/catégorie/catégorie-nerf.html">Nerfs</a>
-                    <a class="liennav" href="../../page/catégorie/catégorie-figurines.html">Figurines</a>
-                    <a class="liennav" href="../../page/catégorie/catégorie-jeuxvideos.html">Jeux Vidéos</a>
-                </div>
+                <a class="liennav" href="../php/catégorie_carte.php/Cartes.php">Cartes à jouer</a>
+                <a class="liennav" href="../php/catégorie_carte.php/Voitures.php">Mini Voitures</a>
+                <a class="liennav" href="../php/catégorie_carte.php/Nerfs.php">Nerfs</a>
+                <a class="liennav" href="../php/catégorie_carte.php/Figurines.php">Figurines</a>
+                <a class="liennav" href="../php/catégorie_carte.php/Jeux.php">Jeux Vidéos</a>
+            </div>
             </div>
         </nav>
     </header>
@@ -74,6 +70,7 @@ $products = [
                     <div class="info">
                         <h3><?= htmlspecialchars($product['title']) ?></h3>
                         <p><?= htmlspecialchars($product['description']) ?></p>
+                        <p><strong>Prix : <?= htmlspecialchars($product['prix']) ?> €</strong></p>
                     </div>
                     <form action="../../php/panier.php" method="post">
                         <input type="hidden" name="action" value="add">

@@ -35,11 +35,11 @@
             </div>
 
             <div class="boxnav">
-                <a class="liennav" href="../page/catégorie/catégorie-carte.html">Cartes à jouer</a>
-                <a class="liennav" href="../page/catégorie/catégorie-mini-voiture.html">Mini Voitures</a>
-                <a class="liennav" href="../page/catégorie/catégorie-nerf.html">Nerfs</a>
-                <a class="liennav" href="../page/catégorie/catégorie-figurines.html">Figurines</a>
-                <a class="liennav" href="../page/catégorie/catégorie-jeuxvideos.html">Jeux Vidéos</a>
+                <a class="liennav" href="../php/catégorie_carte.php/Cartes.php">Cartes à jouer</a>
+                <a class="liennav" href="../php/catégorie_carte.php/Voitures.php">Mini Voitures</a>
+                <a class="liennav" href="../php/catégorie_carte.php/Nerfs.php">Nerfs</a>
+                <a class="liennav" href="../php/catégorie_carte.php/Figurines.php">Figurines</a>
+                <a class="liennav" href="../php/catégorie_carte.php/Jeux.php">Jeux Vidéos</a>
             </div>
         </div>
     </nav>
