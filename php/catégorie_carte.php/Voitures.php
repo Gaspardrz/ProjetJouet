@@ -45,15 +45,9 @@ $products = $query->fetchAll(PDO::FETCH_ASSOC);
                         <h1>Toy'isen</h1>
                     </div>
                     <div class="top-bar-right">
-                        <?php if (isset($_SESSION['user_id'])): ?>
-                            <a href="/projet jouer - Copie (2)/ProjetJouet/php/espace-client.php">Profil</a>
-                            <a href="/projet jouer - Copie (2)/ProjetJouet/php/logout.php">Déconnexion</a>
-                        <?php else: ?>
-                            <a href="/projet jouer - Copie (2)/ProjetJouet/page/connexion.html">Connexion</a>
-                            <a href="/projet jouer - Copie (2)/ProjetJouet/page/inscription.html">S'inscrire</a>
-
-                        <?php endif; ?>
-                    </div>
+                    <a href="/projet jouer - Copie (2)/ProjetJouet/php/espace-client.php">Profil</a>
+                    <a href="/projet jouer - Copie (2)/ProjetJouet/php/logout.php">Déconnexion</a>
+                </div>
                 </div>
 
                 <div class="boxnav">
