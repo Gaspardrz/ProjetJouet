@@ -49,6 +49,33 @@ $user = $_SESSION['user'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espace Client</title>
     <link rel="stylesheet" href="/projet jouer - Copie (2)/ProjetJouet/css/espace-client.css">
+    <style>
+        /* Pop-up des cookies */
+        #cookie-popup {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            display: none; /* Masqué par défaut */
+            z-index: 1000;
+        }
+        #cookie-popup button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #cookie-popup button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
 
@@ -99,6 +126,25 @@ $user = $_SESSION['user'];
         </form>
     </div>
 </div>
+
+<!-- Pop-up des cookies -->
+<div id="cookie-popup">
+    Ce site utilise des cookies pour améliorer votre expérience. 
+    <button id="accept-cookies">Accepter</button>
+</div>
+
+<script>
+    // Vérifie si le cookie de consentement existe
+    if (!document.cookie.includes("cookies_accepted=true")) {
+        document.getElementById("cookie-popup").style.display = "block";
+    }
+
+    // Ajoute un cookie lorsque l'utilisateur accepte
+    document.getElementById("accept-cookies").addEventListener("click", function () {
+        document.cookie = "cookies_accepted=true; path=/; max-age=" + 60 * 60 * 24 * 30; // 30 jours
+        document.getElementById("cookie-popup").style.display = "none";
+    });
+</script>
 
 </body>
 </html>
