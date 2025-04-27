@@ -141,8 +141,7 @@ $user = $_SESSION['user'];
 
     // Ajoute un cookie lorsque l'utilisateur accepte
     document.getElementById("accept-cookies").addEventListener("click", function () {
-        document.cookie = "cookies_accepted=true; path=/; max-age=" + 60 * 60 * 24 * 30; // 30 jours
-        document.getElementById("cookie-popup").style.display = "none";
+        document.cookie = "cookies_accepted=true; path=/; max-age=" + 60 * 60 * 24 * 30; // 30 jours        document.getElementById("cookie-popup").style.display = "none";
     });
 </script>
 
