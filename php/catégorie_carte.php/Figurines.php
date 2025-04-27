@@ -41,6 +41,8 @@ $products = $query->fetchAll(PDO::FETCH_ASSOC);
                 <div class="top-bar-right">
                     <a href="/projet jouer - Copie (2)/ProjetJouet/php/espace-client.php">Profil</a>
                     <a href="/projet jouer - Copie (2)/ProjetJouet/php/logout.php">Déconnexion</a>
+                    <a href="/projet jouer - Copie (2)/ProjetJouet/php/panier.php">Panier</a>
+
                 </div>
                 </div>
 
@@ -65,10 +67,10 @@ $products = $query->fetchAll(PDO::FETCH_ASSOC);
                         <p><?= htmlspecialchars($product['description']) ?></p>
                         <p><strong>Prix : <?= htmlspecialchars($product['prix']) ?> €</strong></p>
                     </div>
-                    <form action="/projet jouer - Copie (2)/ProjetJouet/php/panier.php" method="post">
-                        <input type="hidden" name="action" value="add">
-                        <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
-                        <input type="hidden" name="quantity" value="1">
+                    <form action="/projet jouer - Copie (2)/ProjetJouet/php/ajouter_au_panier.php" method="post">
+                        <input type="hidden" name="id" value="<?= htmlspecialchars($product['id']) ?>">
+                        <input type="hidden" name="categorie" value="figurines"> <!-- Ajoutez la catégorie -->
+                        <input type="hidden" name="quantite" value="1">
                         <button type="submit">Ajouter au panier</button>
                     </form>
                 </div>

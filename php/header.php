@@ -26,6 +26,8 @@
                 <div class="top-bar-right">
                 <a href="/projet jouer - Copie (2)/ProjetJouet/php/espace-client.php">Profil</a>
                 <a href="/projet jouer - Copie (2)/ProjetJouet/php/logout.php">Déconnexion</a>
+                <a href="/projet jouer - Copie (2)/ProjetJouet/php/panier.php">Panier</a>
+
             </div>
 
             <div class="boxnav">

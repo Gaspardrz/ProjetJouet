@@ -24,70 +24,80 @@ $cartTotal = 0;
 $totalQuantity = 0;
 ?>
 
-<h2>Votre Panier</h2>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Panier</title>
+    <link rel="stylesheet" href="/projet jouer - Copie (2)/ProjetJouet/css/panier.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Votre Panier</h2>
 
-<?php if (empty($cart)): ?>
-    <p>Votre panier est vide.</p>
-    <a href="javascript:history.back()">Retour</a>
-<?php else: ?>
-    <form method="post" action="maj_panier.php">
-        <table>
-            <thead>
-                <tr>
-                    <th>Image</th>
-                    <th>Nom du produit</th>
-                    <th>Quantité</th>
-                    <th>Prix unitaire</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($cart as $index => $item): ?>
-                    <?php
-                    $id = $item['id'];
-                    $categorie = $item['categorie'];
-                    $quantite = $item['quantite'];
+        <?php if (empty($cart)): ?>
+            <p class="empty-cart">Votre panier est vide.</p>
+            <a href="javascript:history.back()" class="btn">Retour</a>
+        <?php else: ?>
+            <form method="post" action="maj_panier.php">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nom du produit</th>
+                            <th>Quantité</th>
+                            <th>Prix unitaire</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($cart as $index => $item): ?>
+                            <?php
+                            $id = $item['id'];
+                            $categorie = $item['categorie'];
+                            $quantite = $item['quantite'];
 
-                    // Récupérer depuis la bonne table
-                    $stmt = $pdo->prepare("SELECT * FROM $categorie WHERE id = ?");
-                    $stmt->execute([$id]);
-                    $product = $stmt->fetch();
+                            // Récupérer depuis la bonne table
+                            $stmt = $pdo->prepare("SELECT * FROM $categorie WHERE id = ?");
+                            $stmt->execute([$id]);
+                            $product = $stmt->fetch();
 
-                    if (!$product) continue;
+                            if (!$product) continue;
 
-                    $productPrice = $product['prix'];
-                    $productName = $product['nom'];
-                    $productImage = $product['image_path'] ?? $product['image']; // selon ta colonne
-                    $productTotal = $productPrice * $quantite;
+                            $productPrice = $product['prix'];
+                            $productName = $product['nom'] ?? $product['titre']; // Selon la table
+                            $productTotal = $productPrice * $quantite;
 
-                    $cartTotal += $productTotal;
-                    $totalQuantity += $quantite;
-                    ?>
-                    <tr>
-                        <td><img src="<?= htmlspecialchars($productImage) ?>" alt="Image Produit" style="width:80px; height:80px; object-fit:cover;"></td>
-                        <td><?= htmlspecialchars($productName) ?></td>
-                        <td>
-                            <input type="number" name="quantities[<?= $index ?>]" value="<?= $quantite ?>" min="0">
-                        </td>
-                        <td><?= number_format($productPrice, 2) ?> €</td>
-                        <td><?= number_format($productTotal, 2) ?> €</td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="2"><strong>Total articles :</strong> <?= $totalQuantity ?></td>
-                    <td colspan="3"><strong>Total panier :</strong> <?= number_format($cartTotal, 2) ?> €</td>
-                </tr>
-            </tfoot>
-        </table>
+                            $cartTotal += $productTotal;
+                            $totalQuantity += $quantite;
+                            ?>
+                            <tr>
+                                <td><?= htmlspecialchars($productName) ?></td>
+                                <td>
+                                    <input type="number" name="quantities[<?= $index ?>]" value="<?= $quantite ?>" min="0">
+                                </td>
+                                <td><?= number_format($productPrice, 2) ?> €</td>
+                                <td><?= number_format($productTotal, 2) ?> €</td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td><strong>Total articles :</strong> <?= $totalQuantity ?></td>
+                            <td colspan="2"><strong>Total panier :</strong> <?= number_format($cartTotal, 2) ?> €</td>
+                        </tr>
+                    </tfoot>
+                </table>
 
-        <button type="submit" name="update_cart">Mettre à jour le panier</button>
-    </form>
+                <button type="submit" name="update_cart" class="btn">Mettre à jour le panier</button>
+            </form>
 
-    <form method="post" action="payement.php">
-        <button type="submit">Valider le panier</button>
-    </form>
-<?php endif; ?>
+            <form method="post" action="valide-panier.php">
+                <button type="submit" class="btn">Valider le panier</button>
+            </form>
+        <?php endif; ?>
+    </div>
 
-<?php include __DIR__ . '/footer.php'; ?>
+    <?php include __DIR__ . '/footer.php'; ?>
+</body>
+</html>

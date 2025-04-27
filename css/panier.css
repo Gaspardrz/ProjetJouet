@@ -1,0 +1,155 @@
+/* Réinitialisation pour une mise en page uniforme */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Variables globales */
+:root {
+    --Bleu-foncé: #16222a;
+    --Bleu-clair: #1e3744;
+    --Blanc: #FFFFFF;
+    --Gris-clair: #f4f4f4;
+    --Noir: #000000;
+}
+
+/* Style général */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to right, var(--Bleu-foncé), var(--Bleu-clair));
+    color: var(--Noir);
+    text-align: center;
+    padding: 20px;
+}
+
+h2 {
+    color: black;
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--Gris-clair);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    color: var(--Noir);
+}
+
+/* Table du panier */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid var(--Bleu-clair);
+}
+
+table th {
+    background-color: var(--Bleu-foncé);
+    color: var(--Blanc);
+}
+
+table td img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Boutons */
+button, .btn {
+    padding: 10px 20px;
+    background-color: var(--Bleu-foncé);
+    color: var(--Blanc);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+button:hover, .btn:hover {
+    background-color: var(--Bleu-clair);
+}
+
+/* Messages */
+.empty-cart {
+    font-size: 18px;
+    color: var(--Noir);
+    margin-bottom: 20px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    table th, table td {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button, .btn {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    table th, table td {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    button, .btn {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}
+/* Formulaire de paiement */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.form-actions .btn {
+    padding: 10px 20px;
+    background-color: #16222a;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-actions .btn:hover {
+    background-color: #1e3744;
+}
+.Merci{
+    margin: 20px 0;
+}

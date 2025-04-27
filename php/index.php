@@ -31,6 +31,7 @@ session_start();
                     <?php else: ?>
                         <a href="/projet jouer - Copie (2)/ProjetJouet/php/connexion.php">Connexion</a>
                         <a href="/projet jouer - Copie (2)/ProjetJouet/php/inscription.php">S'inscrire</a>
+                        
                     <?php endif; ?>
                 </div>
                 </div>

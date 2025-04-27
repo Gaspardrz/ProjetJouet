@@ -8,7 +8,7 @@ session_start();
 
 // Vérifie que les données existent et sont valides
 $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
-$categorie = filter_input(INPUT_POST, 'categorie', FILTER_SANITIZE_STRING);
+$categorie = filter_input(INPUT_POST, 'categorie', FILTER_SANITIZE_SPECIAL_CHARS);
 $quantite = filter_input(INPUT_POST, 'quantite', FILTER_VALIDATE_INT);
 
 if ($id && $categorie && $quantite && $quantite > 0) {
