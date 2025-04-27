@@ -317,3 +317,11 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
+.BOUTTONS{
+    color: var(--Blanc);
+    padding: 10px 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 15px;
+    background: linear-gradient(to right, #16222a, #1e3744);
+}

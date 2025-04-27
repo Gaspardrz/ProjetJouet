@@ -27,6 +27,7 @@ session_start();
                     <?php if (isset($_SESSION['user'])): ?>
                         <a href="/projet jouer - Copie (2)/ProjetJouet/php/espace-client.php">Profil</a>
                         <a href="/projet jouer - Copie (2)/ProjetJouet/php/logout.php">Déconnexion</a>
+                        <a href="/projet jouer - Copie (2)/ProjetJouet/php/panier.php">Panier</a>
                     <?php else: ?>
                         <a href="/projet jouer - Copie (2)/ProjetJouet/php/connexion.php">Connexion</a>
                         <a href="/projet jouer - Copie (2)/ProjetJouet/php/inscription.php">S'inscrire</a>

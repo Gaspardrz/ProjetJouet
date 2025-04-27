@@ -1,0 +1,182 @@
+/* Réinitialisation pour une mise en page uniforme */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Variables globales */
+:root {
+    --Orangé: #000000;
+    --violet-clair: #a4a589;
+    --Noir: #000000;
+    --Blanc: #FFFFFF;
+    --Gris-clair: #f4f4f4;
+    --Bleu-foncé: #16222a;
+    --Bleu-clair: #1e3744;
+}
+
+/* Style général */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to right, var(--Bleu-foncé), var(--Bleu-clair));
+    color: var(--Blanc);
+    text-align: center;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: var(--Blanc);
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--Gris-clair);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    color: var(--Noir);
+}
+
+.box {
+    text-align: left;
+}
+
+.user-info {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Photo de profil */
+.profile-photo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--Bleu-clair);
+}
+
+/* Formulaire */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form label {
+    font-size: 14px;
+    color: var(--Noir);
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="file"] {
+    padding: 10px;
+    border: 1px solid var(--Bleu-clair);
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: var(--Bleu-foncé);
+    color: var(--Blanc);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: var(--Bleu-clair);
+}
+
+/* Boutons */
+.BOUTTONS a {
+    color: var(--Blanc);
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 15px;
+    background: linear-gradient(to right, var(--Bleu-foncé), var(--Bleu-clair));
+    display: inline-block;
+    margin: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.BOUTTONS a:hover {
+    background: linear-gradient(to right, var(--Bleu-clair), var(--Bleu-foncé));
+}
+
+/* Messages de succès ou d'erreur */
+.success-message {
+    color: green;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="file"] {
+        font-size: 12px;
+    }
+
+    form button {
+        font-size: 14px;
+    }
+
+    .BOUTTONS a {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-photo img {
+        width: 120px;
+        height: 120px;
+    }
+
+    h1, h2, h3 {
+        font-size: 18px;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="file"] {
+        font-size: 12px;
+    }
+
+    form button {
+        font-size: 12px;
+    }
+
+    .BOUTTONS a {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+}

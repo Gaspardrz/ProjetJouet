@@ -48,8 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (password_verify($password, $user['MdpClient'])) {
                     // Connexion réussie : stockage des informations utilisateur dans la session
                     $_SESSION['user'] = $user; // Stocke toutes les informations de l'utilisateur
-
-                    // Enregistrer les informations principales séparément si nécessaire
+                    $_SESSION['user_id'] = $user['id']; // Stocke l'ID utilisateur pour une vérification simplifiée
                     $_SESSION['prenom'] = $user['Prénom'];
                     $_SESSION['nom'] = $user['Nom'];
                     $_SESSION['email'] = $user['MailCLien'];

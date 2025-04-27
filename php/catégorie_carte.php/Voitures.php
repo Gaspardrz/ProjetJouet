@@ -1,5 +1,10 @@
 <?php
-// Vérification si la connexion à la base de données est déjà établie
+// Démarrage de la session
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Connexion à la base de données
 if (!isset($pdo)) {
     $host = 'localhost';
     $dbname = 'projet25_infoclient';
@@ -14,17 +19,17 @@ if (!isset($pdo)) {
     }
 }
 
-// Récupération des données depuis la table `minivoitures`
+// Récupération des produits
 $query = $pdo->query("SELECT id, image_path AS image, nom AS title, description, prix FROM minivoitures");
 $products = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <meta charset="UTF-8">
     <title>Mini Voitures - Toy'isen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/projet jouer - Copie (2)/ProjetJouet/css/css_categorie/figurine.css">
-    <meta charset="UTF-8">
 </head>
 <body>
     <header>   
@@ -32,15 +37,22 @@ $products = $query->fetchAll(PDO::FETCH_ASSOC);
             <div class="subnav">
                 <div class="boxnav">
                     <div class="navbar-logo">
-                        <a href="/projet jouer - Copie (2)/ProjetJouet/php/index.php"><img src="/projet jouer - Copie (2)/ProjetJouet/images/logo.png" alt="Logo Jouet" class="logo"></a>
+                        <a href="/projet jouer - Copie (2)/ProjetJouet/php/index.php">
+                            <img src="/projet jouer - Copie (2)/ProjetJouet/images/logo.png" alt="Logo Jouet" class="logo">
+                        </a>
                     </div>
                     <div class="navbar-title">
-                        <h1> Toy'isen </h1>
+                        <h1>Toy'isen</h1>
                     </div>
-            
                     <div class="top-bar-right">
-                    <a href="/projet jouer - Copie (2)/ProjetJouet/php/espace-client.php">Profil</a>
-                    <a href="/projet jouer - Copie (2)/ProjetJouet/php/logout.php">Déconnexion</a>
+                        <?php if (isset($_SESSION['user_id'])): ?>
+                            <a href="/projet jouer - Copie (2)/ProjetJouet/php/espace-client.php">Profil</a>
+                            <a href="/projet jouer - Copie (2)/ProjetJouet/php/logout.php">Déconnexion</a>
+                        <?php else: ?>
+                            <a href="/projet jouer - Copie (2)/ProjetJouet/page/connexion.html">Connexion</a>
+                            <a href="/projet jouer - Copie (2)/ProjetJouet/page/inscription.html">S'inscrire</a>
+
+                        <?php endif; ?>
                     </div>
                 </div>
 
@@ -54,6 +66,7 @@ $products = $query->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </nav>
     </header>
+
     <main>
         <h2>Nos Mini Voitures</h2>
         <div class="produit-container">
@@ -65,16 +78,19 @@ $products = $query->fetchAll(PDO::FETCH_ASSOC);
                         <p><?= htmlspecialchars($product['description']) ?></p>
                         <p><strong>Prix : <?= htmlspecialchars($product['prix']) ?> €</strong></p>
                     </div>
+
                     <form action="/projet jouer - Copie (2)/ProjetJouet/php/panier.php" method="post">
-                        <input type="hidden" name="action" value="add">
-                        <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
-                        <input type="hidden" name="quantity" value="1">
-                        <button type="submit">Ajouter au panier</button>
-                    </form>
+    <input type="hidden" name="action" value="add">
+    <input type="hidden" name="product_id" value="<?= htmlspecialchars($product['id']) ?>">
+    <input type="hidden" name="quantity" value="1">
+    <button type="submit">Ajouter au panier</button>
+</form>
+
                 </div>
             <?php endforeach; ?>
         </div>
     </main>
+
     <footer>
         <p>© 2024 Toy'isen - Tous droits réservés.</p>
     </footer>

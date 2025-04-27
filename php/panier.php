@@ -1,33 +1,27 @@
 <?php
 session_start();
-include __DIR__ . '/../php/includes/header.php';
-
-$pdo = new PDO('mysql:host=localhost;dbname=infoconnexion;charset=utf8', 'root', 'root');
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // Vérifie si l'utilisateur est connecté
-if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
+if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
+    header('Location: /projet jouer - Copie (2)/ProjetJouet/page/connexion.html');
     exit();
 }
 
-// Mettre à jour les quantités
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_cart'])) {
-    foreach ($_POST['quantities'] as $productId => $quantity) {
-        $quantity = max(0, (int)$quantity);
-        if ($quantity === 0) {
-            unset($_SESSION['cart'][$productId]);
-        } else {
-            $_SESSION['cart'][$productId] = $quantity;
-        }
-    }
-    header('Location: panier.php');
-    exit();
+// Inclure le fichier header
+include __DIR__ . '/header.php';
+
+// Connexion à la base de données
+try {
+    $pdo = new PDO('mysql:host=localhost;dbname=projet25_infoclient;charset=utf8', 'root', 'root');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Erreur de connexion : " . $e->getMessage());
 }
 
 // Affichage du panier
-$cart = $_SESSION['cart'] ?? [];
+$cart = $_SESSION['panier'] ?? [];
 $cartTotal = 0;
+$totalQuantity = 0;
 ?>
 
 <h2>Votre Panier</h2>
@@ -36,40 +30,57 @@ $cartTotal = 0;
     <p>Votre panier est vide.</p>
     <a href="javascript:history.back()">Retour</a>
 <?php else: ?>
-    <form method="post" action="panier.php">
+    <form method="post" action="maj_panier.php">
         <table>
             <thead>
                 <tr>
+                    <th>Image</th>
                     <th>Nom du produit</th>
                     <th>Quantité</th>
-                    <th>Prix</th>
+                    <th>Prix unitaire</th>
                     <th>Total</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($cart as $productId => $quantity): ?>
+                <?php foreach ($cart as $index => $item): ?>
                     <?php
-                    $stmt = $pdo->prepare("SELECT * FROM produits WHERE id = ?");
-                    $stmt->execute([$productId]);
+                    $id = $item['id'];
+                    $categorie = $item['categorie'];
+                    $quantite = $item['quantite'];
+
+                    // Récupérer depuis la bonne table
+                    $stmt = $pdo->prepare("SELECT * FROM $categorie WHERE id = ?");
+                    $stmt->execute([$id]);
                     $product = $stmt->fetch();
-                    if (!$product) continue; // Si produit introuvable
+
+                    if (!$product) continue;
 
                     $productPrice = $product['prix'];
                     $productName = $product['nom'];
-                    $productTotal = $productPrice * $quantity;
+                    $productImage = $product['image_path'] ?? $product['image']; // selon ta colonne
+                    $productTotal = $productPrice * $quantite;
+
                     $cartTotal += $productTotal;
+                    $totalQuantity += $quantite;
                     ?>
                     <tr>
+                        <td><img src="<?= htmlspecialchars($productImage) ?>" alt="Image Produit" style="width:80px; height:80px; object-fit:cover;"></td>
                         <td><?= htmlspecialchars($productName) ?></td>
-                        <td><input type="number" name="quantities[<?= $productId ?>]" value="<?= $quantity ?>" min="0"></td>
+                        <td>
+                            <input type="number" name="quantities[<?= $index ?>]" value="<?= $quantite ?>" min="0">
+                        </td>
                         <td><?= number_format($productPrice, 2) ?> €</td>
                         <td><?= number_format($productTotal, 2) ?> €</td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2"><strong>Total articles :</strong> <?= $totalQuantity ?></td>
+                    <td colspan="3"><strong>Total panier :</strong> <?= number_format($cartTotal, 2) ?> €</td>
+                </tr>
+            </tfoot>
         </table>
-
-        <h3>Total général : <?= number_format($cartTotal, 2) ?> €</h3>
 
         <button type="submit" name="update_cart">Mettre à jour le panier</button>
     </form>
@@ -77,7 +88,6 @@ $cartTotal = 0;
     <form method="post" action="payement.php">
         <button type="submit">Valider le panier</button>
     </form>
-    <a href="javascript:history.back()">Retour</a>
 <?php endif; ?>
 
-<?php include __DIR__ . '/../php/includes/footer.php'; ?>
+<?php include __DIR__ . '/footer.php'; ?>

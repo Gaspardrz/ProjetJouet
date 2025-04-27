@@ -1,18 +1,15 @@
 <?php 
-
 session_start();
 include __DIR__ . '/header.php';
 
 // Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION['user'])) {
-    // Rediriger vers la page de connexion si non connecté
     header("Location: /projet jouer - Copie (2)/ProjetJouet/php/connexion.php");
     exit();
 }
 
 // Récupération des données utilisateur depuis la session
 $user = $_SESSION['user'];
-
 ?>
 
 <!DOCTYPE html>
@@ -21,76 +18,57 @@ $user = $_SESSION['user'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espace Client</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: rgb(255, 255, 255);
-            color: rgb(0, 0, 0);
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding-top: 30px;
-        }
-
-        .box {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        h1 {
-            color: rgb(0, 0, 0);
-        }
-
-        p {
-            font-size: 16px;
-            color: #666;
-        }
-
-        .user-info {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        .buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .buttons a {
-            padding: 10px 20px;
-            background-color: #d46a28;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .buttons a:hover {
-            background-color: #aa4f1e;
-        }
-    </style>
+    <link rel="stylesheet" href="/projet jouer - Copie (2)/ProjetJouet/css/espace-client.css">
 </head>
 <body>
 
-    <div class="container">
-        <div class="box">
-            <h1>Bienvenue, <?php echo htmlspecialchars($user['Prénom']) . " " . htmlspecialchars($user['Nom']); ?> !</h1>
-            <p class="user-info">Adresse email : <?php echo htmlspecialchars($user['MailCLien']); ?></p>
+<div class="container">
+    <div class="box">
+        <?php if (isset($_GET['success']) && $_GET['success'] == 1): ?>
+            <p style="color: green;">Informations mises à jour avec succès !</p>
+        <?php endif; ?>
 
-            <div class="buttons">
-                <a href="/projet jouer - Copie (2)/ProjetJouet/php/index.php">Accéder à la page Shopping</a>
-                <a href="/projet jouer - Copie (2)/ProjetJouet/php/logout.php">Se déconnecter</a>
-            </div>
+        <h1>Bienvenue, <?php echo htmlspecialchars($user['Prénom']) . " " . htmlspecialchars($user['Nom']); ?> !</h1>
+        <p class="user-info">Adresse email : <?php echo htmlspecialchars($user['MailCLien']); ?></p>
+
+        <!-- Affichage de la photo de profil -->
+        <div class="profile-photo">
+            <?php 
+            $photo = !empty($user['photoProfil']) ? $user['photoProfil'] : '/projet jouer - Copie (2)/ProjetJouet/images/default-profile.jpg';
+            ?>
+            <img src="<?php echo htmlspecialchars($photo); ?>" 
+                 alt="Photo de profil" 
+                 style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+
+            <!-- Bouton pour supprimer la photo de profil -->
+            <?php if (!empty($user['photoProfil'])): ?>
+                <form action="delete_photo.php" method="POST" style="margin-top: 10px;">
+                    <input type="hidden" name="email" value="<?php echo htmlspecialchars($user['MailCLien']); ?>">
+                    <button type="submit" name="delete_photo" style="background-color: red; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+                        Supprimer la photo de profil
+                    </button>
+                </form>
+            <?php endif; ?>
         </div>
+
+        <!-- Formulaire pour modifier les informations -->
+        <form action="update_user.php" method="POST" enctype="multipart/form-data">
+            <label for="prenom">Prénom :</label>
+            <input type="text" name="prenom" id="prenom" value="<?php echo htmlspecialchars($user['Prénom']); ?>" required>
+
+            <label for="nom">Nom :</label>
+            <input type="text" name="nom" id="nom" value="<?php echo htmlspecialchars($user['Nom']); ?>" required>
+
+            <label for="email">Email :</label>
+            <input type="email" name="email" id="email" value="<?php echo htmlspecialchars($user['MailCLien']); ?>" required>
+
+            <label for="photo">Changer la photo de profil :</label>
+            <input type="file" name="photo" id="photo" accept="image/*">
+
+            <button type="submit" name="update">Modifier les informations</button>
+        </form>
     </div>
+</div>
 
 </body>
 </html>
