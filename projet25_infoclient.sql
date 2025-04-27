@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : sam. 26 avr. 2025 à 10:18
+-- Généré le : dim. 27 avr. 2025 à 18:23
 -- Version du serveur : 5.7.24
 -- Version de PHP : 8.3.1
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `infoconnexion`
+-- Base de données : `projet25_infoclient`
 --
 
 -- --------------------------------------------------------
@@ -79,43 +79,35 @@ CREATE TABLE `client` (
   `MdpClient` varchar(255) DEFAULT NULL,
   `Nom` varchar(255) NOT NULL,
   `Prénom` varchar(255) NOT NULL,
-  `photoProfil` varchar(255) DEFAULT NULL
+  `photoProfil` varchar(255) DEFAULT NULL,
+  `banni` tinyint(1) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Données info client';
 
 --
 -- Déchargement des données de la table `client`
 --
 
-INSERT INTO `client` (`MailCLien`, `MdpClient`, `Nom`, `Prénom`, `photoProfil`) VALUES
-('exemplemail@gmail.com', '$2y$10$59kCPfx2qpujIQmjrkO2S.YIpgD3PUF.V5UiiKCrWcIFZ7atRZS5e', 'Dupont', 'Jean', NULL),
-('exemplemail@gmail.com', '$2y$10$59kCPfx2qpujIQmjrkO2S.YIpgD3PUF.V5UiiKCrWcIFZ7atRZS5e', 'Dupont', 'Jean', NULL),
-('exemplemail@gmail.com', '$2y$10$59kCPfx2qpujIQmjrkO2S.YIpgD3PUF.V5UiiKCrWcIFZ7atRZS5e', 'Dupont', 'Jean', NULL),
-('eamzrh@gmail.com', '$2y$10$bN9yBAaziwyXS3XU85fKCeIeBB7LxhfTOpOikxPmdycKtzwRZfuoG', 'Priem', 'Charles', NULL);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `créationcompte`
---
-
-CREATE TABLE `créationcompte` (
-  `Mail` varchar(255) NOT NULL,
-  `MDP` varchar(255) NOT NULL,
-  `Nom` varchar(255) NOT NULL,
-  `Prénom` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `créationcompte`
---
-
-INSERT INTO `créationcompte` (`Mail`, `MDP`, `Nom`, `Prénom`) VALUES
-('eamzrrh@gmail.com', '$2y$10$LlPp7ALFGodLlwhfav44teWuWu2JNkvFM9i.ar0lwBnOCNddzMtpS', 'Priem', 'Charles'),
-('eamzrhO@gmail.com', '$2y$10$BD3PDedSdxDhqWrtrcGIAOY2jL8UfEPb.WJ9rnEfiR6QLB7Jn/EWC', 'Priem', 'Charles'),
-('adadz@gmail.com', '$2y$10$hBVGA96oyJcKKaYb3EeooOneQrPhepX9sJbInNfHtnU4MXTPJwcG6', 'Priem', 'Charles'),
-('adadzada@gmail.com', '$2y$10$2PpsuFNT./YFI/J5ah7W9Oz2j8nEBm3jGYhrRh9IcwvskB7eE1Qiy', 'Priem', 'Charles'),
-('adadzadaadd@gmail.com', '$2y$10$e/7yc0cqaSaG63kGQCFhQ.UmZ4KBPxWkkzH5RhW3jV6P30m02ffDy', 'Priem', 'Charles'),
-('adadzaAda@gmail.com', '$2y$10$dgFvgyPrh8JELQtcHMA5IOTRD720EL20HfnxljFRTV1qA8M73a9wO', 'Priem', 'Charles');
+INSERT INTO `client` (`MailCLien`, `MdpClient`, `Nom`, `Prénom`, `photoProfil`, `banni`) VALUES
+('exemplemaile@gmail.com', '$2y$10$59kCPfx2qpujIQmjrkO2S.YIpgD3PUF.V5UiiKCrWcIFZ7atRZS5e', 'bearnd', 'MICHEL', '/projet jouer - Copie (2)/ProjetJouet/uploads/680e6746f2e6b_67b57ec4ef209.jpg', 0),
+('exemplemaile@gmail.com', '$2y$10$59kCPfx2qpujIQmjrkO2S.YIpgD3PUF.V5UiiKCrWcIFZ7atRZS5e', 'bearnd', 'MICHEL', '/projet jouer - Copie (2)/ProjetJouet/uploads/680e6746f2e6b_67b57ec4ef209.jpg', 0),
+('exemplemaile@gmail.com', '$2y$10$59kCPfx2qpujIQmjrkO2S.YIpgD3PUF.V5UiiKCrWcIFZ7atRZS5e', 'bearnd', 'MICHEL', '/projet jouer - Copie (2)/ProjetJouet/uploads/680e6746f2e6b_67b57ec4ef209.jpg', 0),
+('eamzrh@gmail.com', '$2y$10$bN9yBAaziwyXS3XU85fKCeIeBB7LxhfTOpOikxPmdycKtzwRZfuoG', 'Priem', 'Charles', NULL, 0),
+('eamzrh12O@gmail.com', '$2y$10$cCBfxFTOJyI/JfuAi.AtQuw0Cg2pZvg4i4oeHbq4LH6zJdrE5ZR.W', 'Priem', 'Charles', NULL, 0),
+('13132323z@gmail.com', '$2y$10$wdtOKe9CUFdfs6PBmdZgcOAO32BMj8vdLfcJGe6thBcqWe8v4J18m', 'Priem', 'Charles', NULL, 0),
+('13132323z@gmail.com', '$2y$10$tpiTaV6DM2fR7dU24lebwutFizUUJQyMsU0ojE/je36wvkWq0ynhy', 'Priem', 'Charles', NULL, 0),
+('13132323z@gmail.com', '$2y$10$TXddT2zYDTaNV3AakwCVoOL0SY/ItKgZi8i9EQ9mMOGJmsuTy3bP2', 'Priem', 'Charles', NULL, 0),
+('13132323z@gmail.com', '$2y$10$JNG.0a39PRAbsLdjYciMQ.cAynjNT56Bc2fjS1Dy1vwp.LD2IIAhG', 'Priem', 'Charles', NULL, 0),
+('13132323z@gmail.com', '$2y$10$3EG9Lj1f7eZZIuvldL2/.uzE8z0M3Y7wzuplnWeX4K.MkRGuWOA9W', 'Priem', 'Charles', NULL, 0),
+('adaDAEEZEzada@gmail.com', '$2y$10$XlDbkP0EgZsvOZBIwcqL8.skEfhcrO6pU5eUksTCz1XgIMI0FOYsW', 'Priem', 'Charles', NULL, 1),
+('ADADZ1E@gmail.com', '$2y$10$J8kGTg041cNDVCyq1zQ5ZeDPgxGcro1KVQkjNk1oZeEHxdXG6jteq', 'Priem', 'Charles', NULL, 0),
+('eamzrhdadO@gmail.com', '$2y$10$1m294nM7PxfO8IB3014EsuZkAclOHivy9wbj1/6Sws9APXYP41T/i', 'Pfe', 'Charles', NULL, 0),
+('adaDAEEZEzada@gmail.com', '$2y$10$XxT6D0Ix3bSNELJtLZAhPuEhCmOgZ3O.9cSFvOWUc2im350uzQnRu', 'Priem', 'Charles', NULL, 1),
+('adaDAEEZEzada-163@gmail.com', '$2y$10$dNl7TsojeJQth/UeN.DiH..9.nyRApq6uvJK5mHvLa2Srao56UNMm', 'Priem', 'Charles', NULL, 0),
+('zfzf1323-1AA@gmail.com', '$2y$10$mm3QpamlGaM/qCRov8x4Mu7zdy35aTJJFiuP7DIeC44VFRlLfJ9JK', 'fzf', 'zff', NULL, 1),
+('eamzrr13AZZE1---1h@gmail.com', '$2y$10$seo5GPM0w8nFvftzkaV/1OqAWSAukkfWXB5cK1iL3e525RthyZ7Rq', 'fzf', 'fzfz', NULL, 0),
+('eamzrr13AZZE1---1h@gmail.com', '$2y$10$o254cyzAWEzuubyowGvh3elYp.cgBVcy6fA9r6Uq1jSv.ed2DmjY.', 'fzf', 'fzfz', NULL, 0),
+('eamzrr13AZZE1---1h@gmail.com', '$2y$10$sb/49BH5vNpMFRlZzXHsjOcjh8b.1CDeBY8Y9AudOghoaX2CzFfM6', 'fzf', 'fzfz', NULL, 0),
+('eamzrr13AZZE1---11h@gmail.com', '$2y$10$wc4Wj4.PCcpQxtI3RSeLceSbw2CmDEiXh2ucvcdK81fJRwbLCvHj2', 'ddzf', 'zff', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -236,6 +228,20 @@ INSERT INTO `nerf` (`id`, `nom`, `description`, `prix`, `image_path`) VALUES
 (9, 'Rival Bleu', 'Nerf Rival édition bleue.', '34.99', '../../images/nerf/rivalbleu.jpg'),
 (10, 'Strike', 'Blaster classique Strike.', '21.99', '../../images/nerf/strike.jpg');
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `panier`
+--
+
+CREATE TABLE `panier` (
+  `id` int(255) NOT NULL,
+  `user_id` varchar(255) NOT NULL,
+  `produit_id` int(255) NOT NULL,
+  `categorie` varchar(255) NOT NULL,
+  `quantite` int(255) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 --
 -- Index pour les tables déchargées
 --
@@ -277,6 +283,12 @@ ALTER TABLE `nerf`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `panier`
+--
+ALTER TABLE `panier`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -290,7 +302,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT pour la table `cartes`
 --
 ALTER TABLE `cartes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT pour la table `figurines`
@@ -315,6 +327,12 @@ ALTER TABLE `minivoitures`
 --
 ALTER TABLE `nerf`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT pour la table `panier`
+--
+ALTER TABLE `panier`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
