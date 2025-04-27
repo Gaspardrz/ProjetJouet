@@ -6,12 +6,12 @@ error_reporting(E_ALL);
 
 session_start();
 
-// Vérifie que les données existent
-if (isset($_POST['id'], $_POST['categorie'], $_POST['quantite'])) {
-    $id = (int) $_POST['id'];
-    $categorie = htmlspecialchars($_POST['categorie']);
-    $quantite = max(1, (int) $_POST['quantite']); // Assurez-vous que la quantité est au moins 1
+// Vérifie que les données existent et sont valides
+$id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
+$categorie = filter_input(INPUT_POST, 'categorie', FILTER_SANITIZE_STRING);
+$quantite = filter_input(INPUT_POST, 'quantite', FILTER_VALIDATE_INT);
 
+if ($id && $categorie && $quantite && $quantite > 0) {
     // Initialise le panier s'il n'existe pas encore
     if (!isset($_SESSION['panier'])) {
         $_SESSION['panier'] = [];
@@ -40,5 +40,7 @@ if (isset($_POST['id'], $_POST['categorie'], $_POST['quantite'])) {
     header('Location: panier.php');
     exit();
 } else {
-    echo "Erreur : Données manquantes.";
+    // Affiche un message d'erreur si les données sont invalides
+    echo "Erreur : Données invalides ou manquantes.";
+    exit();
 }
