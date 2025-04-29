@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : dim. 27 avr. 2025 à 18:23
+-- Généré le : mar. 29 avr. 2025 à 04:33
 -- Version du serveur : 5.7.24
 -- Version de PHP : 8.3.1
 
@@ -107,7 +107,31 @@ INSERT INTO `client` (`MailCLien`, `MdpClient`, `Nom`, `Prénom`, `photoProfil`,
 ('eamzrr13AZZE1---1h@gmail.com', '$2y$10$seo5GPM0w8nFvftzkaV/1OqAWSAukkfWXB5cK1iL3e525RthyZ7Rq', 'fzf', 'fzfz', NULL, 0),
 ('eamzrr13AZZE1---1h@gmail.com', '$2y$10$o254cyzAWEzuubyowGvh3elYp.cgBVcy6fA9r6Uq1jSv.ed2DmjY.', 'fzf', 'fzfz', NULL, 0),
 ('eamzrr13AZZE1---1h@gmail.com', '$2y$10$sb/49BH5vNpMFRlZzXHsjOcjh8b.1CDeBY8Y9AudOghoaX2CzFfM6', 'fzf', 'fzfz', NULL, 0),
-('eamzrr13AZZE1---11h@gmail.com', '$2y$10$wc4Wj4.PCcpQxtI3RSeLceSbw2CmDEiXh2ucvcdK81fJRwbLCvHj2', 'ddzf', 'zff', NULL, 1);
+('eamzrr13AZZE1---11h@gmail.com', '$2y$10$wc4Wj4.PCcpQxtI3RSeLceSbw2CmDEiXh2ucvcdK81fJRwbLCvHj2', 'ddzf', 'zff', NULL, 1),
+('zfzf1323-1A133E4@gmail.com', '$2y$10$1jgJ6u8HqwlUyiQyKovTTOjC2xcZxwnRpcwbR4IOHhkaqSf1C.c0e', 'efgaEG', 'eggEG', NULL, 1),
+('aedzaaA-71@gmail.com', '$2y$10$OjQjAgIcd1GUrPbYKeafCOf2qxa5rG.N0XZ.c5dcnFXXGglOUotMi', 'zegzgaeg', 'eggZG', '/projet jouer - Copie (2)/ProjetJouet/uploads/681041ddf0348_1200x1200bb.jpg', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `commandes`
+--
+
+CREATE TABLE `commandes` (
+  `id` int(255) NOT NULL,
+  `user_id` varchar(255) NOT NULL,
+  `produit_id` int(255) NOT NULL,
+  `categorie` varchar(255) NOT NULL,
+  `quantite` int(255) NOT NULL,
+  `date_commande` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `commandes`
+--
+
+INSERT INTO `commandes` (`id`, `user_id`, `produit_id`, `categorie`, `quantite`, `date_commande`) VALUES
+(1, 'exemplemaile@gmail.com', 0, '', 0, '2025-04-27 20:29:39');
 
 -- --------------------------------------------------------
 
@@ -243,6 +267,15 @@ CREATE TABLE `panier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Déchargement des données de la table `panier`
+--
+
+INSERT INTO `panier` (`id`, `user_id`, `produit_id`, `categorie`, `quantite`) VALUES
+(2, 'zfzf1323-1A133E4@gmail.com', 0, '', 0),
+(3, 'exemplemaile@gmail.com', 0, '', 0),
+(4, 'aedzaaA-71@gmail.com', 0, '', 0);
+
+--
 -- Index pour les tables déchargées
 --
 
@@ -256,6 +289,12 @@ ALTER TABLE `admin`
 -- Index pour la table `cartes`
 --
 ALTER TABLE `cartes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `commandes`
+--
+ALTER TABLE `commandes`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -305,6 +344,12 @@ ALTER TABLE `cartes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
+-- AUTO_INCREMENT pour la table `commandes`
+--
+ALTER TABLE `commandes`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT pour la table `figurines`
 --
 ALTER TABLE `figurines`
@@ -332,7 +377,7 @@ ALTER TABLE `nerf`
 -- AUTO_INCREMENT pour la table `panier`
 --
 ALTER TABLE `panier`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
