@@ -54,6 +54,7 @@ if ($result && $result->num_rows > 0) {
                     </div>
             
                 <div class="top-bar-right">
+                    <?php if (isset($_SESSION['user'])): ?>
                         <a href="/projet jouer - Copie (2)/ProjetJouet/php/espace-client.php">Profil</a>
                         <a href="/projet jouer - Copie (2)/ProjetJouet/php/logout.php">Déconnexion</a>
                         <a href="/projet jouer - Copie (2)/ProjetJouet/php/panier.php">Panier</a>
