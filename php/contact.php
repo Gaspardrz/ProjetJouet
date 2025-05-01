@@ -59,7 +59,7 @@ if ($result && $result->num_rows > 0) {
         // Déconnecte l'utilisateur et affiche un message
         session_destroy();
         echo "<p style='color: red;'>Vous avez été banni du site.</p>";
-        echo "<a href='/projet jouer - Copie (2)/ProjetJouet/page/connexion.html' style='color: blue; text-decoration: underline;'>Retour à la page de connexion</a>";
+        echo "<a href='/projet jouer - Copie (2)/ProjetJouet/php/index.php' style='color: blue; text-decoration: underline;'>Retour à la page de connexion</a>";
         exit();
     }
 }
